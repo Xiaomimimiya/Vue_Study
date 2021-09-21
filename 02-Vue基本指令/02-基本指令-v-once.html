@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <template id="my-app">
+        <div>
+            <h2>{{count}}</h2>
+
+            <!--不会进行增加 和进行渲染=========>即 只渲染一次
+            如果是子节点也会不会再渲染-->
+            <div v-once>
+                <h2>{{count}}</h2>
+                <h2>{{message}}</h2>
+            </div>
+          
+
+            <button @click="btn">+1</button>
+        </div>
+    </template>
+
+    <div id="app"></div>
+
+    <script>
+        const app = {
+            template: "#my-app",
+            data() {
+                return {
+                    count: 100,
+                    message: "hello v-once"
+                }
+            },
+            methods: {
+                btn() {
+                    this.count += 1;
+                }
+            }
+        };
+        Vue.createApp(app).mount("#app");
+    </script>
+
+</body>
+
+</html>

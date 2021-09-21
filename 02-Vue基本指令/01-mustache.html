@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <template id="my-app">
+        <div>
+            <!--1.mustache基本使用-->
+            <h2>{{message}}</h2>
+
+            <!--2.表达式使用-->
+            <h1>{{count*10}}</h1>
+            <h2>{{message.split(" ").reverse().join(" ")}}</h2>
+
+             <!--3.调用函数-->
+             <h2>{{getReverseMessage()}}</h2>
+
+             <!--4.计算属性-->
+             <!--5.三元判断-->
+             <h2>{{isture?"哈哈":"呵呵"}}</h2>
+
+             <!--6.调用函数-->
+             <button @click="turn_off">切换哈哈和呵呵</button>
+             
+            <!--不能再里面赋值和进行条件判断 这种是错误的-->
+        </div>
+    </template>
+
+    <div id="app"></div>
+
+    <script>
+        const app = {
+            template: "#my-app",
+            data() {
+                return {
+                    message: "hello world",
+                    count: 100,
+                    isture: true
+                }
+            },
+            methods: {
+                getReverseMessage() {
+                    return this.message.split(" ").reverse().join(" ");
+                },
+                turn_off() {
+                    this.isture = !this.isture;
+                }
+            }
+        };
+        Vue.createApp(app).mount("#app");
+    </script>
+
+</body>
+
+</html>
