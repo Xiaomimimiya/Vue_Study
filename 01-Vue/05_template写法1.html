@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <script type="x-template" id="templates">
+        <div>
+            <h2>{{message}}</h2>
+            <h2>{{count}}</h2>
+            <button @click="plus">加1</button>
+            <button @click="minus">减1</button>
+        </div>
+    </script>
+    <div id="app"></div>
+    <script>
+        Vue.createApp({
+            // 调用前面的script标签里定义的模板html
+            // 以#号开头
+            template: "#templates",
+            // 固定写法 函数里面且套一个对象 
+            // 传入数据 在template里面使用{{message}}
+            data: function() {
+                return {
+                    count: 1,
+                    message: "hello world"
+                }
+            },
+
+            // 可以在methods定义各种方法
+            methods: {
+                // 加法事件绑定
+                //  写法：<button @click="plus">加1</button>
+                plus() {
+                    console.log("点击了+1");
+                    // 通过this来修改count
+                    this.count += 1;
+                },
+                // 减法事件绑定
+                minus() {
+                    console.log("点击了-1");
+                    this.count -= 1;
+                }
+            }
+        }).mount("#app");
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .plus {
+        width: 50px;
+        height: 50px;
+        border: solid 2x #000;
+    }
+    
+    .minus {
+        width: 50px;
+        height: 50px;
+        border: solid 2x #000;
+    }
+</style>
+
+<body>
+    <h2 class="count">0</h2>
+    <button class="plus">加</button>
+    <button class="minus">减</button>
+    <script>
+        var count = document.querySelector(".count");
+        var plus = document.querySelector(".plus");
+        var minus = document.querySelector(".minus");
+        var num = 0;
+
+        plus.addEventListener("click", () => {
+            num += 1;
+            count.innerHTML = num;
+        });
+
+        minus.addEventListener("click", function() {
+            num -= 1;
+            count.innerHTML = num;
+        });
+    </script>
+</body>
+
+</html>
