@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="D:\vue_Study\js\vue.js"></script>
+</head>
+
+<body>
+    <template id="my-app">
+       
+        <div @click="divClick">
+            <!-- 修饰符的作用在于对事件做进一步的处理 -->
+            <!-- 阻止冒泡 -->
+            <button @click.stop="btnclick">点击我</button>
+        </div>
+        <!-- 输入enter 键 才会执行 -->
+        <input type="text" @keyup.enter="keyenter">
+    </template>
+
+    <div id="app"></div>
+
+    <script>
+        const app = {
+            template: "#my-app",
+            data() {
+                return {
+                    message: "hello world",
+                }
+            },
+            methods: {
+                divClick() {
+                    console.log("div_Click");
+                },
+                btnclick() {
+                    console.log("btn_click");
+                },
+                keyenter(event) {
+                    console.log("keyenter", event.target.value);
+                }
+            },
+        };
+        Vue.createApp(app).mount("#app");
+    </script>
+
+</body>
+
+</html>

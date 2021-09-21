@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <template id="my-app">
+        <!-- 数组引入 -->
+        <div :class="['abc',title]">呵呵呵</div>
+        <!-- 三元判断 -->
+        <div :class="['abc',title,isActive?active:'123']">呵呵呵123</div>
+        <!-- 对象语法 -->
+        <div :class="['abc',title,{title:active}]">呵呵呵1234</div>
+    </template>
+
+    <div id="app"></div>
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = {
+            template: "#my-app",
+            data() {
+                return {
+                    active: 1123,
+                    title: "name",
+                    isActive: false
+                }
+            }
+        };
+        Vue.createApp(app).mount("#app");
+    </script>
+
+</body>
+
+</html>

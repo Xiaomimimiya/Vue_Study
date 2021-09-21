@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="D:\vue_Study\js\vue.js"></script>
+    <style>
+        .area {
+            width: 200px;
+            height: 300px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <template id="my-app">
+       <!-- 完整写法 :v-on:事件="methods 中的一个方法" -->
+       <!-- 点击事件 -->
+       <button v-on:click="btnClick">按钮1</button>
+       <!-- <button @click="btnClick">按钮1</button> -->
+
+       <!-- 鼠标移动事件 -->
+       <button v-on:mousemove="mouse_move">按钮2</button>
+
+       <!-- 语法糖 v-on:替换成@-->
+       <button @mousemove="mouse_move">按钮3</button>
+
+       <!-- 绑定一个表达式 直接实现自加 -->
+       <button @click="count++">{{count}}</button>
+
+       <!-- 绑定一个对象 例如使下面的div绑定两个事件：鼠标移动+鼠标点击 -->
+       <div class="area" v-on="{click:btnClick,mousemove:mouse_move}"></div>
+    </template>
+
+    <div id="app"></div>
+
+    <script>
+        const app = {
+            template: "#my-app",
+            data() {
+                return {
+                    message: "hello world",
+                    count: 100
+                }
+            },
+            methods: {
+                btnClick() {
+                    console.log("点击了一次呢");
+                },
+                mouse_move() {
+                    console.log("鼠标在不断移动啊");
+                },
+            }
+        };
+        Vue.createApp(app).mount("#app");
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <template id="my-app">
+        <!--属性的动态绑定=====> v-bind 指令的使用-->
+        <img v-bind:src="imgurl" alt="">
+        <a v-bind:href="link">baidu</a>
+
+        <!--v-bind的语法糖 即直接省略v-bind 留下 ：-->
+        <img :src="imgurl" alt="">
+        <a :href="link">baidu</a> 
+    </template>
+
+    <div id="app"></div>
+
+    <script>
+        const app = {
+            template: "#my-app",
+            data() {
+                return {
+                    imgurl: "https://img.printf520.com/dist/static/images/avatar/015-avatar.jpg",
+                    link: "http://www.baidu.com"
+                }
+            }
+        };
+        Vue.createApp(app).mount("#app");
+    </script>
+
+</body>
+
+</html>

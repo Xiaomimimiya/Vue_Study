@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="D:\vue_Study\js\vue.js"></script>
+    <title>Document</title>
+
+</head>
+
+<body>
+    <template id="my-app">
+        <div :style="{color:final_color,fontSize:final_fontSize}">哈哈哈1</div>
+        <!-- 字符串拼接px -->
+        <div :style="{color:final_color,fontSize:final_fontsize+'px'}">哈哈哈2</div>
+        <!-- 调用属性值 -->
+        <div :style="final_style">哈哈哈3</div>
+
+        <!-- 调用方法 -->
+        <div :style="getfontstyle()">哈哈哈4</div>
+
+    </template>
+
+    <div id="app"></div>
+
+    <script>
+        const app = {
+            template: "#my-app",
+            data() {
+                return {
+                    final_color: 'red',
+                    final_fontSize: 100 + "px",
+                    final_fontsize: 50,
+                    final_style: {
+                        fontSize: "100px",
+                        fontWeight: 200,
+                        backgroundColor: "blue"
+                    }
+                }
+            },
+            methods: {
+                getfontstyle() {
+                    return {
+                        fontSize: "100px",
+                        fontWeight: 200,
+                        backgroundColor: "white"
+                    }
+                }
+            }
+
+        };
+        Vue.createApp(app).mount("#app");
+    </script>
+
+</body>
+
+</html>

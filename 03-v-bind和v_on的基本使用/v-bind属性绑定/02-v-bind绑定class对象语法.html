@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+    <style>
+        .active {
+            width: 100px;
+            height: 30px;
+            color: red;
+            background-color: teal;
+        }
+    </style>
+</head>
+
+<body>
+    <template id="my-app">
+
+        <div :class="className">哈哈哈</div>
+        <!-- 对象语法 {'active':boolean} true绑定 false不绑定 -->
+        <!-- 绑定成功-->
+        <div :class="{active: true}">呵呵呵</div>
+        <!-- 绑定失败-->
+        <div :class="{active:false}">噢噢噢</div>
+        <!-- 动态切换 -->
+        <div :class="{active: isActive}">噢噢噢</div>
+        <button @click="toggle">点击切换</button>
+
+        <!-- 可以有多个键值对 -->
+        <div :class="{active: isActive,title:true}">嗯嗯嗯</div>
+
+        <!-- 动态的和固定的可以结合 -->
+        <div class="name" :class="{active: isActive}">嘻嘻嘻</div>
+
+        <!-- 对象可以添加到一个属性中去 -->
+        <div class="name1213" :class="classobj">哦哦哦11</div>
+
+        <!-- 对象可以添加到一个函数中去 -->
+        <div class="name1213" :class="getClassObj()">哦哦哦112</div>
+
+    </template>
+
+    <div id="app"></div>
+
+    <script>
+        const app = {
+            template: "#my-app",
+            data() {
+                return {
+                    className: "xiaomi",
+                    isActive: true,
+                    classobj: {
+                        active: true,
+                        title: true
+                    }
+                }
+            },
+            methods: {
+                toggle() {
+                    this.isActive = !this.isActive;
+                },
+                getClassObj() {
+                    return {
+                        active: true,
+                        title: true
+                    }
+                }
+            }
+        };
+        Vue.createApp(app).mount("#app");
+    </script>
+
+</body>
+
+</html>
