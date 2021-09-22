@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="D:\vue_Study\js\vue.js"></script>
+</head>
+
+<body>
+    <template id="my-app">
+        <!-- true -->
+        <template v-if="isshow">
+            <div>hhh</div>
+            <div>hhh</div>
+            <div>hhh</div>
+        </template>
+    <!-- false -->
+    <template v-else>
+            <div>111</div>
+            <div>111</div>
+            <div>11</div>
+        </template>
+
+    </template>
+
+    <div id="app"></div>
+
+    <script>
+        const app = {
+            template: "#my-app",
+            data() {
+                return {
+                    isshow: true
+                }
+            }
+        };
+        Vue.createApp(app).mount("#app");
+    </script>
+
+</body>
+
+</html>

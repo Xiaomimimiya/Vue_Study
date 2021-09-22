@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="D:\vue_Study\js\vue.js"></script>
+</head>
+
+<body>
+    <template id="my-app">
+        
+        <!-- v-mode 根据用户的输入进行判断 -->
+        <input type="text" v-model="score">
+
+        <!-- v-if-else 多个条件判断 -->
+        <h1 v-if="score>90">优秀</h1>
+        <h1 v-else-if="score>60">良好</h1>
+        <h1 v-else="score">不及格</h1>
+
+    </template>
+
+    <div id="app"></div>
+
+    <script>
+        const app = {
+            template: "#my-app",
+            data() {
+                return {
+                    // 大于90就是优秀 小于90就是良好 >60不及格
+                    score: 100
+                }
+            },
+            methods: {
+                toggle() {
+                    // 取反 能够进行动态切换
+                    this.isshow = !this.isshow
+                }
+            }
+        };
+        Vue.createApp(app).mount("#app");
+    </script>
+
+</body>
+
+</html>

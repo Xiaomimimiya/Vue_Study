@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="D:\vue_Study\js\vue.js"></script>
+</head>
+
+<body>
+    <template id="my-app">
+   
+        <div v-if="isshow">v-if </div>
+
+        <!-- 区别在于false时  v-show 依然会被html渲染 源码可以看到
+            只是 display:none
+        而 v-if 不会 被渲染 不会存在DOM里面  -->
+        <div v-show="isshow">v-show </div>
+
+        <!-- 区别在于：
+        v-show  不能和temlpate一起使用
+        v-show 不能和 v-else一起使用
+        -->
+
+        <!-- 开发中需要元素频繁切换隐藏和现实 就使用v-show
+        不会发生切换就使用v-if -->
+    </template>
+
+    <div id="app"></div>
+
+    <script>
+        const app = {
+            template: "#my-app",
+            data() {
+                return {
+                    isshow: true
+                }
+            }
+        };
+        Vue.createApp(app).mount("#app");
+    </script>
+
+</body>
+
+</html>
