@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="D:\vue_Study\js\vue.js"></script>
+</head>
+
+<body>
+    <template id="my-app">
+       
+    <ul>
+        <li v-for="movie in movies" :key="movies">
+            {{movie}}
+        </li>
+    </ul>
+    <input  type="text" v-model="pustMovie" >
+    <button @click="addmovie">添加电影</button>
+    </template>
+
+    <div id="app"></div>
+
+    <script>
+        const app = {
+            template: "#my-app",
+            data() {
+                return {
+                    pustMovie: "",
+                    movies: [
+                        "xiaomi0",
+                        "xiaomi1",
+                        "xiaomi2",
+                        "xiaomi3"
+                    ],
+
+                }
+            },
+            methods: {
+                addmovie() {
+                    // 使用push 进行数组更新
+                    this.movies.push(this.pustMovie);
+                    this.pustMovie = "";
+                },
+
+            }
+        };
+        Vue.createApp(app).mount("#app");
+    </script>
+
+</body>
+
+</html>

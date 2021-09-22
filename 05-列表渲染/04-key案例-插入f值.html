@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="D:\vue_Study\js\vue.js"></script>
+</head>
+
+<body>
+    <template id="my-app">
+       <!-- 最好加入  :key="number" 能够提高渲染效率-->
+        <ul>
+            <li v-for="number in info" :key="number">{{number}}</li>
+        </ul>
+        <button @click="insertF">插入F值</button>
+    </template>
+
+    <div id="app"></div>
+
+    <script>
+        const app = {
+            template: "#my-app",
+            data() {
+                return {
+                    info: ["a", "b", "c", "e"]
+                }
+            },
+            methods: {
+                insertF() {
+                    // splice是从哪里开始插入
+                    this.info.splice(2, 0, "f")
+                }
+            }
+        };
+        Vue.createApp(app).mount("#app");
+    </script>
+
+</body>
+
+</html>
