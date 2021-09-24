@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="D:\vue_Study\js\vue.js"></script>
+</head>
+
+<body>
+    <template id="my-app">
+       <!-- 通过methods来实现 -->
+       <h2>{{getFullname()}}</h2>
+       <h2>{{getResult()}}</h2>
+       <h2>{{getRevers()}}</h2>
+       <hr>
+       <h3>{{fullname}}</h3>
+       <h3>{{getscore}}</h3>
+       <h3>{{getReversMessage}}</h3>
+    </template>
+
+    <div id="app"></div>
+
+    <script>
+        const app = {
+            template: "#my-app",
+            data() {
+                return {
+                    // 对其进行逻辑运算
+                    FirstName: "xiao",
+                    LastName: "mi",
+                    score: 80,
+                    message: "hello world",
+                }
+            },
+            methods: {
+                getFullname() {
+                    return this.FirstName + " " + this.LastName;
+                },
+                getResult() {
+                    return this.score > 60 ? "及格" : "不及格";
+                },
+                getRevers() {
+                    return this.message.split(" ").reverse().join(" ");
+                },
+            },
+            // 使用计算属性
+            computed: {
+                // 定义一个计算属性 fullname
+                fullname() {
+                    return this.FirstName + "" + this.LastName;
+                },
+                // 定义一个计算属性 score
+                getscore() {
+                    return this.score > 60 ? "及格" : "不及格";
+                },
+                // 定义一个计算属性 message
+                getReversMessage() {
+                    return this.message.split(" ").reverse().join(" ")
+                }
+            }
+        };
+        Vue.createApp(app).mount("#app");
+    </script>
+
+</body>
+
+</html>

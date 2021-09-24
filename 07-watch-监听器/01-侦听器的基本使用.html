@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="D:\vue_Study\js\vue.js"></script>
+</head>
+
+<body>
+    <template id="my-app">
+       
+       您的问题：<input type="text" v-model="message">
+       <button @click="queryanswer">查找答案</button>
+    </template>
+
+    <div id="app"></div>
+
+    <script>
+        const app = {
+            template: "#my-app",
+            data() {
+                return {
+                    // 监听到message的变化时  进行一些逻辑的处理 
+                    // javascript 网络请求
+                    message: "hello world",
+                }
+            },
+            // 增加监听器 能够实时查看输入数据的变化
+            watch: {
+                // message是监听data中的属性的名称
+                // 名称一定要和data中的属性进行对应
+                // newValue 变化后的新值 oldValue变化前的旧值
+                message: function(newValue, oldValue) {
+                    console.log("新值:", newValue, "旧值：", oldValue);
+                    this.queryanswer();
+                }
+            },
+            methods: {
+                queryanswer() {
+                    console.log(`你的答案${this.message}的答案是哈哈哈`);
+                }
+            }
+        };
+        Vue.createApp(app).mount("#app");
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="D:\vue_Study\js\vue.js"></script>
+</head>
+
+<body>
+    <template id="my-app">
+       
+       <button @click="changeanswer">答案1</button>
+       <button @click=" deepChange">答案2</button>
+    </template>
+
+    <div id="app"></div>
+
+    <script>
+        const app = {
+            template: "#my-app",
+            data() {
+                return {
+                    message: {
+                        name: "xiaomi",
+                        age: 18,
+                        nba: {
+                            name: "kobe"
+                        }
+                    }
+                }
+            },
+
+            watch: {
+                // 1.默认情况下 我们侦听器只能监听数据本身的改变(内部发生的改变是不能监听到的)
+                // message(newInfo, oldInfo) {
+                //     console.log("新值:", newInfo, "旧值：", oldInfo);
+                // }
+                // 
+                // 2.vue2检测单个元素的写法
+                // "message.name":(newInfo, oldInfo) {
+                //     console.log("新值:", newInfo, "旧值：", oldInfo);
+                // }
+
+                // 3.深度侦听/立即执行(一定会执行一次)
+                message: {
+                    handler: function(newInfo, oldInfo) {
+                        console.log("新值:", newInfo, "旧值：", oldInfo);
+                    },
+                    // 常用配置选项
+                    deep: true, //深度侦听
+                    // immediate: true, //立即执行
+                }
+            },
+            methods: {
+                changeanswer() {
+                    this.message = {
+                        name: "xiaomimi"
+                    };
+                },
+                deepChange() {
+                    this.message.nba.name = "james";
+                }
+            }
+        };
+        Vue.createApp(app).mount("#app");
+    </script>
+
+</body>
+
+</html>

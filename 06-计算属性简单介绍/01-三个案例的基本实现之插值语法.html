@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="D:\vue_Study\js\vue.js"></script>
+</head>
+
+<body>
+    <template id="my-app">
+       <!-- 插值语法的实现 -->
+       <!-- 1.字符串拼接 -->
+       <h2>{{FirstName +" " +LastName}}</h2>
+       <!-- 条件判断 -->
+       <h2>{{score>60?"及格":"不及格"}}</h2>
+       <!-- 数据翻转 -->
+       <h2>{{message.split(" ").reverse().join(" ")}}</h2>
+    </template>
+
+    <div id="app"></div>
+
+    <script>
+        const app = {
+            template: "#my-app",
+            data() {
+                return {
+                    // 对其进行逻辑运算
+                    FirstName: "xiao",
+                    LastName: "mi",
+                    score: 80,
+                    message: "hello world",
+                }
+            }
+        };
+        Vue.createApp(app).mount("#app");
+    </script>
+
+</body>
+
+</html>

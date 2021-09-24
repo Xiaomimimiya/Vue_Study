@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="D:\vue_Study\js\vue.js"></script>
+</head>
+
+<body>
+    <template id="my-app">
+       <!-- 通过methods来实现 -->
+
+       <h3>{{fullname}}</h3>
+    </template>
+
+    <div id="app"></div>
+
+    <script>
+        const app = {
+            template: "#my-app",
+            data() {
+                return {
+                    // 对其进行逻辑运算
+                    FirstName: "xiao",
+                    LastName: "mi",
+                    score: 80,
+                    message: "hello world",
+                }
+            },
+            methods: {
+                getFullname() {
+                    return this.FirstName + " " + this.LastName;
+                }
+            },
+            computed: {
+                // 实现的是fullname的get方法
+                fullname: function() {
+                    return this.FirstName + "" + this.LastName;
+                }
+
+
+            }
+        };
+        Vue.createApp(app).mount("#app");
+    </script>
+
+</body>
+
+</html>
