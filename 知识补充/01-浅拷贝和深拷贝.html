@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1对象的引用类型 -->
+    <!-- <script>
+        const info = {
+            name: "xiaomi",
+            age: 18
+        }
+        const obj = info;
+        obj.name = "kobe";
+        console.log(obj.name); // kobe
+    </script> -->
+
+    <!-- 2对象的浅拷贝 -->
+    <!-- <script>
+        const info = {
+            name: "xiaomi",
+            age: 18,
+            fridend:{name:"xiaoxiao",age:20}
+        }
+        const obj = Object.assign({}, info,);
+        info.name = "kobe";
+        console.log(obj.name); //xiaomi  不会改变
+
+        info.fridend.name="kobe";
+        console.log(obj.frinde.name); // kobe 会发生改变 
+    </script> -->
+
+    <!-- 3对象的深拷贝 -->
+    <script>
+        const info = {
+                name: "xiaomi",
+                age: 18,
+                fridend: {
+                    name: "xiaoxiao",
+                    age: 20
+                }
+            }
+            // 借助新的方法
+            // 先转换为字符串 再进行还原
+        const obj = JSON.parse(JSON.stringify(info));
+        info.fridend.name = "kobe";
+        console.log(obj.fridend.name); // xiaoxiao 不会发生改变
+    </script>
+</body>
+
+</html>

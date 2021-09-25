@@ -1,0 +1,52 @@
+vue
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="D:\vue_Study\js\vue.js"></script>
+</head>
+
+<body>
+    <template id="my-app">
+       
+        <!-- 对组件进行调用的时候 很少用驼峰标识 -->
+    <component-a></component-a>
+ 
+    </template>
+    <template id="component-a">
+        <h2>我是组件A</h2>
+    </template>
+
+    <div id="app"></div>
+
+    <script>
+        // 定义组件对象
+        const componentA = {
+            template: "#component-a"
+        };
+        const App = {
+            // 注册局部组件
+            components: {
+                // key：组件名称
+                // value：组件对象
+                // 对象上面已经定义
+                componentA: componentA
+            },
+            template: "#my-app",
+            data() {
+                return {
+                    message: "hello world",
+                }
+            }
+        };
+        const app = Vue.createApp(App);
+        app.mount("#app");
+    </script>
+
+</body>
+
+</html>

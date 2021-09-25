@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="D:\vue_Study\js\vue.js"></script>
+</head>
+
+<body>
+    <template id="my-app">
+        <!-- 1.lay修饰符 -->
+       <!-- 添加.lazy以后 需要点击回车才会显示出绑定结果 -->
+       <!-- 提交后才会显示结果 -->
+       <!-- <input type="text" v-model.lazy="message"> -->
+
+       <!-- 2.number修饰符 -->
+       <!-- v-mode绑定数据 都会将其转换为字符串类型 -->
+       <!-- 但是添加修饰符number可以解决 -->
+        <!-- <input type="text" v-model.number="message">
+        <button @click="getObject">数据类型</button>
+       <h2>{{message}}</h2> -->
+
+         <!-- 3.trim修饰符 -->
+         <!-- 去除 输入内容 前后的空格 -->
+         <input type="text" v-model.trim="message">
+        <button @click="getObject">结果</button>
+     
+    </template>
+
+    <div id="app"></div>
+
+    <script>
+        const app = {
+            template: "#my-app",
+            data() {
+                return {
+                    message: "hello world"
+                }
+            },
+            methods: {
+                getObject() {
+                    console.log(this.message);
+                }
+            }
+        };
+        Vue.createApp(app).mount("#app");
+    </script>
+
+</body>
+
+</html>

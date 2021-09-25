@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="D:\vue_Study\js\vue.js"></script>
+</head>
+
+<body>
+    <template id="my-app">
+        <!-- 1.随着message改变而不断改变 -->
+        <!-- 但是步骤繁琐 1是绑定 2是增加监听事件 -->
+        <!-- <input type="text" v-bind:value="message" @input="inputchange"> -->
+        <!-- 更加简便的办法是直接使用v-model -->
+        <input type="text" v-model="message">
+        <!-- 2.实现双向绑定 类似于1的语法糖 -->
+        <div>{{message}}</div>
+    </template>
+
+    <div id="app"></div>
+
+    <script>
+        const app = {
+            template: "#my-app",
+            data() {
+                return {
+                    message: "hello world",
+                }
+            },
+            methods: {
+                inputchange(event) {
+                    this.message = event.target.value;
+                }
+            }
+        };
+        Vue.createApp(app).mount("#app");
+    </script>
+
+</body>
+
+</html>

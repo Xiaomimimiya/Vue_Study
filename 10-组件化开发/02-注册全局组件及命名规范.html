@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="D:\vue_Study\js\vue.js"></script>
+</head>
+
+<body>
+    <template id="my-app">
+       <!-- 对以下的内容进行拆分 分成独立的组件 -->
+       <!-- 内容移动到了组件内 -->
+       <!-- <h2>我是标题</h2>
+       <p>我是内容 哈哈哈</p> -->
+
+       <!-- 使用注册好的组件 可以渲染出-->
+       <component-a></component-a>
+       <component-b></component-b>
+  
+    </template>
+
+    <!-- 模板组件的配置 component-a -->
+    <template id="component-a">
+        <h2>我是component-a组件</h2>
+        <!-- 直接调用title -->
+        <h2>{{title}}</h2>
+        <p>{{desc}}</p>
+
+        <button @click="btnclick">按钮</button>
+    </template>
+
+    <!-- 模板组件配置 component-b -->
+    <template id="component-b">
+        <div>
+            <input type="text" v-model="message">
+            <h2>{{message}}</h2>
+        </div>
+        
+    </template>
+
+    <div id="app"></div>
+
+    <script>
+        const App = {
+            template: "#my-app",
+        };
+
+        // 对vue 注册和挂载 进行拆分成两个步骤
+        const app = Vue.createApp(App);
+        // 使用拆分后的app去注册一个全局组件
+        // 全局组件：意味着我们注册的组件可以 在任何的模板组件中 进行使用
+        // component(组件名称，组件对象)  组件对象中可以有自己的逻辑 data methods
+        app.component("component-a", {
+            template: "#component-a",
+            data() {
+                return {
+                    title: "我是标题",
+                    desc: "我是内容 哈哈哈"
+                }
+            },
+            methods: {
+                btnclick() {
+                    console.log("点击了一次");
+                }
+            }
+        });
+        // 注册第二个组件
+        app.component("component-b", {
+            template: "#component-b",
+            data() {
+                return {
+                    message: "hello world"
+                }
+            }
+        })
+
+        app.mount("#app");
+    </script>
+
+</body>
+
+</html>
