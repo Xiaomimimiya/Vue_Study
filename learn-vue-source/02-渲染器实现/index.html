@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script src="./render.js"></script>
+    <script>
+        //渲染器代码的实现
+
+        //1.通过h函数来实现一个vnode
+        const vnode = h("div", {
+            class: "xiaomi"
+        }, [
+            h("h2", null, "当前计数：100"),
+            h("button", {
+                onClick: function() {}
+            }, "+1"),
+        ]); // 事实上已经是一个虚拟dom 因为已经有两个节点 形成了树结构
+
+        //2.通过mount函数 将vnode挂载到divapp上面
+        mount(vnode, document.querySelector("#app"));
+
+        //3.创建新的vnode
+        const vnode1 = h("h2", {
+            class: "test"
+        }, [
+            h("h2", null, "计数后：10"),
+            h("button", {
+                onClick: function() {}
+            }, "-1"),
+        ])
+        setTimeout(() => {
+            patch(vnode, vnode1);
+        }, 2000)
+    </script>
+</body>
+
+</html>
