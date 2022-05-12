@@ -6,47 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="D:\vue_Study\js\vue.js"></script>
 </head>
 
 <body>
-    <template id="my-app">
-       <!-- 通过methods来实现 -->
-
-       <h3>{{fullname}}</h3>
-    </template>
 
     <div id="app"></div>
 
+    <template id="my-app">
+        <h2>{{fullName}}</h2>
+        <button @click="changeFullName">切换</button>
+    </template>
+
+    <script src="../js/vue.js"></script>
     <script>
-        const app = {
-            template: "#my-app",
-            data() {
+        const App = {
+            template: '#my-app',
+
+            data: function () {
                 return {
-                    // 对其进行逻辑运算
-                    FirstName: "xiao",
-                    LastName: "mi",
-                    score: 80,
-                    message: "hello world",
-                }
-            },
-            methods: {
-                getFullname() {
-                    return this.FirstName + " " + this.LastName;
+                    firstname: "11",
+                    lastname: "222",
+
                 }
             },
             computed: {
-                // 实现的是fullname的get方法
-                fullname: function() {
-                    return this.FirstName + "" + this.LastName;
+                fullName: {
+                    get: function() {
+                        return this.firstname + " " + this.lastname;
+                    },
+                    set: function(newValue) {
+                        const names = newValue.split(" ")
+                        this.firstname = names[0];
+                        this.lastname = names[1];
+                    }
                 }
-
-
+            },
+            methods: {
+                changeFullName() {
+                    this.fullName = "xiao mi"
+                }
             }
-        };
-        Vue.createApp(app).mount("#app");
+        }
+        Vue.createApp(App).mount("#app")
     </script>
-
 </body>
 
 </html>
