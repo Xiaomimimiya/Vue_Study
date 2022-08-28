@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        th {
+            border: 1px solid #333;
+            padding: 3px 4px;
+
+        }
+
+        td {
+            border: 1px solid #333;
+            padding: 3px 4px;
+        }
+
+        .price::before {
+            content: "￥";
+        }
+
+        .total {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>书籍名词</th>
+                <th>出版日期</th>
+                <th>价格</th>
+                <th>购买数量</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <div class="total">
+        <h2>总价格：</h2>
+        <h2>￥</h2>
+        <h2 class="total-price"></h2>
+    </div>
+    <script>
+
+        // 1.获取到数据
+        var books = [
+            {
+                id: 1,
+                name: '《算法导论》',
+                date: '2006-09',
+                price: 85.00,
+                count: 3
+            },
+            {
+                id: 2,
+                name: '《UNIX编程艺术》',
+                date: '2006-02',
+                price: 59.00,
+                count: 2
+            },
+            {
+                id: 3,
+                name: '《编程珠玑》',
+                date: '2008-10',
+                price: 39.00,
+                count: 5
+            },
+            {
+                id: 4,
+                name: '《代码大全》',
+                date: '2006-03',
+                price: 128.00,
+                count: 8
+            },
+        ]
+
+        // 2.数据展示
+        var tbodyEl = document.querySelector('tbody')
+
+        // 2.1 动态添加数据
+        for (var i = 0; i < books.length; i++) {
+            // 2.2 创建元素
+            var trEl = document.createElement("tr")
+            var book = books[i]
+            var booksKeys = Object.keys(book)
+
+            for (var index = 0; index < booksKeys.length; index++) {
+                var key = booksKeys[index]
+                var value = book[key]
+                var tdEl = document.createElement("td")
+
+                if (key === "price") {
+                    value = "￥ " + value
+                }
+                tdEl.textContent = value
+                trEl.append(tdEl)
+            }
+            // 3.添加删除按钮
+            // 先添加td
+            var deleEl = document.createElement("td")
+
+            var delebtn = document.createElement("button")
+            delebtn.textContent = "删除"
+            // td添加到tr后
+            trEl.append(deleEl)
+
+            // 再把按钮添加到 td中
+            deleEl.append(delebtn)
+
+            tbodyEl.append(trEl)
+        }
+        
+        var totalP = document.querySelector(".total-price")
+
+        getTotalPrice()
+
+        function getTotalPrice(){
+            var totalPrice = 0
+            for (let index = 0; index <books.length; index++) {
+
+                const element = books[index];
+                var prices = element.price;
+                var numbers = element.count
+
+                totalPrice += prices * numbers
+            }
+            totalP.textContent = totalPrice
+        }
+
+        // 删除
+        var delBtns = document.querySelectorAll("button")
+        var tbodyEl = document.querySelector("tbody")
+        var trEls = tbodyEl.querySelectorAll("tr")
+
+        for (let index = 0; index < delBtns.length; index++) {
+            const element = delBtns[index];
+            element.onclick = function(){
+
+                // 删除表格
+                trEls[index].remove()
+
+                // 删除books数据
+                books.splice(index,1)
+
+                // 重新计算价格
+                getTotalPrice()
+            } 
+        }
+
+    </script>
+</body>
+
+</html>

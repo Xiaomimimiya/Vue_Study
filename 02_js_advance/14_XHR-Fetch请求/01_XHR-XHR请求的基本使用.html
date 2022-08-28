@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+   <div class="test">
+
+   </div>
+    <script>
+        // 1. 创建XMLHttpRequest对象
+        const xhr = new XMLHttpRequest()
+
+        // 2. 监听状态的改变   数据获取
+        xhr.onreadystatechange = function () {
+            // console.log(xhr.response);
+            if (xhr.readyState !== XMLHttpRequest.DONE) return
+            // 将字符串转换为json
+            const resJson = JSON.parse(xhr.response)
+
+            const banner = resJson.data.banner.list
+
+            
+            const TestEl = document.querySelector(".test")
+            for (let index = 0; index < banner.length; index++) {
+                const element = banner[index];
+                var itemEl = document.createElement("img")
+                itemEl.src = element.image
+                TestEl.append(itemEl)
+            }
+        }
+
+        // 3. 配置请求 
+        // 3.1 请求方式(get, post, delete, put, patch)
+        // 3.2 服务器地址
+        xhr.open("get", "http://123.207.32.32:8000/home/multidata")
+
+        // 4. 发送请求
+        xhr.send()
+
+
+
+    </script>
+</body>
+
+</html>

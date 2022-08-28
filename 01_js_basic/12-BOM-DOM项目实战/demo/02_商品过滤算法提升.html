@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box .active {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <button class="active"> red</button>
+        <button> blue</button>
+        <button> yellow</button>
+    </div>
+    <div class="list">
+
+    </div>
+    <script>
+        var listEl = document.querySelector(".list")
+        var students = [
+            { name: "小明", colors: ["red", "blue", "green"] },
+            { name: "小王", colors: ["orange", "yellow", "red"] },
+            { name: "小龙", colors: ["purple", "yellow", "black"] },
+            { name: "小李", colors: ["red", "orange", "blue"] },]
+
+        // 获取点击方法一
+        //     var btnEl = document.querySelectorAll("button")
+        //     for (const iterator of btnEl) {
+        //         iterator.onclick = function(){
+        //             iterator.classList.toggle("active")
+        //         }
+        //    }
+
+        // 1。 点击按钮  筛选出最新的数据
+        // 获取点击方法二
+        var boxEl = document.querySelector(".box")
+        var filters = []
+        for (let index = 0; index < boxEl.children.length; index++) {
+            var btnEl = boxEl.children[index];
+            btnEl.onclick = function () {
+                this.classList.toggle("active")
+
+                if (this.classList.contains("active")) {
+                    // 加入到数组时 最好去除空格
+                    filters.push(this.textContent.trim())
+                } else {
+                    var filterItem = this.textContent.trim()
+                    var index = filters.indexOf(filterItem)
+                    //如果没有active  就需要通过索引去删除
+                    filters.splice(index, 1)
+                }
+                console.log(filters);
+            }
+
+            filterResult()
+
+        }
+
+
+        // 2。 根据筛选结果 进行数据的展示
+        var showResultList = students
+        function filterResult() {
+            showResultList = students.filter(function (item) {
+                var isFlag = true
+                for (var filteritems of filters) {
+
+                    if (!item.colors.includes(filteritems)) {
+                        isFlag = false
+                        break
+                    }
+                    return isFlag
+                }
+
+            })
+            console.log("showResultList:" + showResultList);
+            showList()
+        }
+
+        // 3.根据最新的筛选 对数据进行展示
+        showList()
+        function showList() {
+            
+            for (let index = 0; index < showResultList.length; index++) {
+                var newStu = showResultList[index]
+                var divEl = document.createElement("div")
+                divEl.textContent = newStu.name
+
+                listEl.append(divEl)
+            }
+        } 
+    </script>
+</body>
+
+</html>

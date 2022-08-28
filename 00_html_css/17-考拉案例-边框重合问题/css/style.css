@@ -1,0 +1,55 @@
+.sport{
+    background-color: royalblue;
+    margin-top: 20px;
+}
+.sport .item{
+    height: 541px;
+    float: left;
+}
+
+.sport .left {
+    width: 330px;
+   
+    background-color: aqua;
+}
+
+.sport .center {
+    width: 550px;
+    background-color: beige;
+}
+.sport .center .center-item{
+    float: left;
+    width: 275px;
+    height: 271px;
+    box-sizing: border-box;
+
+    border:  1px solid red;
+    border-left: none;
+}
+/* 最后两个元素 */
+/* 使用偏移 防止 边框重复 */
+.sport .center .center-item:nth-last-child(-n+2){
+    margin-top: -1px;
+}
+.sport .right {
+    width: 220px;
+}
+.sport .right .item{
+    float: left;
+
+    width: 220px;
+    height: 121px;
+
+    box-sizing: border-box;
+
+    border:  1px solid rebeccapurple;
+
+    border-left: none;
+
+}
+.sport .right .item:nth-last-child(-n+4){
+    margin-top: -1px;
+}
+.sport .right .item.header{
+    height: 61px;
+}

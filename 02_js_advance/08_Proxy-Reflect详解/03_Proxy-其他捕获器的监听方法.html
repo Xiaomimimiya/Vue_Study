@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const obj = {
+            name: "why",
+            age: 18,
+            city: "广州"
+        }
+        const objProxy = new Proxy(obj, {
+
+            // 改变 设置 监听
+            set: function (target, key, newValue) {
+
+                console.log(target === obj); // true
+
+                console.log(`监听: 监听${key}设置的变化`);
+                target[key] = newValue
+            },
+
+            // 获取变化监听
+            get: function (target, key) {
+                console.log(`监听: 监听${key}打印`);
+                return target[key]
+            },
+
+            // 删除监听
+            deleteProperty: function (target, key) {
+                console.log(`监听: 监听${key}删除的监听`);
+                delete target[key]
+            },
+
+            has: function (target, key) {
+                console.log(`监听到 ${key}属性的in判断`);
+                return key in target
+            }
+        })
+
+        delete objProxy.city
+
+        console.log(obj);
+    </script>
+</body>
+
+</html>

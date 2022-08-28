@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 元素中的属性叫做attribute -->
+    <!-- 标准的attribute有对应的property -->
+    <!-- 非标准的则没有 -->
+    <div class="box" id="abc" age="18" height="188">
+        我是box
+    </div>
+
+    <input type="checkbox" checked>
+    <script>
+        // 对象中的属性叫做property
+        // var obj = {
+        //     name:"why"
+        // }
+
+        // 获取box
+        var boxEl = document.querySelector(".box")
+
+        // 标准流的attribute可以直接通过对象的属性来获得值 而非标准则没有
+        // 在开发中 标准的可以直接用对象的方法来获取
+        console.log(boxEl.id, boxEl.age, boxEl.height);
+
+        // 典型案例
+        var inputEl = document.querySelector("input")
+        if (inputEl.checked) {
+            console.log("处于选中状态");
+        }
+        // 如果使用.getAttribute则没有选中
+
+        // 非标准的获取值则需要通过getAttribute
+        console.log(boxEl.getAttribute("age"));
+        
+    </script>
+</body>
+
+</html>

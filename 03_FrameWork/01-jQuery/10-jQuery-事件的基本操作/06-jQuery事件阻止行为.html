@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="box">
+        1111
+        <span class="content">111</span>
+    </div>
+    <a href="http://www.jd.com" class="jd">京东</a>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        $(function () {
+            // 在jQuery中 最好将对象转换为jq对象  res ===> $res
+            $(".jd").click(function ($res) {
+                // 阻止默认行为
+                $res.preventDefault()
+            })
+
+            $(".content").click(function ($res) {
+                // 阻止-冒泡
+                $res.stopPropagation()
+                console.log($res);
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li class="div-1">li-1</li>
+            <li class="div-2" id="list">li-2</li>
+            <li class="div-3">li-3</li>
+            <li class="div-4">li-4</li>
+            <li class="div-5">li-5</li>
+            <li class="div-6">li-6</li>
+            <span>我是span</span>
+        </ul>
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        $(function () {
+            // 1、获取宽度   number 类型
+            //   const width =  $("ul").width()
+            // const width = $("ul").innerWidth()
+            // const width = $("ul").outerWidth()
+            // console.log(width);
+
+            // 2、设置宽度
+            $(".div-1").width(200)
+
+
+            // ========> width 也是类似的操作
+        })
+    </script>
+</body>
+
+</html>

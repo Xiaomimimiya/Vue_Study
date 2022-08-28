@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="hide">隐藏</button>
+    <button class="show">显示1</button>
+    <button class="shows">显示2</button>
+    <div class="box">box</div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        $(function () {
+            // 隐藏
+            $(".hide").click(function () {
+
+                $(".box").animate({
+                    height: "100",
+                    width: "100"
+                }, 2000, "linear",
+                    function () {
+                        console.log("动画执行完成");
+                    })
+            })
+
+            $(".show").click(function () {
+                $(".box").animate({
+                    // 支持字符串类型 也支持 数字类型
+                    height: "500",
+                    width: 500,
+                    // 还支持以下的参数
+                    // width: "+=50",
+                    // width: "-=50",
+                    // width: "hide",
+                    // width: "toggle"
+                    // width: "show"
+                }, 2000, "swing",
+                    function () {
+                        console.log("动画执行完成");
+                    })
+            })
+
+            // 另一种写法 阅读性更好
+            $(".shows").click(function () {
+                $(".box").animate({
+                    // 支持字符串类型 也支持 数字类型
+                    height: "500",
+                    width: 500,
+                },{
+                    duration: 2000,
+                    
+                    complete(){
+                        console.log("执行完毕");
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

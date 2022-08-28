@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- <table>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>身高</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>小米</td>
+                <td>12</td>
+                <td>111</td>
+            </tr>
+            <tr>
+                <td>小米</td>
+                <td>12</td>
+                <td>111</td>
+            </tr>
+           
+        </tbody>
+    </table> -->
+
+    <form action="">
+        <input name="account" type="text">
+        <input type="password">
+        <select name="" id="">
+            <option>1</option>
+            <option>2</option>
+        </select>
+    </form>
+    <script>
+        // 获取table
+        // var tableEl = document.body.children
+        // console.log(tableEl);
+
+        // 获取table里面的数据
+        // console.log( tableEl.tHead);
+
+        //  获取form
+        var formEl = document.forms[0]
+
+        // 获取form子元素
+        var inputEl = formEl.elements.account
+        // 获取内部的值
+        setTimeout(function () {
+            console.log(inputEl.value);
+        }, 5000)
+    </script>
+</body>
+
+</html>

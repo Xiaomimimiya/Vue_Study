@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border: 10px solid orange;
+            padding: 30px;
+            /* 盒子的大小会被撑大 */
+            box-sizing: content-box;
+        }
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            border: 10px solid saddlebrown;
+            /* 盒子的大小不会被撑大 仍然是原来的100px */
+            /* 其边框的内容也包含在其中 */
+            /* =========================> 经常用到 */
+            padding: 30px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person{
+            constructor(name, age){
+                this.name = name
+                this.age = age
+            }
+            runing(){
+                console.log(this.name);
+            }
+            eating(){
+                console.log(this.name +" eating");
+            }
+        }
+        class Student extends Person{
+            constructor(name, age, studys){
+                super(name, age)
+                // 关于使用super的注意事项
+                // 1. 必须在使用this之前调用 即构造函数中
+                // 2. super可以调用父类的方法  super.eating
+
+                this.studys = studys
+            }
+
+            study(){
+                console.log(this.name+" study "+ this.studys);
+            }
+           
+        }
+
+        class Teacher extends Person{
+            constructor(name, age, subject){
+                super(name, age)
+
+                this.subject = subject
+            }
+
+            subjects(){
+                console.log(this.name+" teach " +this.subject);
+            }
+           
+        }
+
+        var newStudent = new Student("xiamiyayya", 10, "math")
+        newStudent.study()
+        newStudent.eating()
+
+        var Teachers = new Teacher("xiami", 10, "math")
+        Teachers.eating()
+        Teachers.subjects()
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 我是注释 -->
+    我是文本
+    <div class="box">我是盒子</div>
+
+    <script>
+        // data/innerHtml/textContent
+        var bodyChildNodes = document.body.childNodes
+        var commentNode = bodyChildNodes[1]
+        var textNode = bodyChildNodes[2]
+        var divNode = bodyChildNodes[3]     
+
+        // 比较重要
+        console.log(commentNode.innerHTML, textNode.innerHTML, divNode.innerHTML);
+        console.log(commentNode.textContent, textNode.textContent, divNode.textContent);
+
+
+        // 使用innerHTML，我们将其“作为HTML”插入，带有所有HTML标签。
+        // 显示h2标题
+        divNode.innerHTML = "<h2>hhh</h2>"
+        console.log( divNode.innerHTML);
+
+        // 使用textContent，我们将其“作为文本”插入，所有符号(symbol)均按字面意义处理
+        // 显示为文本
+        divNode.textContent = "<h2>sss</h2>"
+        
+    </script>
+
+</body>
+
+</html>

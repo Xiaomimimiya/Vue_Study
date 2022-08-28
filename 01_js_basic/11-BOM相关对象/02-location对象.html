@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button>打开新的网页</button>
+    <button>替换新的网页</button>
+    <button>重载当前网页</button>
+
+    <script>
+        //  1、location主要用来操作url对象 获取url的属性
+        
+        // console.log(location.href);
+        // console.log(location.host);
+        // console.log(location.hostname);
+
+        // 2、location常见的方法
+        
+        var btn = document.querySelectorAll("button")
+        
+        btn[0].onclick = function(){
+            // 有返回按钮 加载新的页面
+            location.assign("http://www.baidu.com")
+        }
+
+        btn[1].onclick = function(){
+            // 没有返回按钮 替换成初始网页
+            location.replace("http://www.baidu.com")
+        }
+
+        btn[2].onclick = function(){
+            location.reload("http://www.baidu.com")
+        }
+
+
+        // URLSearchParams
+        var urlsearchParams = "?name=xiaomi&age=18"
+        var searchParams = new URLSearchParams(urlsearchParams)
+        console.log(searchParams.get("name"));
+        console.log(searchParams.get("age"));
+
+        searchParams.append("address","湖南")
+        // get set append has 
+        console.log(searchParams.get("address"));
+        console.log(searchParams.toString() );
+        // 中文会使用
+        //  encodeURIComponent编码
+        // decodeURIComponent进行和解码
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li class="div-1">li-1</li>
+            <li class="div-2" id="list">li-2</li>
+            <li class="div-3">li-3</li>
+            <li class="div-4">li-4</li>
+            <li class="div-5">li-5</li>
+            <li class="div-6">li-6</li>
+            <span>我是span</span>
+        </ul>
+        <button class="cancle">取消监听</button>
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        $(function () {
+            // on
+            // on 事件可以为点击 提供 命名空间
+            // 有利于取消单独的事件
+            $(".div-1").on("click.xiaomi", function () {
+                console.log("on-click div-1");
+            })
+            // click
+            $(".div-2").click(function () {
+                console.log("click div-2");
+            })
+            
+            // 
+            $(".cancle").click(function(){
+                // 取消xiaomi事件的监听
+                $("li").off("click.xiaomi")
+                console.log("sucess");
+            })
+        })
+    </script>
+</body>
+
+</html>

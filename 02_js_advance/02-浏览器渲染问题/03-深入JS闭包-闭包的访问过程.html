@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1、在没有使用闭包的基础上 我们使用传统的方法来调用函数 
+        // function add(num, count) {
+        //     return num + count
+        // }
+        // add(10,5)
+        // add(11,5)
+        // add(12,5)
+
+        // add(10,6)
+        // add(11,6)
+        // add(12,6)
+
+        // 2、新的方法
+        function Createadder(num) {
+            function adder(count) {
+                return num + count
+            }
+            return adder
+        }
+        // num = 100
+        var adder1 = Createadder(100)
+        // 因为 Createadder返回 adder 所以 addre1 就是 adder函数
+        // count = 10
+        adder1(10)
+        adder1(12)
+        adder1(13)
+
+        // num = 200
+        var adder2= Createadder(200)
+        // count = 10
+        adder2(10)
+        adder2(12)
+        adder2(13)
+    </script>
+</body>
+
+</html>

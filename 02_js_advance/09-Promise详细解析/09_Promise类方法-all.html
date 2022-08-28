@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const p1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("p1 reject error")
+            }, 3000)
+        })
+
+
+        const p2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("p2 reject error")
+            }, 3000)
+        })
+        const p3 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                reject("p3 reject error")
+            }, 3000)
+        })
+
+
+        // 类方法 ：allsetter
+        //  应用场景
+        //  在做网络请求时， 希望三个请求都结束后，再返回结果，因此将其进行包裹 all
+        Promise.all([p1, p2, p3]).then(res => {
+            console.log("all promise res", res);
+        }).catch(error=>{
+            console.log(error);
+        })
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // weakset 基本使用
+        let obj1 = { name: "why" }
+        let obj2 = { name: "why" }
+        let obj3 = { name: "why" }
+
+        const weaksets = new WeakSet()
+
+        // 1.1 和Set的区别一: 只能存放对象类型
+        weaksets.add(obj1)
+        weaksets.add(obj2)
+        weaksets.add(obj3)
+        console.log(weaksets);
+
+        // 1.2 和Set的区别二: 对对象的引用都是弱引用  Set是强引用
+
+        // 1.3 无法遍历
+
+        
+    </script>
+</body>
+
+</html>

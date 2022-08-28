@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    
+
+    <script src="https://unpkg.com/vue@next"></script>
+   
+    <div id="app"></div>
+
+    <!-- 设置template -->
+
+    <template id="my-app">
+        <button @click="plus">+</button>
+        <h2>{{number}}</h2>
+        <button @click="minus">-</button>
+    </template>
+
+
+    <script>
+        const App = {
+            // 绑定template
+            template: '#my-app',
+
+            // 函数
+            data() {
+                return {
+                    number: 0
+                }
+            },
+            // 对象
+            methods: {
+                plus() {
+                    this.number++
+                },
+                minus() {
+                    this.number--
+                }
+            }
+        }
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+
+</html>

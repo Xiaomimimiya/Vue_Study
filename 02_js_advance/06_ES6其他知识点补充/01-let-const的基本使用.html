@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ES6之前
+        var message1 = "hello world"
+        message1 = "aaa"
+        
+        // ES6后
+     
+        //  1. let
+        let message2 = "hello let"
+        message2 = "bbbb"
+
+        // 从直观的角度来说，let和var是没有太大的区别的，都是用于声明一个变量;
+
+        // 2. const  =======>定义后是常量  不能更改
+        
+        const message3 = "hello const"
+        // 更改后就报错
+        // message3 = "hello swith"
+ 
+        // console.log(message3);
+
+        // 但是赋值引用类型可以更改
+
+        const obj = {
+            name:'xiaomi',
+            age:19
+        }
+        // info = {} 不允许
+        obj.name = "change"
+        console.log(obj);
+    </script>
+</body>
+</html>

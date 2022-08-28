@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 500px;
+            background-color: orange;
+            display: flex;
+
+            /* 最常用的 */
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .item{
+            width: 80px;
+            height: 150px;
+            background-color: red;
+        }
+        
+        .box span{
+            /* 宽度和item一样 */
+            width: 80px;
+            /* 不用设置高度 */
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <!-- 只有八个 存在对齐问题 -->
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+        <div class="item item4">4</div>
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+        <div class="item item1">1</div>
+        <!-- 在后面加span -->
+        <!-- 加的数量是item的数量-1 -->
+        <!-- 3-1 = 2 -->
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+</html>

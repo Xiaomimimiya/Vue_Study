@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../0配置文件/01-font/font_vewhdo8oek/iconfont.css">
+    <style>
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+        /* 从外面往里面 从上往下进行调整 */
+        .box {
+            width: 150px;
+            height: 200px;
+            margin: 0 auto;
+            font-size: 14px;
+            color: rgb(206, 190, 190);
+        }
+        .box .bcg {
+            position: relative;
+        }
+        .box .bcg .image {
+            display:inline-block;
+            width: 100%;
+            height: 100%;
+        }
+        .box .bcg .cover {
+            /* 相对于祖先元素的位置 进行调整 */
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: url(../0配置文件/0-images/coverall-music.png) ;
+      
+            background-position: 0 0;
+            width: 100%;
+            height: 100%;
+        }
+        .box .bcg .bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            line-height: 27px;
+
+            padding-left: 10px;
+            background-image: url(../0配置文件/0-images/coverall-music.png);
+            background-position: 0 -537px;
+
+        }
+        .box .bottom .count {
+            margin-left: 5px;
+        }
+        .box .bottom .icon {
+            margin-left: 55px;
+        }
+        .box .text:hover{
+            
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="bcg">
+            <img class="image" src="../0配置文件/0-images/yuanshen.jpg" alt="">
+            <a class="cover" href="#"></a>
+            <div class="bottom">
+                <i class="iconfont icon-24gl-headphones "></i>
+                <span class="count">60万</span>
+                <i class="iconfont icon-bofang icon"></i>
+            </div>
+        </div>
+        <div class="text">
+            <a href="#">天气好的话,把耳机分我一半吧</a>
+        </div>
+    </div>
+</body>
+
+</html>

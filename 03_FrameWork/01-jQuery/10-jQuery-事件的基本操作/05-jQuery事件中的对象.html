@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="box">
+        1111
+        <span class="content">111</span>
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        $(function () {
+            // 1、原生事件对象
+            const divEl = document.querySelector(".box")
+            divEl.onclick = function(res){
+                console.log(res);
+            }
+
+            // 2、jQuery事件对象
+            $(".content").click(function(res){
+                console.log(res);
+            })
+
+        })
+    </script>
+</body>
+
+</html>

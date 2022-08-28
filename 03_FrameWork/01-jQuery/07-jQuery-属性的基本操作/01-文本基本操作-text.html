@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <ul>
+            <li class="div-1">li-1</li>
+            <li class="div-2" id="list">li-2</li>
+            <li class="div-3">li-3</li>
+            <li class="div-4">li-4</li>
+            <li class="div-5">li-5</li>
+            <li class="div-6">li-6</li>
+            <span>我是span</span>
+        </ul>
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        $(function(){ 
+            // 需求 拿到ul>li里面的所有文本
+            const text = $("ul").text()  
+            console.log(text);
+
+            // 设置li里面的文本
+            // $("li").text("我是li") 所有元素设置文本
+        })
+    </script>
+</body>
+</html>

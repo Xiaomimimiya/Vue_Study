@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        $(function () {
+
+            // 1、在URL中添加参数
+
+            // $.ajax({
+            //     url: "http://httpbin.org/post?name=xiaomi",
+            //     method: "POST",
+
+            //     success(res) {
+            //         console.log("POST", res);
+            //     },
+            //     error(error) {
+            //         console.log(error.status);
+            //     }
+            // })    
+
+            // 2、在data中添加参数
+
+            // $.ajax({
+            //     url: "http://httpbin.org/post",
+            //     method: "POST",
+            //     data:{
+            //         name: "xiaomi",
+            //         age: 18,
+            //         city: "gz"
+            //     },
+            //     success(res) {
+            //         console.log("POST", res);
+            //     },
+            //     error(error) {
+            //         console.log(error.status);
+            //     }
+            // })
+
+            // 3、在data中添加JSON参数
+
+            // $.ajax({
+            //     url: "http://httpbin.org/post",
+            //     method: "POST",
+            //     data: JSON.stringify({
+            //         name: "xiaomi",
+            //         age: 18,
+            //         city: "gz"
+            //     }),
+            //     contentType:"application/json; charset=UTF-8",    
+            //     success(res) {
+            //         console.log("POST", res);
+            //     },
+            //     error(error) {
+            //         console.log(error.status);
+            //     }
+            // })
+
+
+            // 4、在data中使用FormaData   文件类型的提交
+           
+            // const fordata = new FormData()
+            // fordata.append("city", "gz")
+            // fordata.append("name", "xm")
+
+
+            // $.ajax({
+            //     url: "http://httpbin.org/post",
+            //     method: "POST",
+            //     data: fordata,
+            //     contentType: false,     // 使用原生的XHR
+            //     processData: false,   // 不对数据进行处理
+            //     success(res) {
+            //         console.log("POST", res);
+            //     },
+            //     error(error) {
+            //         console.log(error.status);
+            //     }
+            // })
+
+            // 5、在data中设置请求头
+
+            // const fordata = new FormData()
+            // fordata.append("city", "gz")
+            // fordata.append("name", "xm")
+
+            // $.ajax({
+            //     url: "http://httpbin.org/post",
+            //     method: "POST",
+            //     data: fordata,
+            //     contentType: false,     // 使用原生的XHR
+            //     processData: false,   // 不对数据进行处理
+            //     headers: {
+            //         "test": "xm"
+            //     },
+            //     success(res) {
+            //         console.log("POST", res);
+            //     },
+            //     error(error) {
+            //         console.log(error.status);
+            //     }
+            // })
+
+            // POST的简写 
+            // $.post("http://httpbin.org/post", {
+            //     name: "xiaomi",
+            //     age: 18,
+            //     city: "gz"
+            // }).then(function (res) {
+            //     console.log(res);
+            // })
+        })
+    </script>
+</body>
+
+</html>

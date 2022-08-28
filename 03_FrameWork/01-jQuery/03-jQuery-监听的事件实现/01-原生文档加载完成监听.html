@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <button class="sub">-</button>
+    <span class="number">0</span>
+    <button class="add">+</button>
+
+    <script>
+        // 文档解析完成 再进行js运行
+
+        // 可以保证代码可以顺序运行 
+
+      document.addEventListener("DOMContentLoaded",function(){
+        const numEl = document.querySelector(".number")
+        const subEl = document.querySelector(".sub")
+        const addEl = document.querySelector(".add")
+
+        subEl.onclick = function () {
+            numEl.textContent--
+        }
+        addEl.onclick = function () {
+            numEl.textContent++
+        }
+      })
+    </script>
+</body>
+
+</html>

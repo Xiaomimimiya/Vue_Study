@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <template id="my-app">
+        <!-- 1、手动实现双向绑定 -->
+        <!-- <input type="text" :value="message" @input="ClickInput"> -->
+
+        <!-- 2、通过v-model来进行实现 =====> 直接使用v-model来进行绑定 -->
+        <input type="text" v-model="message">
+        <h2>{{message}}</h2>
+
+        <!-- 3、v-model的登录案例 -->
+
+        <label for="account">
+            <!-- 使用v-model进行双向绑定 -->
+            用户名：<input id="account" type="text" v-model="username">
+        </label>
+
+        <label for="psd">
+            <!-- 使用v-model进行双向绑定 -->
+            用户名：<input id="psd" type="password" v-model="passsword">
+        </label>
+
+        <button @click="Login">登录</button>
+    </template>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data() {
+                return {
+                    message: "hello world",
+                    username: "",
+                    passsword: ""
+                }
+            },
+            methods: {
+                ClickInput(event) {
+                    this.message = event.target.value
+                },
+                Login() {
+                    const account = this.username;
+                    const password = this.passsword;
+                }
+            }
+        }
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+
+</html>

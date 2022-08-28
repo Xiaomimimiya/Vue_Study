@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <button class="out">取消settime定时器</button>
+    <button class="inter">取消setinter定时器</button>
+
+    <script>
+        // 1. 设置定时器
+        function foo(){
+            console.log("foo被调用");
+        }
+        // 是foo  不是foo()
+        var timeout =  setTimeout(foo, 2000)
+        
+        // 2.取消定时器
+        var OutBtn = document.querySelector(".out")
+        var intertime = document.querySelector(".inter")
+
+        OutBtn.onclick = function(){
+            // 定时器的取消 
+            clearTimeout(timeout)
+        }
+
+        // 3 每隔多久就调用
+        var inter = setInterval(foo, 1000);
+
+        // 取消调用
+        intertime .onclick = function(){
+            clearInterval(inter)
+        }
+    </script>
+</body>
+</html>

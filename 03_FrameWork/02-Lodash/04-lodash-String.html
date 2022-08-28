@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="./libs/lodash-4.17.21.js"></script>
+
+    <script>
+        //  1、将字符串转成·驼峰命名
+
+        console.log(_.camelCase("asf fq"));
+        
+        // 2、首字母大写
+        console.log(_.capitalize("wq wrq"));
+
+        // 3、是不是以什么结尾
+        console.log(_.endsWith("asf.png", ".png"));  // true
+
+        // 4、补位
+
+        console.log(_.padStart("1wfrqw", 10, "0"));
+    </script>
+</body>
+
+</html>

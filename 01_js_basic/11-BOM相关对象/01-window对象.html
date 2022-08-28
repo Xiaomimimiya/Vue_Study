@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <a href="http://www.baidu.com">百度一下</a>
+        <button>百度一下</button>
+       
+    <script>
+        
+        // 1、window 是全局对象
+        // 对于浏览器 全局对象 就是window
+        // 对于node 全局对象就是 global
+        console.log(window);
+        console.log(globalThis === window);
+
+        // 2、window 是浏览器窗口对象
+        console.log(window.outerHeight);
+
+
+        // 3.window 常见的方法 
+        
+        // 3.1 close窗口
+        var btn = document.querySelector("button")
+        btn.onclick = function(){
+            // window.open("http://www.baidu.com") 
+            window.open("http://www.baidu.com", "_self")
+        }
+        // 3.2 焦点
+        
+        window.onblur = function(){
+            console.log("!11");
+        }
+    </script>
+</body>
+</html>

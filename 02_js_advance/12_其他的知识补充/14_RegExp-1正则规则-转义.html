@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 如果要把特殊字符作为常规字符来使用，
+        // 需要对其进行转义: 只需要在它前面加个反斜杠;
+
+        // 定义正则之 对 . 进行转义
+
+        // const re = /\./ig
+
+        // const res = "sads.fasf"
+        // const results = res.match(re)
+        // console.log(results);
+
+
+        // 案例
+        // 获取到很多的文件名
+        const fileNames = ["abc.html", "Home.jsx", "index.html", "index.js", "util.js", "format.js"]
+        // 获取所有的js的文件名
+
+        const fileRe = /\.js$/ig  // $结尾  不结尾会匹配到jsx
+        const newFileName = []
+        for (const iterator of fileNames) {
+            const results = iterator.match(fileRe)
+            if (results) {
+                newFileName.push(iterator)   
+            }
+        }
+        // const newFileName = fileNames.filter(fileName => fileRe.test(fileName))
+        console.log(newFileName);
+    </script>
+</body>
+
+</html>

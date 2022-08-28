@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li class="div-1">li-1</li>
+            <li class="div-2" id="list">li-2</li>
+            <li class="div-3">li-3</li>
+            <li class="div-4">li-4</li>
+            <li class="div-5">li-5</li>
+            <li class="div-6">li-6</li>
+            <span>我是span</span>
+        </ul>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        $(function () {
+            // 获取ul的宽度 px类型 字符串
+
+            // const width =  $(".div-1").css("width")  
+            // const width =  $("ul").css(["width","height"])  
+            // console.log(width);
+
+            // 设置ul的宽度 
+
+            // $("ul").css("width", "300px")  // 单个
+
+            // 设置多个
+
+            // $(".div-1").css({
+            //     height: 100,
+            //     width: 100,
+            //     color: "red"
+            // })
+
+            // 设置奇数个
+            $("ul li")
+                .css("color", 'black')
+                .even()
+                .css({
+                    height: 100,
+                    width: 100,
+                    color: "red"
+                })
+        })
+    </script>
+</body>
+
+</html>

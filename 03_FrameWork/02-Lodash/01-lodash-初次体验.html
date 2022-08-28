@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./libs/lodash-4.17.21.js"></script>
+
+    <script>
+        // 导入lodash库之后 其会在window上面添加一个 _ 方法
+        //  window._ = lodash函数
+
+        // 查看其版本
+        console.log(_.VERSION);    
+        // 对数组进行拼接
+        console.log(_.join([101, 11, 22],"-"));
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content {
+            width: 1180px;
+            height: 470px;
+            background-color: aquamarine;
+            margin: 0 auto;
+        }
+
+        .box .item {
+            background-color: blue;
+            float: left;
+        }
+
+        .box .left {
+            width: 170px;
+            height: 470px;
+            margin-right: 10px;
+        }
+
+        .box .middle {
+            width: 590px;
+            height: 470px;
+        }
+
+        .box .small{
+            width: 190px;
+            height: 470px;
+            margin-left: 10px;
+            background-color: antiquewhite;
+        }
+        .box .small .inner{
+            float: left;
+            width: 190px;
+            height: 150px;
+            margin-bottom: 10px;
+            background-color: red;
+        }
+        .box .right {
+            width: 190px;
+            height: 470px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="box">
+            <div class="item left"></div>
+            <div class="item middle"></div>
+            <div class="item small">
+              <div class="inner"></div>
+              <div class="inner"></div>
+              <div class="inner"></div>
+            </div>
+            <div class="item right"></div>
+        </div>
+    </div>
+</body>
+
+</html>

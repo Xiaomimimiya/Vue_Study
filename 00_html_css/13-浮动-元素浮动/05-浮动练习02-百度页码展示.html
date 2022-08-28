@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        .box {
+            width: 1000px;
+            height: 40px;
+            position: absolute;
+            bottom: 80px;
+            left: 100px;
+        }
+        .box span {
+            float: left;
+            background-color: #fff;
+
+            width: 36px;
+            height: 36px;
+        
+            border-radius: 6px;
+            
+            font-size: 14px;
+
+            margin-left: 20px;
+            line-height: 36px;
+
+            text-align: center;
+        }
+        .box .first span{
+            background-color: red;
+        }
+        .box .last span{
+            width: 80px;
+            height: 36px;
+        }
+        span:hover{
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <strong>
+        <a class="first" href="#">
+            <span>1</span>
+        </a>
+        </strong>
+        <a href="#">
+            <span>2</span>
+        </a>
+        <a href="#">
+            <span>3</span>
+        </a>
+        <a href="#">
+            <span>4</span>
+        </a>
+        <a href="#">
+            <span>5</span>
+        </a>
+        <a href="#">
+            <span>6</span>
+        </a>
+        <a href="#">
+            <span>7</span>
+        </a>
+        <a href="#">
+            <span>8</span>
+        </a>
+        <a class="last" href="#">
+            <span>下一页</span>
+        </a>
+    </div>
+</body>
+
+</html>

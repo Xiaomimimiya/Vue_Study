@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <template id="my-app">
+
+        <!-- 多重判断 -->
+        <div v-if="score>=90">优秀</div>
+        <div v-else-if="score>=80">良好</div>
+        <div v-else-if="score>=60">及格</div>
+        <div v-else="score<60">不及格</div>
+
+    </template>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data() {
+                return {
+                    score: 79
+                }
+            },
+        }
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function foo(){
+            console.log("调用了foo", this);
+        }
+
+        // 调用方式一 直接调用
+        // this 指向foo本身
+        foo()
+
+        // 调用方式二 对象调用
+        var obj = {name: "xiaomi"}
+        obj.test = foo
+        // this 指向obj 
+        obj.test()
+
+        // 总结
+        // 1.this的绑定和定义的位置(编写的位置)没有关系;
+        // 2.this的绑定和调用方式以及调用的位置有关系;
+        
+        // 3.this是在运行时被绑定的;
+
+    </script>
+    
+</body>
+</html>

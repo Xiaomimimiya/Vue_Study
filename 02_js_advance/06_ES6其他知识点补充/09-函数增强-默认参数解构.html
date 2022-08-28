@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1、传统的解构
+        // const obj = {
+        //     name : "xiaomi"
+        // }
+        // const { name = "xiao", age = 10} = obj
+        
+        // 2、函数的默认值是一个对象
+
+        // function foo(obj = {name:"xiami", age :10}){
+        //     console.log(obj.name, obj.age);
+        // }
+
+        // 对其再解构
+        // function foo({name, age} = {name: "xiaom", age:10}){
+        //     console.log(name, age);
+        // }
+        
+        function foo({
+            name = "xiaom",
+             age = 10
+            } = {}){
+            console.log(name, age);
+        }
+        foo()
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .box span {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="http://www.baidu.com">百度一下</a>
+
+    <div class="box">
+        <span>
+            <button>按钮</button>
+        </span>
+    </div>
+
+    <script>
+        var aEl = document.querySelector("a")
+        // 阻止默认点击行为
+        aEl.onclick = function(event){
+
+            // 点击 a元素则不会发生跳转
+            event.preventDefault()
+        }
+
+        // 阻止事件传递 event.stopPropagation()
+        var btnEl = document.querySelector("button")
+        var spanEl = document.querySelector("span")
+        var divEl = document.querySelector("div")
+        
+        // 捕获从外向内
+        btnEl.addEventListener("click",function(event){
+            console.log("btnEl捕获");
+            // event.stopPropagation()
+        },true)
+
+        spanEl.addEventListener("click",function(){
+            console.log("spanEl捕获");
+            // event.stopPropagation()
+        },true)
+
+        divEl.addEventListener("click",function(){
+            console.log("divEl捕获");
+            // event.stopPropagation()
+        },true)
+
+
+         // 捕获从内向外
+        btnEl.addEventListener("click",function(event){
+            console.log("btnEl冒泡");
+        })
+
+        spanEl.addEventListener("click",function(){
+            console.log("spanEl冒泡");
+            // event.stopPropagation()
+        })
+
+        divEl.addEventListener("click",function(){
+            console.log("divEl冒泡"); 
+           
+        })
+       
+       
+    </script>
+</body>
+</html>

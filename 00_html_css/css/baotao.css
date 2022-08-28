@@ -1,0 +1,224 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #EAE8EB;
+}
+h2 {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+ ol, ul, li {
+     list-style: none;
+     margin: 0;
+     padding: 0;
+ }
+/* 公共的高度 */
+.layer {
+    width: 100%;
+    min-width: 1190px;
+}
+
+
+.t-nav-cover {
+    height: 35px;
+    background-color: #f5f5f5;
+}
+
+.t-nav-cover .site-nav {
+    width: 1190px;
+    height: 35px;
+    margin: 0 auto;
+
+}
+
+.t-main-cover .main-belt {
+    width: 1190px;
+    height: 121px;
+    margin: 0 auto;
+
+}
+
+.taobao-content {
+    background-color: #666;
+    width: 1190px;
+    margin: 0 auto;
+    background-color: #fff;
+  
+    display: flex;
+
+    justify-content: space-around;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+}
+
+
+.taobao-content .top-left-content {
+    width: 212px;
+    border-top-left-radius: 18px;
+    font-size: 14px;
+    float: left;
+    background-color: #fff;
+    position: relative;
+}
+
+.top-left-content h2{
+    color: #FF6200;
+    padding-top: 14px;
+    width: 190px;
+    text-align: center;
+    font-size: 16px;
+    margin-right: 52px;
+}
+
+.top-left-content .top-left-box{
+    border-top: 0;
+    padding: 6px 0 3px 18px;
+    box-sizing: border-box;
+    border-top-right-radius: 16px;
+}
+.top-left-content .top-left-box .top-left-list{
+    height: 20px;
+    width: 212px;
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    overflow: hidden;
+    margin-bottom: 14px;
+
+    box-sizing: border-box;
+}
+
+
+.taobao-content .top-right-content {
+    width: 950px;
+    border-top-right-radius: 18px;
+   
+}
+.top-right-content .right-nav-content{
+    width: 950px;
+    padding-top: 6px;
+    background-color: #fff;
+    margin: 0 auto;
+    box-sizing: 18px 18px 0 0 ;
+    height: 30px;
+    line-height: 30px;
+
+    color: #000;
+    border-top-right-radius: 16px;
+    
+    display: flex;
+    
+}
+.line {
+    margin: 0 7px;
+}
+
+.top-right-content .right-nav-content .nav-content-l{
+    display: flex;
+    font-size: 16px;
+    font-weight: 700;
+}
+.right-nav-content .nav-content-l li{
+    margin: 0 3px;
+    text-align: center;
+    padding: 0 4px;
+}
+.right-nav-content .nav-content-l a{
+    padding: 0 5px;
+}
+
+.top-right-content .right-nav-content .nav-content-m{
+    display: flex;
+    font-size: 14px;
+    margin-left: 7px;
+
+}
+.right-nav-content .nav-content-m a {
+    padding: 0 10px;
+
+    color: #333;
+}
+.top-right-content .right-nav-content .nav-content-r {
+    font-size: 14px;
+    display: flex;
+    float: right;
+    margin-left: 7px;
+    justify-content: space-between;
+}
+
+.right-nav-content .nav-content-r a{
+    padding: 0 10px;
+    float: left;
+    color: #333;
+}
+
+.top-right-content .main-inner-box {
+    width: 950px;
+  
+    display: inline;
+}
+
+.top-right-content .main-inner-box .box-left{
+    width: 520px;
+    height: 511px;
+
+    margin-top: 10px;
+    float: left;
+}
+
+
+.main-inner-box .box-left .lunbo-img{
+    width: 520px;
+    height: 280px;
+    border-radius: 12px;
+}
+
+.main-inner-box .box-left .lunbo-text{
+    padding-top: 6px;
+    font-size: 14px;
+    width: 520px;
+    height: 24px;
+    line-height: 24px;  
+    display: flex;
+    align-items: center;
+}
+.box-left .lunbo-text .lunbo-text-content{
+    font-size: 12px;
+    height: 24px;
+    line-height: 24px;
+    margin-left: 10px;
+    color: #999999;
+}
+.box-left .bottom-lunbo-box {
+    width: 520px;
+    height: 201px;
+    background: #F6F6F6;
+    border-radius: 12px;
+
+}
+
+.box-left .bottom-lunbo-box  .bottom-lunbo-click{
+    margin-top: 6px;
+    width: 251px;
+    height: 190px;
+    margin-left: 6px;
+    float: left;
+}
+
+.box-left .bottom-lunbo-box .bottom-inner-img{
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+
+.top-right-content .main-inner-box .box-right {
+    width: 394px;
+    height: 527px;
+    background-color: #F3F3F3;
+    float: right;
+    border-radius: 12px;
+    margin-top: 10px;
+}

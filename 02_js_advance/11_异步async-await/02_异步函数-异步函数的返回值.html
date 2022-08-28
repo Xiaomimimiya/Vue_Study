@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        async function foo() {
+            // 异步函数返回普通值
+            // return 123
+
+            // 异步函数返回Promise
+            return new Promise((reslove, reject) => {
+                setTimeout(() => {
+                    reslove("异步函数返回Promise")
+                }, 2000);
+            })
+        }
+        // 可以通过then 进行调用
+        foo().then(res => {
+            console.log(res);  // 123
+        })
+    </script>
+</body>
+
+</html>

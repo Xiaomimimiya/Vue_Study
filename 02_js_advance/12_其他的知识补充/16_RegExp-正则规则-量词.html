@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 确切的位数:{5}
+        // 某个范围的位数:{3,5}
+        //  +: 代表“一个或多个”，相当于{1,}
+        //  ?: 代表“零个或一个”，相当于{0,1}。换句话说，它使得符号变得可选;
+        //  *: 代表着“零个或多个”，相当于{0,}。也就是说，这个字符可以多次出现或不出现;
+
+
+
+        // 量词的使用
+        //    const re = /a{3,5}/ig
+
+        //    const message = "asdasfaaaaafasaaafasaaasfasf"
+
+        //    const result = message.match(re)
+        //    console.log(result);
+
+
+        //  案例 字符串的htmL元素,·匹配出来里面所有的标签
+
+        const htmlElement = "<div><span>我是span</span><h2>我是h2</h2></div>"
+        // ? 零个或者一个
+        // * 零个或多个
+        //  / 转义 前面加\
+        // [a-z] a到z
+        // [a-z0-9] a-z和0-9都可以
+        const htmlRe = /<\/?[a-z][a-z0-9]*>/ig
+
+        const results = htmlElement.match(htmlRe)
+        console.log(results);
+    </script>
+</body>
+
+</html>

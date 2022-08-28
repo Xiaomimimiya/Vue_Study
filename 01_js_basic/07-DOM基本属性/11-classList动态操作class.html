@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active{
+            color: red;
+            font-size: 30px;
+            background-color: rgb(12, 26, 66);
+        }
+    </style>
+</head>
+<body>
+    <!-- 如果我们需要添加或者移除单个的class，那么可以使用classList属性。 -->
+    <!-- 而不是进行直接的替换 -->
+    <div class="box">我是盒子</div>
+
+    <button class="btn">切换</button>
+
+    <script>
+        var boxEl = document.querySelector(".box")
+        var btnEl = document.querySelector(".btn")
+
+        boxEl.onclick = function(){
+            boxEl.classList.add("active")
+            // classList.remove   
+        }
+
+        // 案例
+        btnEl.onclick = function(){
+            // 方法一：classList.contains 判断是否存在active true/false
+            // if (boxEl.classList.contains("active")) {
+            //     boxEl.classList.remove("active")
+            // }else{
+            //     boxEl.classList.add("active")
+            // }
+            // 方法二：是对方法一的精简 直接使用toggle方法来进行切换
+            boxEl.classList.toggle("active")
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <template id="my-app">
+        <!-- 对象遍历 -->
+
+        <h2>对象的遍历</h2>
+        <!-- 先 value 再 key 再 index -->
+        <div v-for="(vlaue, key ) in info">
+            {{vlaue}}- {{key}}
+        </div>
+
+        <!-- 遍历字符串 -->
+        <div v-for="item in message">
+            <span>{{item}}</span>
+        </div>
+
+        <!-- 遍历数字 -->
+        <div v-for="item in 10">
+            <span>{{item}}</span>
+        </div>
+    </template>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data() {
+                return {
+                    message: "hello world",
+                    info: {
+                        name: "xiaomi",
+                        age: 10,
+                        city: "广州"
+                    }
+                }
+            },
+        }
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+
+</html>

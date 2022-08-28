@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const message = "ijfpijqiwj7575eg47we4g5w4g"
+
+        // 字符类一: \d 数字{0~9的数字}  \d+ 多个数字  ====> \D 非数字
+        // 字符类二: \s 空格{空格, 换行, 制表符 等等}  ====>  \S 除了空格以外所有
+        // 字符类三: \w 文本{a~z, 0~9, 下划线}        ====>  \W 除\w以外的任何字符，例如非拉丁字母或空格。
+        // 字符类三: .  是一种特殊字符类,它与 除换行符之外的任何字符 匹配 任意字符串
+
+        // 匹配出来所有的数字
+        const re  = /\d+/ig
+        
+        // const res1 = message.replaceAll(re,"" )
+        // console.log(res1);
+
+        // const res2 =  message.match(re)
+        // console.log(res2);
+       
+    </script>
+</body>
+</html>

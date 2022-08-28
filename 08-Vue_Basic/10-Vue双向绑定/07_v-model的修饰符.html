@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <template id="my-app">
+        <!-- 1、lazy.  -->
+
+        <!-- 如果我们在v-model后跟上lazy修饰符，
+            那么会将绑定的事件切换为change事件，
+            只有在提交时（比如回车)才会触发
+         -->
+        <!-- <input type="text" v-model.lazy="message">
+        <h2>{{message}}</h2> -->
+
+        <!-- 2、number 自动将内容转换为数字 -->
+        <!-- <input type="text" v-model.number="counter">
+        <h2>{{counter}}- {{typeof counter}}</h2> -->
+
+        <!-- 3、trim 去除首尾空格 -->
+        <input type="text" v-model.trim="content">
+        <h2>conten:{{content}}</h2>
+
+        <!-- 4、多个修饰符进行链式引用 -->
+        <input type="text" v-model.lazy.trim="content">
+        <h2>conten:{{content}}</h2>
+
+    </template>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data() {
+                return {
+                    message: "hello world",
+                    counter:0,
+                    content: ""
+                }
+            },
+        }
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+
+</html>

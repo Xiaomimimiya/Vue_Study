@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input class="username" type="text" placeholder="用户名">
+    <input class="password" type="text" placeholder="密码">
+
+    <button class="login">登录</button>
+
+    <button class="setUserPass">设置用户名和密码</button>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        $(function () {
+            // 获取表单的值
+            $(".login").click(function () { 
+                const username = $(".username").val()
+                const password = $(".password").val()
+
+                console.log(username, password);
+            })
+
+            // 设置表单的值
+
+            $(".setUserPass").click(function(){
+                $(".username").val("xiaomi")
+                $(".password").val("123")
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 判断字符串是否存在另一个字符串
+
+            var message = "my name is xiaomi "
+            var name = "xiaomi"
+
+        // 方法一 1.indexOf(searchString, fromIndex)
+            // 返回索引值 
+            // 1.搜索到 返回索引值 2.没有搜索到显示-1
+            var index = message.indexOf(name)
+            console.log(index);  // 11
+
+            // if进行判断 
+            // 没有搜索到显示-1
+            if (message.indexOf(name) !== -1) {
+                // 存在
+                console.log("搜索到了 包含");
+            } else {
+                console.log("没有搜索到 没有包含");
+            }
+
+        // 方法二 ES6 新语法 用来判断包含
+            if (message.includes(name)) {
+                console.log("包含");
+            }
+        
+        // 方法三 startWith   endWith
+        if (message.startsWith("my")) {
+            console.log("以我开头");
+        } 
+
+    // 查找到后进行替换
+        var newMessage = message.replace("xiaomi","replace")
+        console.log(newMessage);  
+    </script>
+</body>
+
+</html>

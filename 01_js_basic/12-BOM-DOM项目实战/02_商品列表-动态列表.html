@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/commen.css">
+    <link rel="stylesheet" href="./css/list.css">
+</head>
+<body>
+    <!-- 商品展示 -->
+    <div class="wrapper">
+
+        <!-- 导航部分 -->
+        <div class="crumbs">
+            <span class="item">首页</span>
+            <!-- 字符实体 >  -->
+            <span>&gt;</span>
+            <span class="item">笔记本</span>
+        </div> 
+
+        <!-- 对内容进行操作 -->
+        <div class="operation">
+
+            <ul class="row category">
+                <li class="item">分类：</li>
+                <li class="item">笔记本</li>
+                <li class="item">台式机</li>
+                <li class="item">智慧屏</li>
+            </ul>
+
+            <ul class="row discount">
+                <li class="item">服务优惠：</li>
+                <li class="item active">仅看有货</li>
+                <li class="item">分期免息</li>
+                <li class="item">优惠商品</li>
+            </ul>
+            
+            <ul class="row sort">
+                <li class="item">排序：</li>
+                <li class="item active">综合</li>
+                <li class="item">最新</li>
+                <li class="item">评论数</li>
+                <li class="item">价格</li>
+            </ul>
+          
+        </div>
+
+        <!-- 商品列表展示部分 -->
+        <ul class="products">
+            <!-- <li class="item">
+                <a href="#">
+                    <img class="ablum" src="./img/11.jpg" alt="">
+                    <div class="name">HUAWEI MateBook E 12.6英寸</div>
+                    <div class="discount">预订立省300元|12期免息</div>
+                    <div class="price">￥6400</div>
+                    <div class="service">
+                        <span class="tip">分期免息</span>
+                        <span class="tip">赠送积分</span>
+                    </div>
+                    <div class="comment">
+                        <span>3190人 评论</span>
+                        <span>96% 好评</span>
+                    </div>
+                </a>
+            </li> -->    
+        </ul>
+
+    </div>
+
+    <script src="./data/product_data.js">
+        
+    </script>
+    <script>
+        var serverURL = "https://res.vmallres.com/pimages"
+
+        var productEl = document.querySelector(".products")
+        // 动态展示数据
+        for (let index = 0; index < resultList.length; index++) {
+            // 获取一条数据
+            var resultItem = resultList[index]
+        
+            // 1.1将数据变成一个个item 
+            // 最外层的item添加
+            var itemEl = document.createElement("li")
+            itemEl.classList.add("item")
+            productEl.append(itemEl)
+
+
+            // 1.2 创建a元素
+            var aEl = document.createElement("a")
+            aEl.href = "#"
+            // 添加到itemEl后面
+            itemEl.append(aEl)
+
+            // 1.3 添加img
+            var albumEl = document.createElement("img")
+            albumEl.classList.add("ablum")
+            albumEl.src = `${serverURL}${resultItem.photoPath}428_428_${resultItem.photoName}`
+            aEl.append(albumEl)
+
+            // 1.4 创建name
+
+            var nameEl = document.createElement("div")
+            nameEl.classList.add("name")
+            nameEl.textContent = resultItem.name
+            // 注意是添加到a里面
+            aEl.append(nameEl)
+
+            // 1.5 创建discount
+
+            var discountEl = document.createElement("div")
+            discountEl.classList.add("discount")
+            discountEl.textContent = resultItem.promotionInfo
+            // 注意是添加到a里面
+            aEl.append(discountEl)
+
+            // 1.6 创建price 
+
+            var priceEl = document.createElement("div")
+            priceEl.classList.add("price")
+            priceEl.textContent ="￥"+resultItem.price
+           
+            aEl.append( priceEl)
+
+            // 1.7 创建service
+            var serviceEl = document.createElement("div")
+            serviceEl.classList.add("service")
+            for (const iterator of resultItem.promoLabels) {
+               var tipEl = document.createElement("span")
+               tipEl.classList.add("tip")
+               tipEl.textContent = iterator
+               serviceEl.append(tipEl)
+            }
+            // 注意是添加到a里面
+            aEl.append(serviceEl)
+            
+            // 1.8 创建comment
+            var commentEl = document.createElement("div")
+            commentEl.classList.add("comment")
+
+            var countEl = document.createElement("span")
+            countEl.textContent = `${resultItem.rateCount}人评论`
+            commentEl.append(countEl)
+
+            var goodcountEl = document.createElement("span")
+            goodcountEl.textContent = `${resultItem.goodRate}% 好评`
+            commentEl.append(goodcountEl)
+
+            aEl.append(commentEl)
+        }
+    </script>
+</body>
+</html>

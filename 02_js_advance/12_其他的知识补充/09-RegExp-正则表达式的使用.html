@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建正则
+        const re1 = /aaa/ig
+
+        const message = "111fabf222 f222aaa2222 f332caaas21 ds13aaa13"
+        // 使用正则
+            // 1. 使用正则提供的实例方法
+
+            // 2. 使用字符串方法，传入一个正则表达式
+            // 需求一：将所有的abc替换成cba (忽略大小写)
+
+            // 2.1 传统的方法
+            // const  newMessage = message.replaceAll("aaa", "cba")
+            // console.log(newMessage);
+
+            // 2.2 字符串的方法
+            // const newMessage = message.replaceAll(/aaa/ig, "cbaa")
+            // console.log(newMessage);
+
+            // 需求二：将所有的数字进行删除  \d 数字 +不确定个数
+            const newMessage = message.replaceAll(/\d+/ig, "")
+            console.log(newMessage);
+
+    </script>
+</body>
+</html>

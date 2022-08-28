@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+
+            background-color: aqua;
+
+            overflow:auto;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        console.log(getComputedStyle(boxEl).width); 
+        console.log(getComputedStyle(boxEl).width); 
+        console.log(getComputedStyle(boxEl).width);
+        console.log(getComputedStyle(boxEl).width);
+        console.log(getComputedStyle(boxEl).width);
+    </div>
+
+    <script>
+        var boxEl = document.querySelector(".box")
+
+        // 方法一：获取样式 局限性较大
+        console.log(getComputedStyle(boxEl).width);
+        console.log(getComputedStyle(boxEl).height);
+
+        // 方法二：获取更多信息 获取到的数据没有单位 便于使用
+        console.log(boxEl.clientWidth);
+        console.log(boxEl.clientHeight);
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        var obj = {
+            name: "xiaomi",
+            age: 12,
+            friend: {
+                name: "kobe"
+            }
+        }
+
+        // 转换过程中对数据进行更改
+
+        // replace 替换
+
+        var objJsonString = JSON.stringify(obj, function(key, value){
+            if (key==="name") {
+                return "mimimi"
+            }
+            return value
+        })
+        console.log(objJsonString);
+
+
+
+    </script>
+</body>
+
+</html>

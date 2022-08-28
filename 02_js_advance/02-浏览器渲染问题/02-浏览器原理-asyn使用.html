@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">app</div>
+
+    <div id="title">title</div>
+
+    <div id="product">product</div>
+
+    <!-- 
+        asyn 的执行是 加载完成立马执行 不管顺序
+     -->
+
+
+   <script src="./js/test.js" async></script>
+    <script src="./js/demo.js" async></script> 
+     <script>
+        var message = "!11"
+        function bar (){
+            function foo(){
+                function test(){
+                    console.log(message);
+                }
+                return test
+            }
+            return foo
+        }
+      
+     </script>
+
+    <h1>哈哈哈</h1>
+</body>
+
+</html>

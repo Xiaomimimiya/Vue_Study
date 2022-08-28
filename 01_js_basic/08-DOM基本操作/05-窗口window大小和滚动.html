@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            background-color: aqua;
+            height: 2000px;
+            width: 200px;
+        }
+
+        .scrollbtn {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <button class="scrollbtn">移动到指定位置</button>
+
+
+    <script>
+        // console.log(window.outerWidth);
+        // console.log(window.outerHeight);
+
+        // console.log(window.innerWidth);
+        // console.log(window.innerHeight);
+
+        // 获取 window 的滚动区域距离
+
+        window.onclick = function () {
+            console.log(window.scrollX);
+            console.log(window.scrollY);
+        }
+
+        // 点击按钮 滚动到指定位置
+        var scrollEl = document.querySelector(".scrollbtn")
+        scrollEl.onclick = function () {
+            // 在原来的基础上进行滚动
+
+            window.scrollTo(0, 0)
+
+            //  window.scrollTo 滚动到指定位置
+        }
+
+        // 回到顶部
+        window.onscroll = function () {
+            var scrollY = window.scrollY
+            if (scrollY > 600) {
+                // 显示元素
+                scrollEl.style.display = "block"
+                // scrollEl.hidden = false
+            } else {
+                // 隐藏元素
+                scrollEl.style.display = "none"
+                // scrollEl.hidden = true
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

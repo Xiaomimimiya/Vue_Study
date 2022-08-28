@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            margin-bottom: 30px;
+        }
+        /* 左右margin不存在折叠的问题 */
+        
+        /* 上下同时设置margin时  折叠后的取值是 选择 设置值较大的 */
+        
+        .container {
+            width: 100px;
+            height: 100px;
+            background-color: violet;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="container"></div>
+</body>
+</html>

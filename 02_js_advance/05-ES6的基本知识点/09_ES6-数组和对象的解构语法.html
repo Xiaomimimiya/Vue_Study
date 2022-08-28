@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var names = ["abc", "cba", "nba", "mba"]
+        var obj = { name: "why", age: 18, height: 1.88 }
+
+        // 1. 数组的解构的基本使用
+        // 传统的方式
+        // var name1 = name[0]
+        // var name2 = name[1]
+        // var name3 = name[2]
+
+        //  1.2 ES6的方式
+        var [name1, name2, name3] = names
+        console.log(name1, name2, name3);
+
+        //  1.3 注意事项：1. 数组有严格的顺序
+        var [name1, , name3] = names
+
+        //  1.4 解构出数组
+        var [name1, name2, ...newNames] = names
+        console.log(name1, name2, ...newNames);
+
+        //  1.5 解构的默认值
+        var names1 = ["abc", "cba", undefined, "mba"]
+        var [name1, name2, name3 = "default"] = names1
+        console.log(name1, name2, name3 );
+
+        // 2. 对象的解构的基本使用
+
+        var { name, age, height } = obj
+        console.log(name, age, height);
+
+        // 2.1 对象的解构没有顺序 按照key来进行的 顺序任意
+
+        // 2.2 对变量进行重命名
+        var { name: xiaomi, age: xiaomiage, height } = obj
+        console.log(xiaomi, xiaomiage,  height);
+
+        // 2.3 默认值的问题
+        var {
+            height: wHeight,
+            name: wName,
+            age: wAge,
+            // address在原对象中是没有的
+            address : wAddress ="中国"
+        } = obj
+        console.log(wName, wAge, wHeight, wAddress)
+
+
+
+        // ================> 应用领域 <================
+        // 主要使用在函数中
+        // 以前的使用方法
+        // function getposition(position){
+        //     console.log(position.x, position.y);
+        // }
+        // getposition({x: 10,y: 10})
+
+        // 使用结构的方法 
+        
+        function getposition({x, y}){
+            console.log(x, y);
+        }
+
+        getposition({x: 10, y: 20})
+        getposition({x: 10, y: 30})
+
+
+    </script>
+</body>
+
+</html>

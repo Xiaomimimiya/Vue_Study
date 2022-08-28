@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const names = [1, 2, 3]
+        const age = [1, 2, 3, 4, 5, 6]
+        
+        function* createArrayIterator(arr) {
+           
+            for (let index = 0; index < arr.length; index++) {
+                //  yield arr[index]
+                yield* arr   
+            }
+        }
+        const nameIterator = createArrayIterator(names)
+        console.log(nameIterator.next());
+        console.log(nameIterator.next());
+        console.log(nameIterator.next());
+
+
+        class Person {
+            constructor(name, age, height, friends) {
+                this.name = name
+                this.age = age
+                this.height = height
+                this.friends = friends
+            }  
+            // 实例方法    语法糖
+            *[Symbol.iterator]() {
+                yield* this.friends
+                
+                // 遍历全部
+                // yield* Object.entries(this)
+            }
+        }
+        const p1 = new Person("why", 18, 1.88, ["curry", "kobe", "james", "tatumu"])
+        const p2 = new Person("why", 18, 1.88, ["currys", "kobes", "jamess", "tatumus"])
+
+        for (const iterator of p1) {
+            console.log(iterator);
+        }
+    </script>
+</body>
+
+</html>

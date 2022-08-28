@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <template id="my-app">
+        <div>
+            <li v-for="(value, key) in info">
+                {{key}} {{value}}
+            </li>
+        </div>
+        <button @click="changeInfo">改变</button>
+    </template>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data() {
+                return {
+                    info: { name: "xiami", age: 18 }
+                }
+            },
+            methods: {
+
+                changeInfo() {
+                    // 1.创建一个新对象赋值给info
+                    // this.info = { name: "xiaomiya", age: 20 }
+
+                    // 2.直接修改原对象的某一个属性
+                    this.info.name="xiaomimmi"
+                }   
+
+
+            },
+
+            watch: {
+                // 默认的watch监听不会进行深度监听  即info.name改变不会被监听到
+                // info(newValue, oldValue) {
+                //     console.log(Vue.toRaw(oldValue));
+                // }
+
+                // 进行深度监听 
+                info:{
+                    handler(newValue, oldValue){
+                        // newValue = oldValue  
+                        console.log(newValue, oldValue);
+                    },
+
+                    // 深度监听配置
+                    deep:true,
+
+                    // 页面第一次渲染就监听一次
+                    immediate: true 
+                }
+            }
+        }
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+
+        // 1、获取的方式不同
+            // 1.1 DOM Element是通过原生方式获取，例如: document.querySelector()
+            // 1.2 jQuery对象是通过调用jQuery函数获取，例如: jQuery(’ ')
+
+        // 2、jQuery对象是一个类数组对象，该对象中会包含所选中的DOM Element的集合。
+
+        // 3、jQuery对象的原型上扩展非常多实用的方法，DOM Element则是W3C规范中定义的属性和方法。
+
+
+        // 1、jQuery对象获取
+        console.log(jQuery("body"));
+
+        // 2、DOM对象获取
+        console.log("%O",document.querySelector("body"));
+    </script>
+</body>
+
+</html>

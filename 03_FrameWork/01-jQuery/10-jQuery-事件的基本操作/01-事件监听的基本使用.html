@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li class="div-1">li-1</li>
+            <li class="div-2" id="list">li-2</li>
+            <li class="div-3">li-3</li>
+            <li class="div-4">li-4</li>
+            <li class="div-5">li-5</li>
+            <li class="div-6">li-6</li>
+            <span>我是span</span>
+        </ul>
+        <button class="cancle">取消监听</button>
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        $(function () {
+            // 鼠标点击 1
+            $(".div-1").on("click", function () {
+                console.log("on-click div-1");
+            })
+            // 鼠标点击 2
+            $(".div-1").click(function () {
+                console.log("click div-1");
+            })
+            // 鼠标经过 1
+            $(".div-2").mouseover(function () {
+                console.log("mouseover div-2");
+            })
+            // 鼠标经过 2
+            $(".div-3").mouseenter(function () {
+                console.log("mouseenter div-3");
+            })
+
+            // 取消监听
+            $(".cancle").click(function(){
+                // $("li").off()  // 取消li上面的所有的事件
+ 
+                $("li").off("mouseover")  // 取消某一个使劲按
+                console.log("取消成功");
+            })
+
+
+            // 使用程序自动触发事件
+            // $("li").trigger("click")
+            // $("li").trigger("mouseenter")
+            $("li").trigger("mouseover")
+         
+        })
+    </script>
+</body>
+
+</html>

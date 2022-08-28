@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 
+        1.先完成结构
+        2.先整体后局部
+            从上往下 从里到外
+        3.尽量去除重复代码 进行抽取和精简 封装
+            .new .hot 进行抽离 
+     -->
+    <style>
+        /* 页面 */
+        ul,li{
+            padding: 0;
+            margin: 0;
+        }
+        a{
+            text-decoration: none;
+            display: inline-block;
+            color: black;
+        }
+        a:hover{
+            color: aqua;
+        }
+        .item{
+            margin-top: 10px;
+        }
+
+        /* 细节 */
+        ul > li .content{
+            display: inline-block;
+        }
+        ul > li .icon{
+            display: inline;
+           
+            position:absolute;
+            width: 20px;
+            height: 20px;
+            margin-left: 5px;
+            margin-top: 3px;
+            background-repeat: no-repeat;
+        }
+        
+        /* 对图标进行抽离 */
+        .hot{
+            background-image: url("../0-images/hot.svg");
+        }
+        .new{
+            background-image: url("../0-images/new.svg");
+        }
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="item">
+            <span>1</span>
+            <a class="list" href="#">
+                <div class="content">上海新增本土确诊2573例无症状25146例</div>
+                <i class="icon hot"></i>
+            </a>
+            
+        </li>
+
+        <li class="item">
+            <span>2</span>
+            <a class="list" href="#">
+                <div class="content">上海新增本土确诊2573例无症状25146例</div>
+                <i class="icon new"></i>
+            </a>
+        </li>
+
+        <li class="item">
+            <span>3</span>
+            <a class="list" href="#">
+                <div class="content">上海新增本土确诊2573例无症状25146例</div>
+                <i class="icon hot"></i>
+            </a>
+        </li>
+    </ul>
+</body>
+</html>

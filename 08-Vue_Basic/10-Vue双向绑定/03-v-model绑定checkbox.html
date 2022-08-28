@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <template id="my-app">
+        <!-- 单选框  绑定到属性中的值是一个BooLean -->
+        <label for="agree">
+            <!-- 有了for == id 后 点击文本也可以点击表单-->
+            <input type="checkbox" id="agree" v-model="isAgree">同意协议
+        </label>
+        <h2>{{isAgree}}</h2>
+
+        <!-- 多选框  绑定到属性中的值是一个数组 -->
+        <!-- 注意:·多选框当中，必须明碗的绑定一个value值 -->
+        <div class="hobbies">
+            <label for="sing">
+                <input type="checkbox" id="sing" v-model="hobbies" value="sing">1
+            </label>
+            <label for="jump">
+                <input type="checkbox" id="jump" v-model="hobbies" value="jump">2
+            </label>
+            <label for="rap">
+                <input type="checkbox" id="rap" v-model="hobbies" value="rap">3
+            </label>
+        </div>
+        <h2>{{ hobbies }}</h2>
+    </template>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data() {
+                return {
+                    message: "hello world",
+                    isAgree: false,
+                    hobbies: []
+                }
+            },
+        }
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function* foo(name1) {
+            console.log("执行内部代码:111",name1);
+            console.log("执行内部代码:111",name1);
+            const name2 = yield "执行第一次结束"
+
+            console.log("执行内部代码:2222", name2);
+            console.log("执行内部代码:2222", name2);
+            const name3 = yield "执行第二次结束"
+
+            console.log("执行内部代码:333", name3);
+            return undefined
+
+        }
+        const generator = foo("next1")
+        //  1、 使用return  立即结束
+        // console.log(generator.next());
+        // console.log(generator.return("next2"));  
+        // console.log(generator.next("next3"));
+
+        //  2、 抛出一个异常来结束  立即结束
+        console.log(generator.next());
+        console.log(generator.throw(new Error("next2 throw error")));  
+        console.log(generator.next("next3"));
+    </script>
+</body>
+</html>

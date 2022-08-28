@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    请输入账号:<input type="text">
+    <p class="tip"></p>
+    <script>
+        // ig 全局  i 第一个
+        const re1 = /aaa/ig
+
+        const message = "111fabf222 f222aaa2222 f332caaas21 ds13aasa13"
+
+        // 1. 使用正则提供的实例方法
+
+        // 1.1  test方法： 判断某一个字符串 是否符合正则表达式的规则  (按照aaa进行匹配)
+
+        // if (re1.test(message)) {
+        //     console.log("符合");
+        // } else {
+        //     console.log("不符合规则");
+        // }
+       
+        // test的使用案例 ======> 让用户输入的账号名必须包含aaaaa
+        // const inputEl = document.querySelector("input")
+        // const tipEl = document.querySelector(".tip")
+
+        // inputEl.oninput = function () {
+        //     const value = this.value
+        //     console.log("value: ", value);
+        //     if (/aaaa/ig.test(value)) {
+        //         tipEl.textContent = "输入的内容符合规则"
+        //         tipEl.style.color = "black"
+        //     } else {
+        //         tipEl.textContent = "输入的内容不符合规则"
+        //         tipEl.style.color = "red"
+        //     }
+        // }
+
+        // 1.2 exec方法：使用正则去执行一个字符串 返回一个结果
+        // const res1 = re1.exec(message)
+    
+        // console.log(res1);
+        
+
+        // 2. 使用字符串方法，传入一个正则表达式
+
+            // 2.1 match方法
+            // const res2 = message.match(re1)
+            // console.log(res2);
+
+            // 2.2 matchAll方法   
+            // matchAll的正则必须加g
+            // const res3 = message.matchAll(re1)
+            // for (const iterator of res3) {
+            //     console.log(iterator.index);
+            // }
+
+            // 2.3 replace/replaceAll =====>替换
+
+            // 2.4 split 分割
+            // const res3 = message.split(re1)
+            // console.log(res3);
+
+            // 2.5 search 搜索字符串的位置
+            // const res4 = message.search(re1)
+            // console.log(res4);
+    </script>
+</body>
+
+</html>

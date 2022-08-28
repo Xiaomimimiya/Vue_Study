@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 将infos变成一个可迭代对象
+        // 1.必须实现一个特定的函数: [Symbol.iterator]
+        // 2.这个函数需要返回一个迭代器(这个迭代器用于迭代当前的对象)
+
+        const info = {
+            friend: ["kobe", "jams", "curry"],
+            [Symbol.iterator]: function () {
+                let index = 0
+                const infoIterator = {
+                    next: () => {
+                        // info.friend.length
+                        // 在这里使用this 时 需要将next改成箭头函数 因为箭头函数不绑定this 
+                        //  如果不改成箭头函数 会在next里面进行查找length 但是他并没有
+
+                        if (index < this.friend.length) {
+                            return { done: false, value: this.friend[index++] }
+                        } else {
+                            return { done: true, value: undefined }
+                        }
+
+                    }
+                }
+                // 返回一个迭代器
+                return infoIterator
+            }
+        }
+
+        // 2  迭代infos中的key/value
+
+        const infos = {
+            name: "why",
+            age: 19,
+            city: "guangzhou",
+            [Symbol.iterator]: function () {
+                // const keys = Object.keys(this)
+                // const values = Object.values(this)
+                const entries = Object.entries(this)  // key 和 value 一起迭代
+                let index = 0
+                const iterator = {
+                    next: () => {
+                        if (index < entries.length) {
+                            return { done: false, value: entries[index++] }
+                        } else {
+                            return { done: true, value: undefined }
+                        }
+                    }
+                }
+                return iterator
+
+            }
+        }
+        const iterator = infos[Symbol.iterator]()
+
+        console.log(iterator.next().value);
+        console.log(iterator.next().value);
+        console.log(iterator.next().value);
+        console.log(iterator.next().value);
+
+        // for ---of
+        for (const iterator of infos) {
+            // 对iterator进行解构
+            const [key, value] = iterator
+
+            console.log(key, value);
+           
+        }
+
+
+    </script>
+</body>
+
+</html>

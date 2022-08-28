@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         const obj = {
+            name :"why",
+            age:18,
+            city:"广州"
+        }
+
+        // 需求 监听对象属性的所有操作
+        // 1、监听属性的操作
+        // 2、对一个属性进行监听
+
+        // let _name = obj.name
+        // Object.defineProperty(obj, "name",{
+        //     set: function(newValue){
+        //         console.log("监听: 设置了新的newValue", newValue);
+        //         _name = newValue
+        //     },
+        //     get: function(){
+        //         console.log("监听变化");
+        //         return _name
+        //     }
+        // })
+        
+        // 3、监听所有属性 对其进行监听操作
+        // 3.1 获取所有的对象的keys
+        const keys = Object.keys(obj) 
+        
+        // 3.2 遍历keys
+
+        for (const key of keys) {
+            value = obj[key] 
+            // 进行遍历
+            Object.defineProperty(obj, key, {
+                set: function(newValue){
+                    console.log(`给${key}设置新的newValue `, newValue);
+                    value = newValue
+                },
+                get: function(){
+                    console.log("监听变化了");
+                    return value
+                }
+            })
+        }
+        console.log(obj.name);
+        obj.name = "change1"
+        obj.name = "change2"
+
+        console.log(obj.age);
+        obj.age = 20
+
+        console.log(obj.city);
+        obj.city = "湖南"
+
+
+        // 但是这样的方式存在较大的缺陷
+
+        // 1、 强行将其定义的内置类来进行监听操作
+        // 2、 对 新增 和 删除 不能进行监听操作
+        // 3、 同时对其他的复杂操作 不能进行监听
+
+        // =========> 使用Proxy 来进行操作 能够解决缺陷
+    </script>
+</body>
+</html>

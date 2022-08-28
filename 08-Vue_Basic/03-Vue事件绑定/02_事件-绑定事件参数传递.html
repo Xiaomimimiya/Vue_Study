@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <template id="my-app">
+        <!-- 1、参数绑定 -->
+        <button @click="btnClick1">按钮点击1</button>
+
+        <!-- 2、明确参数绑定 -->
+        <button @click="btnClick2('message', 18)">按钮点击2</button>
+
+        <!-- 3、在data自定义参数 -->
+        <button @click="btnClick2(message, age)">按钮点击3</button>
+
+        <!-- 4、自定义参数+默认参数   -->
+        <!-- 通过$event的方式来进行 -->
+        <button @click="btnClick3($event,message, age)">按钮点击4</button>
+    </template>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data: function () {
+                return {
+                    message: "hello world",
+                    age: 20
+                }
+            },
+            methods: {
+                // 默认参数 event 
+                btnClick1(event) {
+                    console.log(event);
+                },
+                // 明确传递参数 及其获取 名字可以自定义
+                btnClick2(name, age) {
+                    console.log("btnClick2: ", name, age);
+                },
+                btnClick3($event,name, age) {
+                    console.log("btnClick2: ",$event);
+                    console.log("btnClick2: ", name, age);
+                }
+            }
+        }
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+
+</html>

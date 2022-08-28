@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <form action="">
+        <input type="text">
+        <button type="reset">重置</button>
+        <button type="submit">提交</button>
+    </form>
+    
+
+    <script>
+        var inputEl = document.querySelector("input")
+        
+        
+        // 1、获取焦点  失去焦点
+        // inputEl.onfocus = function(){
+        //     console.log("input 获取到了焦点");
+        // }
+        
+        // inputEl.onblur = function(){
+        //     console.log("input 失去了焦点");
+        // }
+
+
+        // 2、内容发生改变和失去内容
+        // 内容实时的发生改变
+        inputEl.oninput = function(){
+            console.log("input内容发生改变",inputEl.value);
+        }
+        // 失去焦点后 内容已经发生改变 才发生改变 
+        inputEl.onchange = function(){
+            console.log("change内容发生改变",inputEl.value);
+        }
+
+
+        // 3、内容重置 和 提交
+        var formEl = document.querySelector("form")
+
+        formEl.onreset = function(){
+            console.log("发生了重置事件");
+        } 
+
+        formEl.onsubmit = function(event){
+            console.log("提交");
+            // 阻止默认提交 然后自定义提交方式
+            event.preventDefault()
+        }
+    </script>
+    
+</body>
+</html>

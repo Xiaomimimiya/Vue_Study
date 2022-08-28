@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 1、创建set
+        const set = new Set()
+
+        // 1.1 添加元素
+        set.add(10)
+        set.add(10)
+        set.add(20)
+        set.add(20)
+
+        console.log("add1: ", set);
+
+        // 我们可以发现Set中存放的元素是不会重复的，那么Set有一个非常常用的功能就是给数组去重。
+
+        const info = {}
+        const obj = { name: 'xiaomi' }
+
+        set.add(info)
+        set.add(obj)
+
+        console.log("add2: ", set);
+
+        // 2、应用场景：数组去重
+        const names = ["abd", "abcd", "abd", "aabd"]
+
+        // 2.1 传统的实现方式
+        // const newNames = []
+        // for (const iterator of names) {
+        //     if (!newNames.includes(iterator)) {
+        //         newNames.push(iterator)
+        //     }
+        // }
+        // console.log(newNames);
+
+        // 2.2 set实现方式
+        const newNames = new Set(names)
+        const newName = Array.from(newNames)  // 转换为数组的形式
+        console.log(newName);
+
+
+        // 3、set的其他属性
+
+        console.log(newNames.size);  // set大小 3
+        set.delete(obj)   // 删除
+
+        console.log(set);
+
+        console.log(set.has(info));
+
+        // set.clear();
+        // console.log(set);
+
+        set.forEach(item =>{
+            console.log(item);
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <template id="my-app">
+        <h2>{{fullname }}</h2>
+
+        <button @click="changename">改变姓名</button>
+    </template>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data() {
+                return {
+                    firstname: "xiao",
+                    lastname: "mi"
+                }
+            },
+            computed: {
+                // 完整写法
+                fullname: {
+                    get: function () {
+                        return this.firstname + " " + this.lastname
+                    },
+                    // 可以获取外部传递的值
+                    set: function (value) {
+                        const name = value.split(" ")
+                        this.firstname = name[0]
+                        this.lastname = name[1]
+                    }
+                }
+            },
+            methods: {
+                changename(){
+                    this.fullname = "change mi"
+                }
+            }
+        }
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+
+</html>

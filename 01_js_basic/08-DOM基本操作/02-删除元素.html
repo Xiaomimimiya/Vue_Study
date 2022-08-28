@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="remove-btn">删除</button>
+    <button class="copy">复制</button>
+    <div class="box">我是box
+        <h2>我是标题</h2>
+        <p>我是文本</p>
+    </div>
+    <script>
+        var btn = document.querySelector(".remove-btn")
+
+        var btn2 = document.querySelector(".copy")
+
+        var boxEl = document.querySelector(".box")
+
+        var h2El = boxEl.querySelector("h2")
+
+        // 移除  直接用remove 方法来进行去除
+        //  btn.onclick = function () {
+        //             h2El.remove()
+        //         }
+
+
+        // 复制元素 clone
+        btn2.onclick = function () {
+            // 进行复制操作 true 深度clone 即复制box的子元素
+            var copy = boxEl.cloneNode(true)
+
+            // 进行修改
+            var titleEl = copy.querySelector("h2")
+            titleEl.textContent = "我是修改后的文本"
+
+            // 然后插入
+            boxEl.after(copy)
+
+        }
+
+    </script>
+</body>
+
+</html>

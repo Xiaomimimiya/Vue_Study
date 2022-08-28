@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <template id="my-app">
+        <!-- v-if 条件  数组的方式 -->
+        <!-- <div class="info">
+            <h2>个人信息</h2>
+            <ul v-if=" info.length > 0">
+                <li>姓名：{{info[0]}}</li>
+                <li>年龄：{{info[1]}}</li>
+            </ul>
+            <ul v-else>
+                <h2>没有信息，请检查</h2>
+                
+            </ul>
+        </div> -->
+
+        <!-- v-if 条件  数组的方式 渲染的方式-->
+        <div class="info" v-if="Object.keys(info).length>0">
+            <h2>个人信息</h2>
+            <ul>
+                <li>姓名：{{info.name}}</li>
+                <li>年龄：{{info.age}}</li>
+            </ul>
+        </div>
+
+        <div class="info" v-else>
+            <ul>
+                <h2>没有信息，请检查</h2>
+            </ul>
+        </div>
+
+
+    </template>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data() {
+                return {
+                    info: {
+                        name: "xiaomi",
+                        age: 18
+                    }
+                }
+            },
+        }
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+
+</html>

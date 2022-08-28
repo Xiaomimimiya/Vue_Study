@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/commen.css">
+    <link rel="stylesheet" href="./css/list.css">
+</head>
+
+<body>
+    <!-- 商品展示 -->
+    <div class="wrapper">
+
+        <!-- 导航部分 -->
+        <div class="crumbs">
+            <span class="item">首页</span>
+            <!-- 字符实体 >  -->
+            <span>&gt;</span>
+            <span class="item">笔记本</span>
+        </div>
+
+        <!-- 对内容进行操作 -->
+        <div class="operation">
+
+            <ul class="row category">
+                <li class="item">分类：</li>
+                <li class="item">笔记本</li>
+                <li class="item">台式机</li>
+                <li class="item">智慧屏</li>
+            </ul>
+
+            <ul class="row discount">
+                <li class="item">服务优惠：</li>
+                <li class="item active">仅看有货</li>
+                <li class="item">分期免息</li>
+                <li class="item">优惠商品</li>
+            </ul>
+
+            <ul class="row sort">
+                <li class="item">排序：</li>
+                <li class="item active">综合</li>
+                <li class="item">好评   </li>
+                <li class="item">评论数</li>
+                <li class="item">价格</li>
+            </ul>
+
+        </div>
+
+        <!-- 商品列表展示部分 -->
+        <ul class="products">
+
+        </ul>
+
+    </div>
+
+    <script src="./data/product_data.js">
+
+    </script>
+    <script>
+        var serverURL = "https://res.vmallres.com/pimages"
+
+        // 1.动态展示数据
+        var productEl = document.querySelector(".products")
+
+        // 2.服务优惠的点击
+        var operationEl = document.querySelector(".operation")
+        var discountEl = operationEl.querySelector(".discount")
+        // 定义变量
+        var discountFilter = []
+
+        for (var index = 1; index < discountEl.children.length; index++) {
+            // 获取当前点击的item
+            var discountItem = discountEl.children[index]
+            //    监听点击
+            discountItem.onclick = function () {
+
+                // 在点击和不点击之间切换
+                this.classList.toggle("active")
+                // 如果点击 就加入到数值中
+                if (this.classList.contains("active")) {
+                    discountFilter.push(this.textContent.trim())
+                } else {
+                    // 没有点击 就从数组中移除
+                    var filteritem = this.textContent.trim()
+                    var filteritemIndex = discountFilter.findIndex(function (item) {
+                        return item === filteritem
+                    })
+                    discountFilter.splice(filteritem, 1)
+                }
+                // 过滤resultList 函数调用
+                filterResultListAction()
+            }
+        }
+
+        // 函数封装 过滤
+        var showResultList = resultList
+        function filterResultListAction() {
+
+            // 1. 过滤数据
+            showResultList = resultList.filter(function (item) {
+                var isFlag = true
+                for (var filterItem of discountFilter) {
+                    if (!item.services.includes(filterItem)) {
+                        isFlag = false
+                        break
+                    }
+                }
+                return isFlag
+            })
+
+            // 2.展示数据
+            showResultListAction()
+
+        }
+
+        // 数据展示封装
+        showResultListAction()
+        function showResultListAction() {
+            // 每次要清空 以免重复追加
+            productEl.innerHTML = ""
+
+            // showResultList是在前面定义的
+            for (let index = 0; index < showResultList.length; index++) {
+                // 获取一条数据
+                var resultItem = resultList[index]
+
+                // 1.1将数据变成一个个item 
+                // 最外层的item添加
+                var itemEl = document.createElement("li")
+                itemEl.classList.add("item")
+
+                // 对于不确定长度的内部 在外部进行评价 再加入到innerHtml中去
+                var serviceString = ""
+                for (const iterator of resultItem.promoLabels) {
+                    serviceString += `<span class="tip">${iterator}</span>`
+                }
+
+                // 使用innerHtml的好处在于可以进行html字符串拼接
+
+                // 但是这种模式只适合与数据的简单展示
+                itemEl.innerHTML = `
+                <a href="#">
+                    <img class="ablum" src="${serverURL}${resultItem.photoPath}428_428_${resultItem.photoName}" alt="">
+                    <div class="name">${resultItem.name}</div>
+                    <div class="discount">${resultItem.promotionInfo}</div>
+                    <div class="price">￥${resultItem.price}</div>
+                    <div class="service">
+                       ${serviceString}
+                    </div>
+                    <div class="comment">
+                        <span>${resultItem.rateCount}评论</span>
+                        <span>${resultItem.goodRate}% 好评</span>
+                    </div>
+                </a>`
+                productEl.append(itemEl)
+
+
+            }
+            
+            // 解决对齐的问题  添加 4-1个
+            for (let index = 0; index < 3; index++) {
+                var itemEls = document.createElement("li")
+                itemEls.classList.add("item")
+                itemEls.classList.add("empty")
+                productEl.append(itemEls)
+            }
+        }
+    </script>
+</body>
+
+</html>

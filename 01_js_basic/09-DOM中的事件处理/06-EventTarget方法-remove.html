@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮</button>
+
+    <script>
+
+        var btn = document.querySelector("button")
+
+        
+        // var foo = function(){
+        //     console.log("事件受到点击");
+        // }
+
+        // btn.addEventListener("click",foo)
+
+        // // 3秒后将事件进行移除 这时进行点击则没有反应
+        // setTimeout(function(){
+        //     btn.removeEventListener("click",foo)
+        // } ,3000);
+
+
+        // 注意这种方法不能被移除
+
+        btn.addEventListener("click",function(){
+            console.log("添加");
+        })
+
+        // 注意这种方法不能被移除
+        // 因为移除的是被添加的foo函数  因此 移除的函数要和添加的函数是同一个  即上面的foo
+
+        setTimeout(function(){
+            btn.removeEventListener("click",function(){
+                console.log("移除");
+            })
+        } ,3000);
+    </script>
+</body>
+</html>

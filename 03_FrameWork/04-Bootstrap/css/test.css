@@ -1,0 +1,144 @@
+.navbar {
+    margin: 16px 0;
+    position: relative;
+
+}
+
+.navbar .container-fluid {
+    max-width: var(--content-width);
+
+}
+
+.navbar .container-fluid img {
+    height: 26px;
+    padding-right: 25px;
+}
+
+.navbar-nav .bar-list {
+    padding: 8px 25px;
+
+}
+
+.container-fluid .collapse {
+    justify-content: space-between;
+}
+
+.navbar-nav .bar-list span {
+    cursor: pointer;
+    font-size: var(--font-size);
+}
+
+.navbar-nav .telephone {
+    font-size: var(--font-size);
+    box-sizing: border-box;
+    padding: 8px 25px;
+}
+
+/* 字体颜色 */
+.navbar-nav .active,
+.navbar-nav .bar-list span:hover {
+    color: var(--theme-color);
+}
+
+/* 下划线 */
+.navbar-nav .active span {
+    border-bottom: 2px solid var(--theme-color);
+}
+
+/* 显示按钮 */
+@media (max-width:992px) {
+    .navbar-toggler {
+        border: none !important;
+        padding: 0 !important;
+
+        width: 26px;
+    }
+
+    /* 修改下拉背景 */
+    #navbarNav {
+        position: relative;
+        top: 16px;
+        width: 100%;
+        background-color: var(--bg-nav-color);
+        color: #fff;
+
+        margin: 0 -17px;
+        z-index: 100;
+
+    }
+}
+
+/* 轮播图的图片 */
+.slide .carousel-inner img {
+    height: 400px;
+}
+
+/* 客户栏 */
+.target-customer {
+    min-height: 256px;
+    background-color: var(--bg-target-color);
+}
+
+.target-customer .target-title {
+    height: 80px;
+    line-height: 80px;
+    font-size: 30px;
+    color: var(--title-color);
+    font-weight: normal;
+}
+
+.target-customer .row .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 135px;
+    overflow: hidden;
+}
+
+.target-customer .sub-title {
+    position: absolute;
+
+    top: 30%;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+
+    font-size: 24px;
+
+    cursor: pointer;
+    /* 动画移动效果 */
+    transition: top 0.6s ease;
+}
+
+.target-customer .desc {
+    position: absolute;
+    top: 125%;
+    width: 100%;
+    left: 50%;
+
+    opacity: 0;
+    color: red;
+
+    transform: translate(-50%, 50%);
+
+    transition: top 0.6s ease;
+}
+
+@media(min-width:768px) {
+    .target-customer .container-fluid .item:hover .sub-title {
+        top: -5%;
+    }
+
+    .target-customer .container-fluid .item:hover .desc {
+        top: 25%;
+        opacity: 1;
+    }
+}
+
+@media(max-width:768px) {
+   
+    .target-customer .container-fluid .item .desc {
+        top:60%;
+        opacity: 1;
+    }
+}

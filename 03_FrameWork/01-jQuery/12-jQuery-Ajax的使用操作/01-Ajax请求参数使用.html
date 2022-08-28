@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        $(function () {
+            //   1、get 请求
+            $.ajax({
+                url: "http://httpbin.org/get",
+                method: "GET",
+                success(res) {
+                    console.log("GET ", res);
+                },
+                error(error) {
+                    console.log(error.status);
+                }
+            })
+            //   2、post 请求
+            $.ajax({
+                url: "http://httpbin.org/post",
+                method: "POST",
+                success(res) {
+                    console.log("POST", res);
+                },
+                error(error) {
+                    console.log(error.status);
+                }
+            })
+
+            //   3、put 请求  更新内容
+            $.ajax({
+                url: "http://httpbin.org/put",
+                method: "PUT",
+                success(res) {
+                    console.log("put", res);
+                },
+                error(error) {
+                    console.log(error.status);
+                }
+            })
+
+            //   4、delete 请求
+            $.ajax({
+                url: "http://httpbin.org/delete",
+                method: "DELETE",
+                success(res) {
+                    console.log("DELETE", res);
+                },
+                error(error) {
+                    console.log(error.status);
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

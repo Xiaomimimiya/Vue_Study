@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .product {
+            background-color: rgb(109, 95, 95);
+        }
+
+        .video {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <product-item></product-item>
+
+        <video-item> </video-item>
+        <video-item></video-item>
+    </div>
+
+    <template id="productItems">
+        <div class="product">
+            <h2>{{title}}</h2>
+            <div>{{image}}</div>
+            <div>商品价格:<span>￥{{price}}</span></div>
+            <p>商品描述信息,{{price}}秒杀</p>
+
+        </div>
+    </template>
+
+    <template id="video">
+        <div class="video">
+            <h2>{{title}}</h2>
+            <div>{{image}}</div>
+            <div>video:<span>￥{{price}}</span></div>
+            <p>video,{{price}}秒杀</p>
+            <product-item></product-item>
+        </div>
+    </template>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const productItem = {
+            template: "#productItems",
+            data() {
+                return {
+                    title: "小米手机",
+                    image: "111",
+                    price: 10,
+                }
+            }
+
+        }
+        const App = {
+            components: {
+                productItem,
+                "video-item": {
+                    template: "#video",
+                    components: {
+                        // 嵌套productItem 
+                        productItem
+                    },
+                    data() {
+                        return {
+                            title: "video手机",
+                            image: "111",
+                            price: 10,
+                        }
+                    }
+                }
+            },
+            data() {
+                return {
+                    message: "hello world",
+                }
+            },
+            wacth: {},
+            methods: {}
+        }
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+
+</html>

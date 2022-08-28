@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            background-color: red;
+            color: white;
+            /* 行内元素 宽高不会生效 */
+            width: 100px;
+            height: 100px;
+
+            /* 下左右会被撑开 但是不占用空间 */
+            /* 上面不会撑开的原因是保持行内元素在同一行 */
+            /* padding: 100px; */
+
+            /* 上下左右会被撑开 但是不占用空间 */
+            /* border: 50px solid orange; */
+
+            /* 上下不会被撑开 只是左右有效果 */
+            margin: 10px;
+
+            /* =============>上面不会被撑开的原因是保持在行内 为一个元素 */
+        }
+    </style>
+</head>
+<body>
+    <span class="box1">我是span</span>
+    aaa
+    <div class="box2">123</div>
+</body>
+</html>

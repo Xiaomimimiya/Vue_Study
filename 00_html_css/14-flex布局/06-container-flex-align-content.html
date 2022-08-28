@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            background-color: orange;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            /* 内容沿着Y轴对其的方式 从顶部开始 */
+
+            /* 两行之间的间隙的调整 主要使用这个 */
+            /* 但是一般较少使用 因为较少设置固定的height */
+            align-content: flex-start;
+
+        }
+        .item {
+            width: 120px;
+            height: 120px;
+            background-color: rebeccapurple;
+            margin-bottom: 10px;
+        }
+    </style>    
+</head>
+<body>
+    <div class="box">
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+        <div class="item item3">4</div>
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+        <div class="item item3">4</div>
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+        <div class="item item3">4</div> 
+    </div>
+</body>
+</html>

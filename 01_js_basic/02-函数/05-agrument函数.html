@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function foo(name, age) {
+            console.log(name);
+            console.log(age);
+            for (let index = 0; index < arguments.length; index++) {
+                console.log(arguments[index]);
+
+            }
+        }
+
+        foo("why", 10, 12, "湖南")
+
+
+        // arguments案例======>传入任意个数参数进行累加
+
+        function sum() {
+            var sums = 0
+            for (let index = 0; index < arguments.length; index++) {
+                var element = arguments[index];
+                sums += element
+            }
+            return sums
+        }
+        console.log(sum(10, 20, 30, 40))
+        console.log(sum(10, 20, 20, 40))
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .product {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <!-- 要放在app里面 -->
+        <product-item></product-item>
+        <product-item></product-item>
+        <product-item></product-item>
+
+        <video-item></video-item>
+        <video-item></video-item>
+        <video-item></video-item>
+        
+    </div>  
+    <template id="video">
+        <h2>我是video</h2>
+        <div>song</div>
+    </template>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+
+        const App = {}
+        
+        const productItem = {
+            template: `
+            <div class="product">
+                <h2>商品信息</h2>
+                <div>商品图片</div>
+                <div>商品价格:<span>￥9.9</span></div>
+                <p>商品描述信息,9.9秒杀</p>
+            </div>
+            `
+        }
+
+        const app = Vue.createApp(App)
+
+        // 注册一个全局组件 component
+        app.component("product-item", productItem)
+
+        // 注册第二个组件 video
+        app.component("video-item",{
+            template: "#video"
+        })
+
+        app.mount("#app")
+
+    </script>
+</body>
+
+</html>

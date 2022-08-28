@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 格式化
+        function forMateNumbers(number){
+            if (number>=10000) {
+                // 取整
+               return Math.floor(number/10000)+"万"
+            }else if (number>=1000) {
+                return Math.floor(number/1000)+"千"
+            }
+            return number     
+        }
+        var result =forMateNumbers(512321)
+        console.log(result);
+
+    </script>
+</body>
+
+</html>

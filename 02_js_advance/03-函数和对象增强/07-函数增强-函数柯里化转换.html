@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 只传递给函数一部分参数来调用它，让它返回一个函数去处理剩余的参数
+        // 这个过程就称之为柯里化;
+
+        // 普通函数
+        function foo(x, y, z) {
+            console.log(x + y + z);
+        }
+
+        foo(10, 20, 30)
+
+
+        // 柯里化  过程 
+
+        function foo1(x) {
+            return function (y) {
+                return function (z) {
+                    console.log(x + y + z);
+                }
+            }
+        }
+
+        foo1(10)(20)(30)
+
+
+        // 柯里化函数的箭头函数写法
+
+        // function foo2(x) {
+        //     return y => {
+        //         return z => {
+        //             console.log(x + y + z);
+        //         }
+        //     }
+        // }
+
+        // 再优化
+        var foo3 = x => y => z => {
+            console.log(x + y + z);
+        }
+
+    </script>
+</body>
+
+</html>

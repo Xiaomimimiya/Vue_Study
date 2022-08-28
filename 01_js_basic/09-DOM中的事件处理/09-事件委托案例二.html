@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <!-- 巧用data-action -->
+        <button data-action="add">添加</button>
+        <button data-action="remove">删除</button>
+        <button data-action="search">搜索</button>
+    </div>
+
+
+    <script>
+
+        var boxEl = document.querySelector(".box")
+
+        // 事件的点击绑定在box上面
+        // 即委托在div上面
+
+        boxEl.onclick = function (event) {
+            var btnEl = event.target
+            var action = btnEl.dataset.action
+            switch (action) {
+                case "add":
+                    console.log("add");
+                    break;
+                case "remove":
+                    console.log("remove");
+                    break;
+                case "search":
+                    console.log("search");
+                    break;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

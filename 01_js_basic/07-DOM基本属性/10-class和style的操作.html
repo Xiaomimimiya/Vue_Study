@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style> 
+        .active {
+            color: red;
+            /* font-size: 40px; */
+            background-color: rgb(0, 19, 19);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">我是box</div>
+   
+
+
+    <script>
+        var boxEl = document.querySelector(".box")
+        
+        var count = 1
+        boxEl.onclick = function (res) {
+            // 1. 直接添加添加css属性
+                // boxEl.style.color = "red"
+                // boxEl.style.fontSize = "50px"
+                // boxEl.style.backgroundColor = "black" 
+
+            // 2. 添加css属性 动态修改class即可
+                // boxEl.className = "active"
+
+            // 精准修改class中的属性值 还是需要用直接添加的方法
+                // 使用驼峰
+                boxEl.style.fontSize = 30 * count +"px" 
+                count++ 
+            // 设置为空 则使用默认的样式
+        }
+
+    </script>
+</body>
+
+</html>

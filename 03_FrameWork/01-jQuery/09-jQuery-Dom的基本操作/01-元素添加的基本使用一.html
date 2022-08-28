@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <ul>
+            <li class="div-1">li-1</li>
+            <li class="div-2" id="list">li-2</li>
+            <li class="div-3">li-3</li>
+            <li class="div-4">li-4</li>
+            <li class="div-5">li-5</li>
+            <li class="div-6">li-6</li>
+            <span>我是span</span>
+        </ul>
+        <h2 class="choose">我是被选中的元素</h2>
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        $(function(){ 
+            const btnEl1 = document.createElement("button")
+            btnEl1.textContent = "我是按钮append"
+            btnEl1.className = "test"
+
+            // 1、是将参数的内容 插入到匹配元素集中 每个元素的 末尾 
+
+            // 1.0 直接插入元素对象
+
+            // 1.0.1 jq对象
+            var $li = $("<li>").addClass("testJQ").text("jqTest")
+            $("div").append($li)  
+
+            // 1.0.2 原生对象
+            $("div").append(btnEl1)  
+            
+            // 1.1 直接插入文本 
+            // $("div").append("我是文本") 
+
+            // 1.2 直接插入html
+            // $("div").append(`
+            //     <h1>我是html的插入</h1>
+            // `) 
+
+            const btnEl2 = document.createElement("button")
+            btnEl2.textContent = "我是按钮prepend"
+
+            // 2、是将参数的内容 插入到匹配元素集中 每个元素的 开头
+            $("div").prepend(btnEl2)
+
+
+            const btnEl3 = document.createElement("button")
+            btnEl3.textContent = "我是按钮after"
+
+            // 3、是将参数的内容 插入到匹配元素集中 每个元素的 之后
+            $("div").after(btnEl3)
+
+            const btnEl4 = document.createElement("button")
+            btnEl4.textContent = "我是按钮after"
+
+            // 4、是将参数的内容 插入到匹配元素集中 每个元素的 之前
+            $("div").before(btnEl4)
+
+            // 案例 选中某个元素 插入到到其他元素之后
+            const $newClass = $(".choose") 
+            $("span").after($newClass)
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <ul class="list" id="test" 
+                         age="19"
+                         name="xiaomi" 
+                         data-counter="100" 
+                         data-number="100">
+            <li class="div-1">li-1</li>
+            <li class="div-2" id="list">li-2</li>
+            <li class="div-3">li-3</li>
+            <li class="div-4">li-4</li>
+            <li class="div-5">li-5</li>
+            <li class="div-6">li-6</li>
+            <span>我是span</span>
+        </ul>
+        <input type="text">
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        $(function(){ 
+            // 获取 data
+            // const data =  $("ul").data() // 获取所有
+            const data1 =  $("ul").data("counter")   //指定某一个
+            console.log(data1);
+
+            // 设置 data
+            // $("ul").data("test", 123)   //只是存储在缓存里面
+            $("ul").data({
+                test: 123,
+                coder: 18,
+                vscode: 2019
+            })
+            const data2 =  $("ul").data()    
+            console.log(data2);  // 但是可以读取出来
+
+            // 删除 data
+            // $("ul").removeData("vscode")
+             
+            $("ul").removeData(["test", "coder", "vscode","id"])  // 多个
+
+            const data3 =  $("ul").data()    
+            console.log(data3);  
+
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <ul>
+            <li class="div-1">li-1</li>
+            <li class="div-2" id="list">li-2</li>
+            <li class="div-3">li-3</li>
+            <li class="div-4">li-4</li>
+            <li class="div-5">li-5</li>
+            <li class="div-6">li-6</li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        // 1、基本选择器
+        console.log($(".div-1"));   //类选择器
+        console.log($("#list"));
+
+        // 2、伪元素选择器
+        console.log($("ul li:nth-child(2)"));
+
+        // 3、jQuery 额外扩展的选择器
+        console.log($("ul li:eq(0)"));   //div-1 第几个
+        console.log($("ul li:first"));   //div-1 第一个
+        console.log($("ul li:last"));   //div-6 最后一个
+        console.log($("ul li:odd"));   //div-2 div-4  div-6  偶数
+        console.log($("ul li:even"));   //div-1 div-3 div-5  奇数
+
+        // 3、filter过滤
+        console.log($("ul li").filter(".div-5"));
+        console.log($("ul li").filter(".div-2,.div-3"));
+
+        // 4、链式调用
+        const $el = $("ul li")
+                    .filter(".div-1, .div-2, .div-3")
+                    .eq(0)
+            console.log($el);
+    </script>
+</body>
+</html>

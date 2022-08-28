@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+
+        }
+        function foo(){
+
+        }
+
+        //  1.将函数看成是一个普通的对象时,它是具备__proto  隐式原型
+        
+        // console.log(obj.__proto__); 
+        // console.log(foo.__proto__);
+
+        //  2. 将函数堪称是一个函数时 就具备prototype 显式原型
+
+        console.log(foo.prototype);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const token = localStorage.getItem("token")
+        if (!token) {
+            console.log("从服务器获取token");
+
+            const token = "hello world"
+            localStorage.setItem("token", token)    
+        }
+        const username = localStorage.getItem("username")
+
+        const password = localStorage.getItem("password")
+
+        if (!username || !password) {
+            console.log("请让用户输入");
+            const username = "xiaomi"
+            const password = "123"
+
+            localStorage.setItem("username", username)
+
+            localStorage.setItem("password", password)
+        }
+
+        // 将username/password保存到Storage中
+        // 通过键值对进行存储 
+     
+
+
+
+        console.log(token);
+        console.log(username);
+        console.log(password);
+
+
+
+    </script>
+</body>
+
+</html>

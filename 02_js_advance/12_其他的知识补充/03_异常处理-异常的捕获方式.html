@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function foo(){
+            console.log("fuction foo1");
+            console.log("fuction foo2");
+
+            // 如果不抛出 下面的代码就不能执行
+
+            throw new Error("我是错误信息")
+
+            console.log("fuction foo3");
+            console.log("fuction foo4");
+
+        }
+        function test(){
+            // 使用try catch 可以抛出异常 并且能够执行后面的代码
+            try {
+                foo()
+            } catch (error) {
+                console.log(error);
+            } finally{
+                // 有没有异常都会执行
+                console.log("没有异常");
+            }
+        }
+
+        function bar(){
+            console.log("bar");
+            test()
+        }
+
+        bar()
+
+        console.log("-------------");
+
+    </script>
+</body>
+</html>

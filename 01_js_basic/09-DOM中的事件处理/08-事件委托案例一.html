@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+    <script>
+        var ulEl = document.querySelector(".list")
+        var liEl = document.querySelectorAll("li")
+
+        // 方法一：耗费资源
+        // for (let index = 0; index < liEl.length; index++) {
+        //     console.log(liEl[index]);
+        //     liEl[index].onclick = function () {
+        //         liEl[index].classList.toggle("active")
+        //     }
+        // }
+
+        // 方法二：事件委托 通过ul监听li 委托给了父元素来进行处理
+
+        ulEl.onclick = function(event){
+            // 做判断是防止点击到ul ul添加了class
+            // 给点击的元素添加class
+            if (event.target !== ulEl) {
+                event.target.classList.toggle("active")
+            } 
+        }
+    </script>
+</body>
+
+</html>

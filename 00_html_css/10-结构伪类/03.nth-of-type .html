@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 选中box第三个div */
+        /* 里面有干扰元素 */
+
+        /* 标记的是2 红色 */
+        /* .box div:nth-child(3){
+            color: red;
+        } */
+
+        /* 选中box第三个div */
+        /* 排除干扰元素 */
+
+        /* 只找到对应的类型的子元素 排除干扰 */
+        .box div:nth-of-type(3){
+            color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>1</div>
+        <p>我是P元素</p>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+    </div>
+</body>
+</html>

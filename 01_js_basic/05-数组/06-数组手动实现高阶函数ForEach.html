@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var names = ["qwr", "231", "412", "Wqrwq"]
+
+        // 传统的foreach 函数的数组遍历
+        names.forEach(element => {
+            console.log("传统的foreach", element);
+        })
+
+        // 版本一：遍历数组
+        // 建立函数 进行调用 然后对函数进行遍历 遍历次数由数组的长度决定
+        // 调用函数 对内容进行遍历
+        function ForEach1(fn) {
+            for (let index = 0; index < names.length; index++) {
+                fn(names[index], index, names)
+            }
+        }
+        ForEach1(function (item, i, arr) {
+            console.log("版本一", item, i, arr);
+        })
+
+        // 版本二：foreach
+        // 数组作为arr参数传入 而不是固定状态
+
+        function ForEach2(fn, arr) {
+            for (let index = 0; index < arr.length; index++) {
+                fn(arr[index], index, arr)
+            }
+        }
+        // 将names传入
+        ForEach2(function (item, i, arr) {
+            console.log("版本二", item, i, arr);
+        }, names)
+
+        // 版本三：foreach
+        names.ForEach3 = function (fn) {
+            for (let index = 0; index < this.length; index++) {
+                fn(this[index], index, this)
+            }
+        }
+        names.ForEach3(function (item, index, names) {
+            console.log("版本三", item, index, names);
+        })
+
+    </script>
+</body>
+
+</html>

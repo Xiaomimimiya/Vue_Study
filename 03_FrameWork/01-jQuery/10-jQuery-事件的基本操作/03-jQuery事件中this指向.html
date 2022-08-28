@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <ul>
+            <li class="div-1">li-1</li>
+            <li class="div-2" id="list">li-2</li>
+            <li class="div-3">li-3</li>
+            <li class="div-4">li-4</li>
+            <li class="div-5">li-5</li>
+            <li class="div-6">li-6</li>
+            <span>我是span</span>
+        </ul>
+        <button class="cancle">取消监听</button>
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        $(function(){ 
+            $(".div-1").on("click", ()=>{
+                console.log(this);
+            })
+
+            $(".div-1").on("click", function(){
+                // 转为jQuery 即可获取内部的值
+                console.log($(this).text());
+            })
+
+            $("ul").click(function(){
+                console.log(this);
+            })
+        })
+    </script>
+</body>
+</html>

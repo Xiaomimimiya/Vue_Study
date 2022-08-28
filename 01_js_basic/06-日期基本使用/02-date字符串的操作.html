@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 表示出自己想要的方式
+        function getNowDate() {
+            var date1 = new Date()
+    
+            var year = date1.getFullYear()
+
+            // 月份从0 开始 需要+1
+            var month = date1.getMonth() + 1
+            month = month > 10 ? month : "0" + month
+
+            // 日期是从1 开始 
+            var day = date1.getDate()
+            day = day >= 10 ? day : "0" + day
+
+            // 时
+            var hour = date1.getHours()
+            hour = hour >= 10 ? hour : "0" + hour
+
+            // 分
+            var minute = date1.getMinutes()
+            minute = minute >= 10 ? minute : "0" + minute
+
+            // 秒
+            var second = date1.getSeconds()
+            second = second >= 10 ? second : "0" + second
+
+            console.log(year + "-" + month + "-" + day + "-" + hour + ":" + minute + ":" + second);
+        }
+        // 封装为函数
+       this.getNowDate()
+    </script>
+</body>
+
+</html>

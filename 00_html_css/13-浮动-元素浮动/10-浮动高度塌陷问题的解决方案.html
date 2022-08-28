@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        .content {
+            width: 1190px;
+            background-color: yellowgreen;
+            margin: 0 auto;
+        }
+
+        /* 添加一个盒子对内容进行包裹 使其增加-10px 使其进行扩大*/
+        .box {
+            margin-left: -10px;
+        }
+
+        .item{
+            width: 290px;
+            background-color: sienna;
+            float: left;
+            margin-bottom: 10px;
+            margin-left: 10px;
+
+        }
+        .item.left {
+            height: 370px;
+        }
+        .item.right{
+            height: 180px;
+        }
+        /* 最终的解决方案 */
+        /* 加上一个css */
+        .clear_fix::after{
+            display: block;
+            content: "";
+            clear: both;
+        }
+        
+        .boxs{
+            height: 500px;
+            width: 500px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content clear_fix">
+        <!-- 1.  所有的item都是浮动 脱离了标准流 就没有高度=====> 高度塌陷 -->
+        <!-- ======> 清除浮动方法  
+                    ① 设置固定高度
+                    ② ========> 使用clear       
+        -->
+        <div class="box">
+           <div class="item left"></div>
+           <div class="item left"></div>
+           <div class="item right"></div>
+           <div class="item right"></div>
+           <div class="item right"></div>
+           <div class="item right"></div>
+        </div>
+    </div>
+    <!-- 2.  则boxs就会在最上面进行展示 认为其没有高度 -->
+    <div class="boxs">
+
+    </div>
+</body>
+
+</html>

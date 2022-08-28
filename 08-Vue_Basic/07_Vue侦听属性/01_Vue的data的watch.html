@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <template id="my-app">
+        <h2>{{message}}</h2>
+
+        <div>
+            <li v-for="(value, key) in info">
+                {{key}} {{value}}
+            </li>
+        </div>
+
+        <button @click="changeMessage">改变</button>
+        <button @click="changeInfo">改变</button>
+    </template>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data() {
+                return {
+                    message: "hello world",
+                    info: { name: "xiami", age: 18 }
+                }
+            },
+            methods: {
+                changeMessage() {
+                    this.message = " hello xiaomi"
+                },
+                changeInfo() {
+                    this.info = {
+                        name: "xiaomiya",
+                        age: 20
+                    }
+
+                }
+            },
+            // 监听 属性 变化
+            watch: {
+                // 监听谁 谁的名字就是函数名字
+                message(newValue, oldValue) {
+                    console.log("message change");
+                    console.log(newValue, oldValue);
+                },
+                // 同时可以获取变化的参数
+                info(newValue, oldValue) {
+                    // console.log(newValue);
+                    // console.log(oldValue);
+
+                    // 获取原始对象
+                    console.log(Vue.toRaw(oldValue));
+                }
+            }
+        }
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+
+</html>

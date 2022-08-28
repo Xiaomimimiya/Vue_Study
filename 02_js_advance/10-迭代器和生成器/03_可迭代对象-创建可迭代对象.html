@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 将infos变成一个可迭代对象
+        // 1.必须实现一个特定的函数: [Symbol.iterator]
+        // 2.这个函数需要返回一个迭代器(这个迭代器用于迭代当前的对象)
+
+
+
+        const info = {
+            friend: ["kobe", "jams", "curry"],
+            [Symbol.iterator]: function () {
+                let index = 0
+                const infoIterator = {
+                    next:function (){
+                        // info.friend.length
+                        if (index < info.friend.length) {
+                            return { done: false, value: info.friend[index++] }
+                        } else {
+                            return { done: true, value: undefined }
+                        }
+
+                    }
+                }
+                // 返回一个迭代器
+                return infoIterator
+            }
+        }
+
+        // 可迭代对象必然具备下面的特点
+        const iterator = info[Symbol.iterator]()
+
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+
+        // 可迭代对象 可以使用for of
+        for (const iterators of info) {
+            console.log(iterators);
+        }
+
+        // 可迭代对象 必然有一个[Symbol.iterator]函数
+        const students = ["张三", "李四", "王五"]
+        // 返回数组的迭代器
+        console.log(students[Symbol.iterator]());
+        const studentIterator = students[Symbol.iterator]();
+        // 输出结果和我们实现的是一样 就是其实现的模式
+        console.log(studentIterator.next());
+        console.log(studentIterator.next());
+        console.log(studentIterator.next());
+
+
+    </script>
+</body>
+
+</html>

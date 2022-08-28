@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const message = "mys name is xiaomi"
+
+        // 1、字符串方法来判断某个字母开头
+
+        // if (message.startsWith("m")) {
+        //     console.log("true");
+        // }
+        // if (message.endsWith("i")) {
+        //     console.log("true");
+        // }
+
+        // 2、正则方法 ： 
+        // 2.1 ^以某个字符串开头
+        if (/^my/i.test(message)) {
+            console.log("true");
+        }
+        // 2.2 $以某个字符串结尾
+        if (/mi$/i.test(message)) {
+            console.log("true");
+        }
+
+        // 案例
+        const res = "mys"
+        const re = /^mys$/i
+        console.log(re.test(res));
+    </script>
+</body>
+
+</html>

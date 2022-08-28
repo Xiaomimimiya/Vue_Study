@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+       <p>我是段落</p>
+       <span>我是span</span>
+    </div>
+
+    <script>
+        var boxEl = document.querySelector(".box")
+
+        // 方法一：通过api的方式插入插入到其中 ===>不推荐
+        // boxEl.innerHTML= `<h2 class='title'>我是H2标题</h2>`
+
+        // 方法二：创建一个真实的DOM元素 
+        var h2El = document.createElement("h2")
+       
+        h2El.className = "title"
+        h2El.textContent = "我是标题"
+
+        // 将元素插入到box中去 append 追加 直接追加到末尾
+        // boxEl.append(h2El)
+        
+        //node.prepend——在node开头插入节点
+        // boxEl.prepend(h2El)
+
+        // node.before——在node 前面插入节点 box之前
+        // boxEl.before(h2El)
+
+        // node.after——在node后面插入节点 box后面
+        // boxEl.after(h2El)
+
+        // node.replacewith——将node替换为给定的节点 即将box替换掉
+        // boxEl.replaceWith(h2El)
+
+        // 案例 插入到p 和 span之间
+        // 获取元素 querySelector可以使用在元素上
+        var spanEl = boxEl.querySelector("span")
+        spanEl.before(h2El)
+        
+    </script>
+</body>
+</html>

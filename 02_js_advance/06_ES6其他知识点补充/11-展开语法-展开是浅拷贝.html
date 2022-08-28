@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+
+    // 1、基本演练
+
+    const names = ["11", '22', "222", "444"]
+    const str = "hellow"
+    function foo(name1, name2, ...arg){
+        console.log(name1, name2, arg);
+    }
+    foo(...names)
+    foo(...str)
+
+    // 2、对象的嵌套 展开
+    const obj1 = {
+        name: "xiaomi",
+        age: 19
+    }
+    const obj2 = {
+        // 对obj1进行展开
+        ...obj1,
+        city: "gz"
+    }
+    console.log(obj2);
+   </script>
+</body>
+</html>

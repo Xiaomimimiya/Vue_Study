@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 如果异步函数中有抛出异常(产生了错误)，这个异常不会被立即浏览器处理
+        // 进行如下处理: Promise.reject(error)
+        // 可以直接使用 catch进行捕获
+        // 继续执行其他代码
+        async function foo(){
+            console.log("1111");
+            console.log("1111");
+            "Abf".filter()
+            return 123
+        }
+
+        foo().then(res =>{
+            console.log(res);
+        }).catch(error =>{
+            console.log(error);
+            console.log("继续执行其他代码");
+        })
+    </script>
+</body>
+</html>

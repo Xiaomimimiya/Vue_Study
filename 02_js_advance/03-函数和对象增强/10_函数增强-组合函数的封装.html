@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var num = 100
+        function double(num) {
+            return num * 2
+        }
+        function pow(num) {
+            return num ** 2
+        }
+
+        // 对上面两个函数进行再组合
+
+        // function conposeFn(num) {
+        //     return double(pow(num))
+        // }
+        // console.log(conposeFn(num));
+
+        // 缺点在于不通用
+        // 对其进行优化封装
+
+        function conposeFn(...fns) {
+            // 1. 边界判断
+            var fnLength = fns.length
+            for (var i = 0; i < fnLength; i++) {
+                var fn = fns[i];
+                if (typeof fn !== "function") {
+                    throw new Error(`Fn ${i} must be fuction`);
+
+                }
+            }
+            // 返回新的函数
+            return function (...args) {
+                var result = fns[0].apply(this, args)
+                for (var i = 1; i < fnLength; i++) {
+                    var fn = fns[i];
+                    result = fn.apply(this, [result])
+                }
+                return result
+            }
+        }
+
+        var newFn = conposeFn(double, pow)
+        console.log(newFn(1));
+
+    </script>
+</body>
+
+</html>

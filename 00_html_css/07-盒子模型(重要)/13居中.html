@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        .box {
+            background-color: red;
+            /* 块级元素的行内元素居中 需要加上text-align:center */
+            text-align: center;
+        }
+
+        .box span {
+            background-color: blue;
+            height: 10px;
+        }
+
+        .container {
+            background-color: yellow;
+            /* 块内的块级元素居中 需要加上下面的语句 margin: 0 auto */
+            /* margin: 0 auto; */
+            width: 100px;
+            height: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span>我</span>
+        <div class="container">wqqq</div>
+    </div>
+</body>
+</html>

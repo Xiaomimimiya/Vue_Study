@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <ul class="list" id="test" age="19" name="xiaomi" data-counter="100">
+            <li class="div-1">li-1</li>
+            <li class="div-2" id="list">li-2</li>
+            <li class="div-3">li-3</li>
+            <li class="div-4">li-4</li>
+            <li class="div-5">li-5</li>
+            <li class="div-6">li-6</li>
+            <span>我是span</span>
+        </ul>
+        <input type="text">
+    </div>
+    
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        $(function(){ 
+
+            // 获取 prop
+            // const prop = $("ul").prop("id") // test  标准
+            // const prop = $("ul").prop("name")  // undefined 非标准
+            const prop = $("ul").prop("id")
+            console.log(prop); 
+
+            // 设置 prop  (key, value)
+
+            // $("input").prop("id", "test1")
+            $("input").prop({
+                id: "test1",
+                name: "xiaomi",
+                "data-test":"test",
+                placeholder: "请输入"
+            })
+            console.log($("input"));
+
+            // 删除prop  只能删除自定义的属性
+
+            $("input").removeProp("data-test")
+        })
+    </script>
+</body>
+</html>

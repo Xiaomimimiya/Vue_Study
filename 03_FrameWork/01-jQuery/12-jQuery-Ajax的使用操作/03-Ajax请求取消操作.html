@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="btn">取消请求</button>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        $(function () {
+          
+
+            const $ajaxXHR = $.ajax({
+                // 服务器 7秒
+                url: "http://httpbin.org/delay/3",
+                method: "POST",
+                //  设置 5秒
+                timeout: 5000,
+                success(res) {
+                    console.log("sucess", res);
+                },
+                error(err) {
+                    console.log(err);
+                }
+            })
+            
+            // 手动点击取消 使用abort 来进行操作
+
+            $(".btn").click(function(){
+                $ajaxXHR.abort("取消")
+
+            })
+        })
+    </script>
+</body>
+
+</html>

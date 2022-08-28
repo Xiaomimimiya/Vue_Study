@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2 class="title">时间显示</h2>
+    <h3 class="newTime"></h3>
+    
+    <script>
+
+        var h2El = document.querySelector(".title")
+        var timeEl = document.querySelector(".newTime")
+
+        setInterval(function () {
+            var date = new Date()
+            timeEl.textContent = date
+        }, 1000)
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* 转换为行内元素 共同在一行 */
+            display: inline;
+        }
+
+        a,span {
+            /* 转换为块元素  独占一行*/
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 块内元素 独占一行 后面没有其他元素 -->
+    <div class="box">111</div>
+    <div class="box">111</div>
+    <div class="box">111</div>
+    <p class="box">111</p>
+
+    <!-- 行内元素 占一行  后面可以有其他元素-->
+
+    <a href="#">111</a>
+    <span>111</span>
+
+</body>
+
+</html>

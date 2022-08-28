@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 计算面积
+        function getArea(height, width) {
+            return height * width
+        }
+
+        var area1 = getArea(100, 200)
+        console.log("面积是：" + area1);
+
+        function getNsum(n) {
+            var sum = 0
+            if (n <= 0) {
+                console.log("n有问题")
+                // 直接return出去 即中止执行
+                return
+            }
+            for (var i = 0; i < n + 1; i++) {
+                sum += i
+               
+            }
+            return sum
+
+
+        }
+        var sum1 = getNsum(10)
+        console.log("合是：" + sum1);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li class="div-1">li-1</li>
+            <li class="div-2" id="list">li-2</li>
+            <li class="div-3">li-3</li>
+            <li class="div-4">li-4</li>
+            <li class="div-5">li-5</li>
+            <li class="div-6">li-6</li>
+            <span>我是span</span>
+        </ul>
+        <h2 class="choose">我是被选中的元素</h2>
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        $(function () {
+            // 使用jQuery新建元素
+
+            const $div7 = $("<li>").addClass("div-7").text("li-7呀")
+            // $div7.insertAfter(".div-6")
+
+            // 1、将匹配元素集中的每个元素插入到目标元素的末尾。
+            // 内容 .appendTo("目标元素")
+            $("<h2>我是appendTo</h2>").appendTo(".div-1")
+
+            // 2、将匹配元素集中的每个元素插入到目标元素的开头
+            // 内容 .appendTo("目标元素")
+            $("<h2>我是prependTo</h2>").prependTo(".div-1")
+
+
+            // 3、在目标元素之后，插入匹配元素集中的每个元素。
+             // 内容 .appendTo("目标元素")
+            $("<h2>我是insertAfter</h2>").insertAfter(".div-2")
+
+            // 4、在目标元素之前，插入匹配元素集中的每个元素。
+             // 内容 .appendTo("目标元素")
+            $("<h2>我是insertBefore</h2>").insertBefore(".div-2")
+        })
+    </script>
+</body>
+
+</html>

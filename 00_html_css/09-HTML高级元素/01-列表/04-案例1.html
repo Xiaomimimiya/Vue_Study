@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            text-decoration: none;
+            color: black;
+            font-size: 25px;
+            margin-left: 5px;
+            display:inline-block;
+        }
+        .box {
+            margin-top: 10px;
+        }
+        .one {
+            color: red;
+            font-size: 30px;
+        }
+
+        .two {
+            color: blueviolet;
+            font-size: 30px;
+        }
+
+        .three {
+            color: orange;
+            font-size: 30px;
+        }
+
+        .gray{
+            color: gray;
+            font-size: 30px;
+        }
+
+        .hot::after {
+            content: url("./0-images/hot.svg");
+            margin-left: 5px;
+            position: relative;
+            width: 30px;
+            height: 30px;
+        }
+
+        a:hover{
+            color: yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <span class="one">1</span>
+        <a class="hot" href="https://www.baidu.com">上海新增本土确诊2573例无症状25146例</a>
+    </div>
+    <div class="box">
+        <span class="two">2</span>
+        <a href="https://www.baidu.com">康师傅回应老坛酸菜面重新上架
+        </a>
+    </div>
+    <div class="box">
+        <span class="three">3</span>
+        <a href="https://www.baidu.com">恰似故人归恰似故人归
+        </a>
+    </div>
+    <div class="box">
+        <span class="gray">4</span>
+        <a class="hot" href="https://www.baidu.com">上海针对四类人群加紧完善兜底机制
+        </a>
+    </div>
+
+</body>
+
+</html>

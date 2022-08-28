@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 1000px;
+            height: 800px;
+            background-color: red;
+            position: relative;
+        }
+        .box{
+            width: 400px;
+            height: 400px;
+            background-color: yellowgreen;
+            /* 相对于父亲元素 是否又定位 */
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        strong {
+            position: absolute;
+            /* 相对于谁来设置top bottom left right 参考对象 最临近的=====>祖先 设置 定位的 元素<====== */
+            /* 在没有祖先元素定位的情况下 和fixed一样 是参照可视窗口来进行设置 */
+            bottom: 0;
+            left: 0;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <span>我是span</span>
+            <strong>我是trong</strong>
+            <img src="../0配置文件/0-images/kobe02.png" alt="">
+            <div>我是div</div>
+        </div>
+    </div>
+</body>
+
+</html>

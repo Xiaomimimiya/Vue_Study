@@ -1,0 +1,1 @@
+console.log("123"),console.log("my name is "),console.log(40),console.log("hello world");

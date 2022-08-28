@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="test">
+
+    </div>
+    <script>
+        // 1. 创建XMLHttpRequest对象
+        const xhr = new XMLHttpRequest()
+
+        // 2. onload 监听数据加载完成
+
+        xhr.onload = function () {
+            // 传统方式
+            // const resJson = JSON.parse(xhr.response)
+
+            // 在xhr.response = "json" 进行设置 就无需解析
+
+            console.log(xhr.response);
+
+        }
+
+        // 告知xhr获取到的数据的类型  
+        // 默认是text
+        
+        xhr.responseType = "json"
+        // xhr.response = "xml"
+
+
+        // 3. 配置请求 
+
+        xhr.open("get", "http://123.207.32.32:8000/home/multidata")
+
+        // 4. 发送请求
+        xhr.send()
+
+
+
+    </script>
+</body>
+
+</html>

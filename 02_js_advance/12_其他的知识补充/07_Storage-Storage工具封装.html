@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="./cache.js"></script>
+
+    <script>
+        localCache.setCache("son", 111)
+
+
+        // storage本身是不能直接存储对象的
+
+        const info = {
+            name: "xiaomi",
+            age: 19,
+            city: " guanzhou",
+            imgUrl: "www.github.com"
+        }
+        // 传统的方式
+        // 存储时，以对象的形式存储
+        // localStorage.setItem("info", JSON.stringify(info))
+        // 提取数据，以对象的形式提取
+        // console.log(JSON.parse(localStorage.getItem("info")));
+
+        // =======>  因此 在封装时 就对其进行转换
+        // 所以可以直接进行调用
+        localCache.setCache("info", info)
+        
+        console.log(localCache.getCache("info"));
+        
+    </script>
+</body>
+
+</html>

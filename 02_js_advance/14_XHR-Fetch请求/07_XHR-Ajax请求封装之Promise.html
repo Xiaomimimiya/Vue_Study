@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 针对于多参数 建议传入对象的形式
+        function XmAjax({
+            url,
+            method = "get",
+            data = {},
+            // failure,
+            // success,
+        } = {}) {
+            // 使用resolve, reject 防止地狱回调
+            return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest()
+
+                xhr.onload = function () {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        resolve(xhr.response)
+                    } else {
+                        reject({ status: xhr.status, message: xhr.statusText })
+                    }
+                }
+                xhr.responseType = "json"
+
+                if (method.toUpperCase() === "GET") {
+                    const qurystringify = []
+                    for (const key in data) {
+                        qurystringify.push(`${key}=${data[key]}`)
+                    }
+                    
+                    url = url + "?" + qurystringify.join("&")
+                    xhr.open(method, url)
+                    xhr.send()
+
+                } else {
+                    xhr.open(method, url)
+                    xhr.setRequestHeader("Content-type", "application/json")
+                    xhr.send(JSON.stringify(data))
+                }
+
+            })
+        }
+
+        // get请求  
+        XmAjax({
+            url: "http://123.207.32.32:1888/02_param/get",
+            method: "GET",
+            data: { // success: function (res) {
+                //     console.log(res);
+                // },
+                // failure: function (err) {
+                //     console.log(err);
+                // }
+                name: "why",
+                age: 18
+            }
+
+        }).then(res => {
+            console.log(res);
+        }).catch(err => {
+            console.log(err);
+        })
+
+        // post请求传递参数
+        // XmAjax({
+        //     url: "http://123.207.32.32:1888/02_param/postjson",
+        //     method: "post",
+        //     data:{
+        //         name: "jsonData",
+        //         age: 18
+        //     },
+        //     success:function(res) {
+        //         console.log(res);
+        //     },
+        //     failure:function(err){
+        //        console.log(err);
+        //     }
+        // })
+    </script>
+</body>
+
+</html>

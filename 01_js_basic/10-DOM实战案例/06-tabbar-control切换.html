@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 600px;
+
+            display: flex;
+
+            justify-content: space-around;
+
+            background-color: gray;
+
+            align-items: center;
+
+        }
+
+        .bar {
+
+            text-align: center;
+        }
+
+        .bar:hover {
+            border-bottom: 2px solid red;
+        }
+
+        .line {
+            width: 1px;
+            height: 30px;
+            background-color: rgb(71, 67, 67);
+        }
+
+        .active {
+            color: rgb(160, 7, 7);
+            border-bottom-color: #f3c258;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <div class="bar">
+            精品栏目
+        </div>
+        <span class="line"></span>
+        <div class="bar">
+            赛事精品
+        </div>
+        <span class="line"></span>
+        <div class="bar">
+            英雄攻略
+        </div>
+    </div>
+
+    <script>
+        // 获取元素 
+        var boxEl = document.querySelector(".box")
+        var activeEl = document.querySelector(".active")
+
+        boxEl.onmouseover = function (event) {
+
+            var itemEl = event.target
+
+            if (itemEl.classList.contains("bar")) {
+                
+                // 先删除
+                activeEl.classList.remove("active")
+
+                // 当前添加active
+                itemEl.classList.add("active")
+
+                // 最新的active赋值到里面
+                activeEl = itemEl
+                
+            }
+        }
+      
+    </script>
+
+</body>
+
+</html>

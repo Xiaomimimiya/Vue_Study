@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 字符串的拼接
+            var name1 = "my1"
+            var name2 = "my2"
+            var name3 = "my3"
+        // 1.传统的方式 使用 + 运算符
+            var newName1 = name1 + name2 + name3
+            console.log(newName1);
+
+        // 2. concat
+            var newName2 = name1.concat(name2).concat(name3)
+
+        // 可以在后面加 参数可变
+            var newName3 = name1.concat(name2, name3, "abc", "bac")
+
+            console.log(newName2);
+            console.log(newName3);
+
+    // 删除首尾的空格 
+        // trim
+
+    // 字符串的分割 split分割  join添加
+        var massage = "my-name-is-xiaomi"
+        var newName4 = massage.split("-")
+        console.log(newName4);
+    </script>
+</body>
+</html>

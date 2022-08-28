@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+   <ul>
+    <li class="li-1">1</li>
+    <li class="li-2">2</li>
+    <li class="li-3">3</li>
+    <li class="li-4">4</li>
+    <li class="li-5">5</li>
+   </ul>
+
+    <div>
+        <ul class="ul-jq">
+            <li class="div-li"></li>
+            <li class="div-li"></li>
+            <li class="div-li"></li>
+        </ul>
+    </div>
+
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+
+    <script>
+
+        //   1、jQuery转换为DOM-Element
+        var $ul = jQuery("ul")
+        // 1.1 方式一 对象索引的方式
+        const DomEl = $ul[0]
+        console.log("jQuery转换为DOM-Element ", DomEl);
+
+        // 1.2 方式二 
+        console.log($ul.get()); // 获取到匹配元素集合中 所有的元素  ul ul.jq
+
+        console.log($ul.get(1));   // 获取到匹配元素集合中 某一个的元素  ul ul.jq
+
+        //   2、DOM-Element转换为jQuery
+        var ulEl = document.querySelector(".ul-jq")
+        
+        // 直接进行转换
+        var $JqEl = jQuery(ulEl);
+
+        console.log("DOM-Element转换为jQuery ", $JqEl);  //作用在于调用jq对象中的相关方法
+    </script>
+</body>
+
+</html>

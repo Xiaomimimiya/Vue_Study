@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script>
+        //    1、增加一天   
+
+        let day = dayjs()
+            // add("增加多少", "增加的单位：year,month,day,hour")
+            // .add(12, "year") 增加
+            // .add(12, "day")
+            // .subtract(1,"year") 减去多少
+            
+
+        // 时间格式化
+
+        console.log(day.format("YYYY-MM-DD HH:mm:ss"));
+    </script>
+</body>
+
+</html>

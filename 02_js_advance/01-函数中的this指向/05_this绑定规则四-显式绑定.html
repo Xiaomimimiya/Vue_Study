@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var obj = {
+            name: "xiaomi"
+        }
+
+        function foo(){
+            console.log("foo", this);
+        }
+        // 1. 执行函数 并且函数中的this指向obj对象
+        // obj.bar = foo
+        // obj.bar();
+
+        // 2. 执行函数 并且强制this就是obj对象
+         // 明确指定绑定到谁身上  就是显示绑定
+            
+         foo.call(obj)
+       
+
+    </script>
+</body>
+</html>

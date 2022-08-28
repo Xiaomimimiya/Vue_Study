@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const p1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("p1 reject error")
+            }, 3000)
+        })
+
+
+        const p2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("p2 reject error")
+            }, 3000)
+        })
+        const p3 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                reject("p3 reject error")
+            }, 3000)
+        })
+
+        // 在使用all方法时， 存在reject方法 就不执行resolve  这往往不是我们想要的
+        // Promise.all([p1, p2, p3]).then(res => {
+        //     console.log("all promise res", res);
+        // }).catch(error => {
+        //     console.log(error);
+        // })
+
+        // 解决all 方法的弊端 使用 allSettled
+        // 它是等待所有都执行后 然后将其全部返回
+
+        Promise.allSettled([p1, p2, p3]).then(res => {
+            console.log("all promise res", res);
+        }).catch(error => {
+            console.log(error);
+        })
+    </script>
+</body>
+
+</html>

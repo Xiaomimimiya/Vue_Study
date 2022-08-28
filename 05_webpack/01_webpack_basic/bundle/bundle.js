@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log(40),console.log("xiaomi".length),console.log("2022:10:20"),console.log("2022:10:20")})();

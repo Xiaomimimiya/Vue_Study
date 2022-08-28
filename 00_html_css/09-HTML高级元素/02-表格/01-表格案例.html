@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            /* 表格间隙的去除   边框合并 边框折叠*/
+            /* 对td边框进行折叠  */
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        td {
+
+            border: 1px solid #333;
+            padding: 3px 4px;
+
+
+        }
+
+        th {
+            border: 1px solid #333;
+            padding: 3px 4px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 是按照一行一行来写的 -->
+    <table>
+        <caption>1111</caption>
+        <thead>
+             <!-- 表格的头部 -->
+            <tr>
+                <th>排名</th>
+                <th>股票名称</th>
+                <th>股票代码</th>
+            </tr>
+        </thead>
+        <!-- 表中内容 -->
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>贵州茅台</td>
+                <td>600519</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>腾讯控股</td>
+                <td>00700</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>五粮液</td>
+                <td>330332</td>
+            </tr>
+
+        <tfoot>
+            <tr>
+                <td>合计</td>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+        </tfoot>
+        </tbody>
+    </table>
+</body>
+
+</html>

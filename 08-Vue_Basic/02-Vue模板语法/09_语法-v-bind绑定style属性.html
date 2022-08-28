@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <template id="my-app">
+        <!-- 1、普通的写法 -->
+        <h2 style="font-size:30px; color:red;">{{message}}</h2>
+
+        <!-- 2、用data中的值来进行设置style里面的属性 -->
+        <!-- font-size 可以是驼峰 fontSize -->
+        <h2 v-bind:style="{color:fontColor, 'font-size': fontSize}">{{message}}</h2>
+
+        <!-- 3、通过属性来进行设置 不要{} -->
+        <h2 v-bind:style="objStyle">{{message}}</h2>
+
+    </template>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data: function () {
+                return {
+                    message: "hello world",
+                    fontColor:"red",
+                    fontSize: "60px",
+                    objStyle:{
+                        color:"red", 
+                        fontSize: "30px"
+                    }
+                }
+            },
+        }
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+
+</html>

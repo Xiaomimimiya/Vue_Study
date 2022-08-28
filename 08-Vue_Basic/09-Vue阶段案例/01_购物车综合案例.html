@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id="app"></div>
+    <template id="my-app">
+        <div class="box" v-if="data.length>0">
+            <table>
+                <thead>
+                    <th>序号</th>
+                    <th>书籍</th>
+                    <th>出版日期</th>
+                    <th>价格</th>
+                    <th>购物数量</th>
+                    <th>操作</th>
+                </thead>
+
+                <tbody>
+                    <!-- 使用index来进行显示 -->
+                    <!-- 使用 排他思想 进行 背景颜色设置 -->
+                    <tr v-for="(books,index) in data" :key="books.id" :class="{ active: index===currentIndex}"
+                        @click="changeColor(index)">
+                        <td>{{index+1}}</td>
+                        <td>{{books.name}}</td>
+                        <td>{{books.date}}</td>
+                        <td>{{formatePrice(books.price)}}</td>
+                        <td>
+                            <!-- 使用disable 绑定来进行屏蔽按钮 -->
+                            <button v-bind:disabled="books.number <= 1" @click="sub(index)">-</button>
+                            {{books.number}}
+                            <button @click="plus(index)">+</button>
+                        </td>
+                        <td>
+                            <button @click="remove(index)">移除</button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div v-else>
+            <h2>购物车为空</h2>
+        </div>
+        <h2>
+            总价格：{{ compute_price}}
+        </h2>
+    </template>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>

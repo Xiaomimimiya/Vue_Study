@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="btn1">1</button>
+    <button class="btn2">2</button>
+    <button class="btn3">3</button>
+
+    <script>
+        var btn1El = document.querySelector(".btn1")
+        var btn2El = document.querySelector(".btn2")
+        var btn3El = document.querySelector(".btn3")
+
+        // 方式一 onclick
+        // 缺点在于不能动态监听按钮的点击 后面定义的函数会覆盖改函数
+        // 同一个事件只能有一个监听方案
+        btn1El.onclick = function () {
+            console.log("btn1");
+        }
+
+        // 方式二 使用addEventListener
+        // 事件监听
+
+        btn2El.addEventListener("click", function () {
+            console.log("btn2");
+        })
+
+        btn3El.addEventListener("click", function () {
+            console.log("btn3");
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="start">动画执行</button>
+    <button class="queue">执行队列</button>
+    <div class="box">我是box</div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        $(function () {
+            const $box = $(".box")
+
+            $(".start").click(function () {
+                // 动画的执行顺序是一个一个的执行 先后的执行
+                $box.animate({ 
+                    top: 200 
+                }, 1000)
+                $box.animate({ 
+                    left: 200 
+                }, 1000)
+                $box.animate({ 
+                    top: 0
+                }, 1000)
+                $box.animate({ 
+                    left: 0
+                }, 1000)
+            })
+            // 查看队列  利用queue 来查看
+            $(".queue").click(function(){
+                console.log($(".box").queue());
+            })
+        })
+    </script>
+</body>
+
+</html>

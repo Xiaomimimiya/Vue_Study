@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>  
+    <li class="li-1">1</li>
+    <li class="li-2">2</li>
+    <li class="li-3">3</li>
+    <li class="li-4">4</li>
+    <li class="li-5">5</li>
+    
+    <div>
+        <ul>
+            <li class="div-li"></li>
+            <li class="div-li"></li>
+            <li class="div-li"></li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+
+    <script>
+        // 创建空对象
+        console.log(jQuery());
+
+        // 创建document对象
+        console.log(jQuery(document));
+
+        // 创建匹配到多个li元素的集合  总共有8个
+        console.log(jQuery("li"));
+
+        // div里面找li 3个 多个条件限定筛选
+        console.log(jQuery("li", document.querySelector("div")));
+        // 一个
+        console.log(jQuery("ul", document.querySelector("div")));
+    </script>
+</body>
+</html>

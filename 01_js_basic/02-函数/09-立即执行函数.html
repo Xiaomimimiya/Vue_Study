@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="btn">1</button>
+    <button class="btn">2</button>
+    <button class="btn">3</button>
+    <button class="btn">4</button>
+
+    <script>
+        // 1.函数被定义后 立即执行 
+        // 函数（）成一个整体
+        (function foo() {
+            console.log("立即被执行");
+        }
+            // 在后面加上小括号  既是立即执行函数
+        )();
+
+        // 2.传参
+        (function bar(name) {
+            console.log("立即被执行", name);
+        }
+            // 传递参数
+        )("xiaomi");
+
+        // 3.应用场景一 防止全局变量的命名冲突 
+        // 每个人写的代码有自己的作用域 防止多人开发 命名冲突
+
+        // 3.应用场景二 作用域问题
+        var btnEls = document.querySelectorAll(".btn")
+        for (var i = 0; i < btnEls.length; i++) {
+            var click_button = btnEls[i];
+           
+            (function (m) {
+                click_button.onclick = function () {
+                    console.log(m + 1 + "被点击");
+                }
+            })(i)
+        }
+
+    </script>
+</body>
+
+</html>

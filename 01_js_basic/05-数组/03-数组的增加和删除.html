@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 数组的增加和删除
+            var names = ["qwq", "rqwr", "Wqeqw", "Eqwe","ewqwe","FAsfsa"]
+        // 1.在尾部添加和删除元素
+            // 1.1 push方法 增加
+                // names.push("test")
+                // console.log(names);
+            // 1.2 pop方法 删除 一个
+                // names.pop() //删除的元素可以接收
+                // console.log(names);
+                
+        // 2.在头部进行添加和删除元素
+            // 2.1 unshift 方法 添加
+                // names.unshift("namesss")
+                // console.log(names);
+            // 2.2 shift 方法 删除 一个
+                // names.shift()
+                // console.log(names);
+
+        // 3.在数组任意位置进行元素的增删改  splice 内置类 
+            // 3.1 元素移除
+                names.splice(1,2)  // 开始的位置 ，删除的个数
+                console.log(names);
+            //  3.2 元素新增  
+                names.splice(1, 0, "kobe","xiaomi")  // 0 就是进行新增
+                console.log(names);
+            //  3.3 元素替换
+                names.splice(1, 2, "xiaomi", "kobe") // 先删除 再新增 就是替换
+                console.log(names);
+    </script>   
+</body>
+</html>

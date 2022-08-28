@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1、普通的赋值运算符
+        const a = 100;
+        let message = 100;
+        message += 100
+
+        // 2、逻辑赋值运算
+        function foo(b) {
+            //  2.1 || 逻辑赋值
+            // b = b || "默认值"
+
+            // 2.2 ??逻辑赋值运算符
+            // b = b ?? "默认值"
+            
+            b ??= "默认值"
+            console.log(b);
+        }
+        foo("a")
+        foo()
+
+    </script>
+</body>
+
+</html>

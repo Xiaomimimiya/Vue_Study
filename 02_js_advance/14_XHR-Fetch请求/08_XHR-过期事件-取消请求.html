@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="cancle">取消请求</button>
+    <script>
+        const xhr = new XMLHttpRequest()
+
+        xhr.onload = function(){
+            console.log(xhr.response);
+        }
+        // 监听取消
+        xhr.onabort = function(){
+            console.log("请求被取消");
+        }
+        // 监听过期
+        xhr.ontimeout = function(){
+            console.log("请求过期");
+        }
+
+        xhr.responseType = "json"
+ 
+        // timeout 览器达到过期时间还没有获取到对应的结果时，取消本次请求
+        xhr.timeout = 3000
+
+        xhr.open("get","http://123.207.32.32:1888/01_basic/timeout")
+
+        xhr.send()
+
+        // 手动取消请求
+        const cancleBtn = document.querySelector(".cancle")
+        cancleBtn.onclick = function(){
+            xhr.abort()
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const name = "xiaomi"
+        const age = 18
+        // 1. ES6的基本用法
+        const info = `my name is ${name}, and my age is ${age}`
+
+        // 2.  标签模板字符串
+        function foo(...arg){
+            console.log("参数：",arg[0][0]);
+            console.log("参数：",arg[1]);;
+            console.log("参数：",arg[2])
+           
+        }
+
+        foo`my name is ${name} , and my age is ${age}`
+
+        // 通过打印结果 我们可以获取到 原有的字符串和拼接的字符串
+    </script>
+</body>
+</html>

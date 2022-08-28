@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 对attribute进行操作 -->
+
+    <div class="box" id="abc" title="head" ages="20" heighe="188">
+        我是内容
+    </div>
+
+    <script>
+        var boxEl = document.querySelector(".box")
+
+        // 1.所有的attribute都支持的操作
+        console.log(boxEl.hasAttribute("id")); //true
+
+        console.log(boxEl.getAttribute("class")); //box
+
+        boxEl.setAttribute("id", "cba");
+        console.log(boxEl.getAttribute("id")); // cba
+
+        boxEl.removeAttribute("id") //移除
+
+        // 获取所有的attribute并且进行遍历
+        var boxAttribute = boxEl.attributes
+        for (const attr of boxAttribute) {
+            console.log(attr.name, attr.value);
+        }
+
+    </script>
+
+
+</body>
+</html>

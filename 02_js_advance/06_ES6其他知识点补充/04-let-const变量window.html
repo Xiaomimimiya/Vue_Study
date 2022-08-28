@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //  var定义的变量是会默认添加到window上
+
+        var message1 = "111"
+        var message2 = "2222"
+
+        console.log(window.message1);
+        console.log(window.message2);
+
+
+        //  let/const定义的变量是不会默认添加到window上
+
+        let message3 = "111"
+        const message4 = "2222"
+
+        console.log(window.message3);  // undefined
+        console.log(window.message4);  // undefined
+    </script>
+</body>
+
+</html>

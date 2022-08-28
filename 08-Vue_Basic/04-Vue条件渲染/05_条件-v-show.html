@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <template id="my-app">
+        <div>
+            <button @click="change">切换</button>
+        </div>
+
+        <!-- 使用 v-show 条件 来进行替代 v-if -->
+
+        <!-- v-show 不能和v-else一起使用 -->
+        <!-- 不能使用在template上面 -->
+        <!-- v-show 为 false 条件 是display:none 来进行隐藏 -->
+
+
+        <!-- 如果我们的原生需要在显示和隐藏之间 频繁的切换 ，那么使用v-show;
+                如果 不会频繁 的发生切换，那么使用v-if
+            -->
+
+        <div v-show="isShow">
+            <img src="https://img.zcool.cn/community/01f56857a2b4ac0000018c1b4234b3.gif">
+        </div>
+
+    </template>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data() {
+                return {
+                    message: "hello world",
+                    isShow: true
+                }
+            },
+            methods: {
+                change() {
+                    this.isShow = !this.isShow
+                }
+            }
+        }
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+
+</html>

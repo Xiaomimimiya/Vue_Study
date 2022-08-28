@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li class="div-1">li-1
+                <p>w s p</p>
+            </li>
+            <li class="div-2" id="list">li-2
+                <p>w s p</p>
+            </li>
+            <li class="div-3">li-3</li>
+            <li class="div-4">li-4</li>
+            <li class="div-5">li-5</li>
+            <li class="div-6">li-6</li>
+            <span>我是span</span>
+        </ul>
+        <h2 class="choose">我是被选中的元素</h2>
+    </div>
+   
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        $(function () {
+            // $("ul").click(function($res){
+                
+            //     // 委托元素 触发事件的父元素
+            //     console.log("currentTarget ", $res.currentTarget);
+
+            //     // 当前点击事件所触发的元素 后代元素    
+            //     console.log($res.target);
+            // })
+            
+            // 利用on的select 进行筛选委托  li 下面的p元素才触发
+             $("ul").on("click", "li p",function(res){
+                console.log("click");
+                console.log(res.target);
+             })
+        })
+    </script>
+</body>
+
+</html>

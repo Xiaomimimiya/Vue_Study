@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <template id="my-app">
+        <!-- 案例：图片切换 -->
+        <div>
+            <button @click="changeimg">切换图片</button>
+        </div>
+        <!-- v-bind绑定数据  -->
+        <!-- 绑定图片的src -->
+        <img v-bind:src="imgUrl">
+
+        <!-- 语法糖 -->
+        <img :src="imgUrl">
+        
+        <!-- 绑定a的超链接 -->
+        <a v-bind:href="hrefs">百度一下</a>
+
+    </template>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data: function () {
+                return {
+                    imgUrl1 : "https://p1.music.126.net/i3TgvurNmOx0xNnGDvv2_A==/109951167809414206.jpg",
+                    imgUrl2 : "https://p1.music.126.net/UojnwNTnWg9fqnBSuaLl1A==/109951167809452986.jpg",
+                    imgUrl: "https://p1.music.126.net/i3TgvurNmOx0xNnGDvv2_A==/109951167809414206.jpg",
+                    hrefs: "http://www.baidu.com"
+                }
+            },
+            methods:{
+                changeimg(){
+                    // 来回切换
+                    this.imgUrl = this.imgUrl === this.imgUrl2? this.imgUrl1: this.imgUrl2
+                }
+            }
+        }
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+
+</html>

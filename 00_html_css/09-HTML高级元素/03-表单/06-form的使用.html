@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/abc" method="post" target="_blank">
+        <!-- 密码  -->
+        <div>
+            <label for="username">
+                <!-- name非常重要 -->
+                用户名：<input type="text" name="username" id="username">
+            </label>
+
+        </div>
+        <div>
+            <label for="password">
+                密码：<input type="password" name="password" id="password">
+            </label>
+        </div>
+
+        <!-- 性别 -->
+
+        <!-- 要设置value才会有值 -->
+        <div>
+            <label for="male">
+                <input type="radio" name="sex" id="male" value="male">男
+            </label>
+
+            <label for="female">
+                <input type="radio" name="sex" id="female" value="female">女
+            </label>
+        </div>
+
+        <!-- 爱好 -->
+        <!-- 要设置value才会有值 -->
+        <div>
+            <label for="soccer">
+                <input type="checkbox" name="hobby" id="soccer" value="soccer">足球
+            </label>
+
+            <label for="basktball">
+                <input type="checkbox" name="hobby" id="basktball" value="basktball">篮球
+            </label>
+
+            <label for="vollyball">
+                <input type="checkbox" name="hobby" id="vollyball" value="vollyball">网球
+            </label>
+        </div>
+        <button type="submit">信息提交</button>
+    </form>
+</body>
+
+</html>

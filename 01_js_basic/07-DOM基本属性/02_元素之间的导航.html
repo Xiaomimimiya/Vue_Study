@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">hhh</div>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        var bodyEl = document.body
+
+        // 1.1 根据body元素去获取子元素  
+        // childNode 是子节点
+        // children 子元素
+        console.log( bodyEl.children);
+       
+        // 1.2 获取子元素box firstElementChild
+        var BoxEl = bodyEl.firstElementChild
+        console.log(BoxEl);
+
+        // 1.3 获取box的下一个元素 ul
+        var UlEl = BoxEl.nextElementSibling
+        console.log(UlEl);
+
+        // 1.4 获取li 元素
+        var LiEl = UlEl.children
+        console.log(LiEl);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        window.addEventListener("DOMContentLoaded", function () {
+            console.log("html元素全部加载完毕");
+            // 可以操作box
+            var boxEl = document.querySelector(".box")
+            boxEl.style.backgroundColor = "red"
+        })
+
+        window.onload = function () {
+            console.log("文档所有资源加载完毕");
+            var imgEl = document.querySelector("img")
+            console.log(imgEl.style.width, imgEl.style.height);
+        }
+
+    </script>
+
+    <div class="box">
+        <p>sss</p>
+    </div>
+    <img src="../../html_css/0配置文件/0-images/11.jpg" style="width: 200px; height: 200px;">
+</body>
+
+</html>

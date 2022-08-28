@@ -1,0 +1,66 @@
+.dress{
+   
+    margin-top: 20px;
+}
+
+.dress .header{
+
+    height: 58px;
+    /* 居中对齐的用法 */
+    line-height: 50px;
+}
+
+.dress .header .left-area{
+    float: left;
+}
+
+.dress .header .right-area{
+    float: right;
+    font-size: 16px;
+}
+
+.right-area .bottom-line{
+    margin-left: 30px;
+}
+
+/* 注意hover伪元素 */
+.right-area .bottom-line:hover{
+    padding: 3px 2px;
+    border-bottom: 1px solid #FF6670;
+    color: #FF6670;
+}
+
+.dress .content{
+   margin-right: -14px;
+}
+
+.content .content-item{
+    float: left;
+
+    width: 234px;
+    height: 300px;
+
+    margin-left: 14px;
+    margin-bottom: 14px;
+
+    background-color: red;
+}
+
+.content .content-item a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+  /* 动画阴影 */
+.content .content-item:hover{
+    box-shadow: 0 15px 30px rgba(182, 39, 39, 0.5) ;
+}
+
+.content .content-item.item1{
+    height: 614px;
+}
+
+.content .content-item.item9,
+.content .content-item.item10{
+    height: 143px;
+}

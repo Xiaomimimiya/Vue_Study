@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var message = "hello world"
+        // length 属性
+        console.log(message.length);
+
+        // 访问字符串中的某个字符串 位置 
+
+        console.log(message[4]);
+        console.log(message.charAt(4));
+
+        // 字符串的遍历1
+        for (var index = 0; index < message.length; index++) {
+            var element = message[index];
+            console.log(element);
+        }
+        
+        // 字符串的遍历2
+        for (const iterator of message) {
+            console.log(iterator);
+        }
+    </script>
+</body>
+
+</html>

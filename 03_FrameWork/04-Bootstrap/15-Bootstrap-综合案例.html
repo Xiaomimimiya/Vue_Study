@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/comm.css">
+    <link rel="stylesheet" href="./css/test.css">
+
+    <!-- 引入bootstrap框架的css文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <!-- logo -->
+            <a class="navbar-brand" href="#">
+                <img src="./css/logo.png">
+            </a>
+            <!-- 按钮  页面小于992显示出来 -->
+            <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNav">
+                <img class="expand-icon" src="./libs/three.png">
+            </button>
+            <!-- 导航列表 -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="bar-list active">
+                        <span class="" href="#">首页</span>
+                    </li>
+                    <li class="bar-list">
+                        <span class="" href="#">API</span>
+                    </li>
+                    <li class="bar-list">
+                        <span class="" href="#">解决方案</span>
+                    </li>
+                    <li class="bar-list">
+                        <span class="" href="#">案例</span>
+                    </li>
+                    <li class="bar-list">
+                        <span class="" href="#">新闻</span>
+                    </li>
+                    <li class="bar-list">
+                        <span class="" href="#">关于我们</span>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <span class="telephone">咨询热线：4009910008
+                    </span>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- 轮播图 -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <!-- 轮播图的照片渲染可以动态进行 即小屏渲染小兔 大屏渲染大图 -->
+            <!-- 性能优化 -->
+            <div class="carousel-item active">
+                <img src="../../00_html_css/0配置文件/0-images/co2.png" class="d-block w-100 ">
+            </div>
+            <div class="carousel-item">
+                <img src="../../00_html_css/0配置文件/0-images/co2.png" class="d-block w-100 " >
+            </div>
+            <div class="carousel-item">
+                <img src="../../00_html_css/0配置文件/0-images/co.png" class="d-block w-100 ">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
+            <span class="carousel-control-prev-icon" ></span>
+           
+        </button>
+        <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators" data-slide="next">
+            <span class="carousel-control-next-icon" ></span>
+            
+        </button>
+    </div>
+    <!-- 目标客户栏 -->
+    <div class="target-customer">
+        <!-- 在小屏不可见 -->
+        <h1 class="target-title text-center d-none d-md-block">目标客户</h1>
+        <div class="container-fluid">
+            <div class="row">
+                <!-- md 762 两列 xl 1140 一列 其余的四列 -->
+                <div class=" col-md-6 col-xl-3 item">
+                    <img class=" d-none d-md-block" src="../../00_html_css/0配置文件/0-images/rank-img3.png" alt="">
+                    <div class="sub-title">电子银行</div>
+                    <div class="desc text-center">
+                        <p>电子银行助力五大行、商业银行、城商行、农商行、且农信社等
+                        </p>
+                    </div>
+                </div>
+                <div class=" col-md-6 col-xl-3 item ">
+                    <img class=" d-none d-md-block" src="../../00_html_css/0配置文件/0-images/rank-img.png" alt="">
+                    <div class="sub-title">电子银行</div>
+                    <div class="desc text-center ">
+                        <p>电子银行助力五大行、商业银行、城商行、农商行、且农信社等
+                       </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-3 item">
+                    <img class=" d-none d-md-block" src="../../00_html_css/0配置文件/0-images/rank-img2.png" alt="">
+                    <div class="sub-title">电子银行</div>
+                    <div class="desc text-center">
+                        <p>电子银行助力五大行、商业银行、城商行、农商行、且农信社等
+                         </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-3 item">
+                    <img class=" d-none d-md-block" src="../../00_html_css/0配置文件/0-images/rank-img3.png" alt="">
+                    <div class="sub-title text-center">电子银行</div>
+                    <div class="desc text-center">
+                        <p>电子银行助力五大行、商业银行、城商行、农商行、且农信社等
+                         </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入bootstrap框架的js文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="./libs/home.js"></script>
+</body>
+
+
+</html>

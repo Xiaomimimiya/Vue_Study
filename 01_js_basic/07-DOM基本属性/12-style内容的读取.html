@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            color: blanchedalmond;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" style="background-color: red;">我是box</div>
+
+    <script>
+        var boxEl = document.querySelector(".box")
+
+        // 方法一：只能读取到内联样式的css属性
+        console.log(boxEl.style.backgroundColor);
+        console.log(boxEl.style.color);  //输出为空
+
+        // 方法二：getComputedStyle函数
+        console.log(getComputedStyle(boxEl).color);
+    </script>
+</body>
+</html>

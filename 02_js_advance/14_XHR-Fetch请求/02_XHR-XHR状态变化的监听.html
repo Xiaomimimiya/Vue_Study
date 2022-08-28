@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+   <div class="test">
+
+   </div>
+    <script>
+        // 1. 创建XMLHttpRequest对象
+        const xhr = new XMLHttpRequest()
+
+        // 2. 监听状态的改变   数据获取
+        xhr.onreadystatechange = function () {
+                // 2.1 如果状态不是 DONE状态 就直接返回
+
+                if (xhr.readyState !== XMLHttpRequest.DONE)  return
+
+                // 2.2 确定拿到了数据
+                console.log(xhr.response);
+
+                // 2.3 数据格式化 转换为JSON
+                const newRes = JSON.parse(xhr.response)
+                
+                console.log(newRes );
+        }
+
+        // 3. 配置请求 
+   
+        xhr.open("get", "http://123.207.32.32:8000/home/multidata")
+
+        // 4. 发送请求
+        xhr.send()
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var  bar = ()=>{
+        //     // 箭头函数不绑定arguments
+        //     console.log(arguments);
+        // }
+        // bar()
+
+        // 情况二 arguments 是到上层作用域进行查找
+
+        function foo(){
+            var bar = ()=>{
+                console.log(arguments);
+            }
+            bar()
+        }
+       foo(11,22)
+    </script>
+</body>
+</html>

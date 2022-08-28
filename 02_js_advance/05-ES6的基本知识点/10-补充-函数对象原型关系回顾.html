@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function foo(name, age){
+            console.log(this, name, age);
+        }
+        function test(){}
+
+        //  对象中的某些属性和方法是来自Function. prototypel 
+        //  test._proto_===Function.prototype
+
+        // 在Function.prototype中添加的属性 可以被所有的函数获取
+        Function.prototype.info = "hello"
+
+        console.log(foo.info);
+        console.log(test.info);
+
+        // 原型定义方法
+        Function.prototype.bar = function(){
+            console.log("Fuction bar exection");
+        }
+
+        test.bar()
+        foo.bar()
+        Function.prototype.bar()
+    </script>
+</body>
+</html>

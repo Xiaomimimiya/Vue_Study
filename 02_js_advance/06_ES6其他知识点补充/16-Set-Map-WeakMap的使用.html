@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 默认的引用都是强引用
+
+        const obj1 = { name: "why" }
+        const obj2 = { name: "coder" }
+
+        const weakmaps = new WeakMap()
+        weakmaps.set(obj1, "11")
+        weakmaps.set(obj2, "22")
+
+        console.log(weakmaps );
+    </script>
+</body>
+</html>

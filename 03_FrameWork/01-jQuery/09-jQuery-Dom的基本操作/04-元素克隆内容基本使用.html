@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li class="div-1">li-1</li>
+            <li class="div-2" id="list">li-2</li>
+            <li class="div-3">li-3</li>
+            <li class="div-4">li-4</li>
+            <li class="div-5">li-5</li>
+            <li class="div-6">li-6</li>
+            <span>我是span</span>
+        </ul>
+        <h2 class="choose">我是被选中的元素</h2>
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        $(function () {
+            //    对匹配的元素集执行深度复制  底层是调用了elemcloneNode(true )来复制元素。
+            //    参数:布尔值，是否复制该元素的事件处理程序和数据，默认值为false 
+
+            // 1、简单克隆
+            // const $newList1 = $(".div-6").clone()   //克隆某个元素
+
+            // $newList1.appendTo("ul")   //添加到ul 后面
+            // 2、数据克隆
+            $(".div-6").data({
+                name: "xiaomi",
+                age: 20,
+                city: "gz"
+            }).click(function(){
+                console.log("click-div-6");
+            })
+            const $newList2 = $(".div-6").clone(true)   //克隆某个元素
+
+            $newList2.appendTo("ul")   //添加到ul 后面
+
+            console.log($(".div-6").get(0));
+        })
+    </script>
+</body>
+
+</html>

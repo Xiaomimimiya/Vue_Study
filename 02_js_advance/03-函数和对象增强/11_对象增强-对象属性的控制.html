@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = {
+            name: "xiaomi",
+            age: 18
+        }
+        // 在正常水平下，我们可以随意对对象的属性内容进行更改
+
+        // 那么 我们也可以对属性进行控制
+
+        // 例如 =========>
+        // 1. name 不能被删除
+        // 2. age 不能被更改
+
+        // 通过属性描述符进行属性控制
+
+        Object.defineProperty(obj, "name", {
+            // 在对象自己默认添加属性 configurable 默认是true
+
+            configurable: false,  // 告诉js引擎 该属性不能被删除
+
+            enumerable: false, // 告诉s引擎，obj对象的name属性不可枚举(for in/object.keys)
+
+            writable: false,   // 告诉js引擎，obj对象的name属性不写入(只读属性)
+
+            value:"coderwhy"    // 告诉js引擎返回这个value
+        })
+
+        //通过object.defineProperty添加一个新的属性 
+        // configurable 默认是为false
+        Object.defineProperty(obj, "address", {})
+    </script>
+</body>
+
+</html>

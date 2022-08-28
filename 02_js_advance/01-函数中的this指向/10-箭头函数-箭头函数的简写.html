@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var names = ["xiao", "mi", "xiaa"]
+        var nums = [11, 22, 33, 44, 55, 66]
+
+        // names.forEach((item, index, arr) => {
+        //     console.log(item, index, arr);
+        // })
+        // 简写1.如果箭头函数只有一个参数 就可以省略()
+        // names.forEach(item => {
+        //     console.log(item);
+        // })
+        // var newNums = nums.filter(item => {
+        //     return item % 2 === 0
+        // })
+
+        // 简写2.如果函数体中只有一行执行代码 那么()可以省略
+        // names.forEach(item => { console.log(item); })
+
+        // 简写3.只有一行代码时 这行代码的表达式结果 会作为 函数的返回值 默认返回 
+        // var newNum = nums.filter((item) => {
+        //     return item % 2 === 0
+        // })
+        var newNum = nums.filter(item => item % 2 === 0)
+        console.log(newNum);
+
+        // 案例
+
+        var numbers = [1, 2, 3, 4]
+        var result = numbers.filter( item => item % 2 === 0)
+                            .map( item => item * item)
+                            .reduce((preValue, item) => preValue + item)
+        console.log(result);
+
+    </script>
+</body>
+
+</html>

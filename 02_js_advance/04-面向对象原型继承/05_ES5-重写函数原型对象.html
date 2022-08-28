@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function foo() {
+
+        }
+
+      
+        // 传统的原型赋值方法
+
+        // foo.prototype.message = "hello world"
+        // foo.prototype.info = {name:"xiaomi", height :188}
+        // foo.prototype.running = function(){
+        //     console.log("running");
+        // }
+
+        // 新的 方法 
+        foo.prototype = {
+            message: "hello world",
+            info: { name: "xiaomi", height: 188 },
+            running: function () {
+                console.log("running");
+            },
+
+            // 最好加上指向 foo
+            constructor: foo
+        }  
+        var newfoo = new foo()
+        console.log(newfoo.message);
+    </script>
+</body>
+
+</html>

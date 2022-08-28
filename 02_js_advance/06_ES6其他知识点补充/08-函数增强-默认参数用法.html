@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function foo(arg1 = "默认值", arg2 = "我是默认值啊") {
+            // 防止没有传参数带来的代码问题 我们需要对其进行默认值的设置
+
+            // 1、默认值写法
+            // arg1 = arg1 ? arg1: "我是默认值"
+
+            // 但是这种写法不严谨
+
+            // 2、严谨写法
+            arg1 = (arg1 === undefined || arg1 === null) ? "我是默认值" : arg1
+
+            // 3、新增写法 
+            arg1 = arg1 ?? "我是默认值"
+
+            // 4、直接在foo里面传参时赋值
+            console.log(arg1, arg2 );
+        }
+        foo()
+        foo(0)
+        foo(null)
+        foo(1,2)
+
+
+        //  ==========> 默认传参的注意 <===============
+        
+        //  1、最好把默认值放在最后面
+        
+        function foo2(name, age=19){
+            console.log(name, age);
+        }
+        foo2("xiami")
+
+        // 2、默认参数不会计算在函数的长度里
+        console.log(foo2.length);  //1
+    </script>
+</body>
+
+</html>

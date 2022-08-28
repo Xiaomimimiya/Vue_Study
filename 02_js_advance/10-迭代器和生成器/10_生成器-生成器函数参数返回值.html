@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function* foo() {
+            console.log(1);
+            console.log(2);
+            console.log(3);
+
+            const name1 = yield "执行第一次结束"
+            // 在第二次执行时所需要的参数 要在前面进行接受 即 const name = yield 
+
+            console.log(4, name1);
+            console.log(5, name1);
+
+            const name2 = yield "执行第二次结束"
+
+            console.log(6, name2);
+            return undefined
+
+        }
+        const generator = foo()
+
+        // 1、 next 的返回值分别是done 和 value
+        // 在使用yield中断时 done为false  而执行到最后 done为fasle
+        // value的值 来自于yield传递的结果
+
+        // console.log(generator.next());   //   { done: false, value:"执行第一次"}
+
+        // console.log(generator.next());   //   { done: false, value:"执行第二次"}
+
+        // console.log(generator.next());   //   { done: false, value: undefined}
+
+        // 2、 在中间位置使用return  那么在第二次执行时 done 就为true 执行结束
+        // console.log(generator.next());   //   { done: false, value:"执行第一次"}
+
+        // console.log(generator.next());   //   { done: true, value:"执行第二次"}
+
+        // console.log(generator.next());   //   { done: true, value: undefined}
+
+        // 3、执行代码的时候 传入参数
+        console.log(generator.next());
+
+        generator.next("第二次执行并传参")
+
+        generator.next("第三次执行并传参")
+        generator.next()
+    </script>
+</body>
+
+</html>

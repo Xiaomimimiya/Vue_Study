@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const names = ["abc", "cba", "nba"]
+
+        // 给数组创建一个迭代器
+        let index = 0
+        const nameIterator = {
+            next: function () {
+                // done: boolean
+                // value: 具体值/undefined
+                if (index < names.length) {
+                    return {done: false, value: names[index++]}
+                }else {
+                    return {done: true, value: undefined}
+                }
+            }
+        }
+        for (let index = 0; index < names.length+1; index++) {
+            console.log(nameIterator.next());
+        }
+        // const value1 = nameIterator.next()
+        // const value2 = nameIterator.next()
+        // const value3 = nameIterator.next()
+        // console.log(value1, value2, value3);
+    </script>
+</body>
+
+</html>

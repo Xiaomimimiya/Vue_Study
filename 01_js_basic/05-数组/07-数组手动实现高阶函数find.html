@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 方式一：原始类型的查找
+        var names = ["qwr", "231", "412", "Wqrwq"]
+        var findName = names.find(
+            function (item, index, arr) {
+                // 遍历数组
+                console.log(item, index, arr);
+                // 查找数组
+                return item === "412"
+            }
+        )
+        console.log("方式一查找到了", findName);
+
+        // 方式二：对象数组中进行查找
+        var students = [
+            { id: 100, name: "xiaomi" },
+            { id: 101, name: "xiaomi2" },
+            { id: 102, name: "xiaomi3" },
+            { id: 103, name: "xiaomi4" },
+        ]
+        // 查找id=101
+        var findStu = students.find(function(item, index, arr){
+            return item.id === 101
+        })
+        console.log("方式二查找到了",findStu);
+
+    </script>
+</body>
+
+</html>

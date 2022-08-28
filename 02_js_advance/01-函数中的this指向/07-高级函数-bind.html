@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function foo(name, age) {
+            console.log("foo", this);
+            console.log(name, age );
+        }
+
+        var obj = { name: "why" }
+
+        // 需求： 调用foo  总是出现在obj身上 不希望obj对象身上有函数
+
+        // var bar = foo.bind(obj)
+        // this ---> obj
+        // bar() 
+
+        // bind函数传参
+        var bar = foo.bind(obj, "xiaomi",20)
+        bar() 
+    </script>
+</body>
+
+</html>

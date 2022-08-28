@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            text-decoration: none;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        /* 对公共代码进行抽离 */
+        .btn {
+            
+            /* 块级元素才能设置宽高 */
+            display: inline-block;
+            width: 75px;
+            height: 25px;
+
+            /* 使得文字能够水平垂直居中 */
+            line-height: 25px;
+            text-align: center;
+
+            /* 圆角 */
+            /* border-radius=height/2 */
+            border-radius: 13px;
+        }
+        
+        /* 浮动特效 */
+        .btn:hover{
+           background-color: yellow;
+        }
+
+        .box1 {
+            background-color: #e1252b;
+            color: white;
+
+        }
+
+        .box2 {
+            background-color: rgb(54, 54, 52);
+            color: rgb(241, 233, 193);
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#" class="btn box1" target="_blanck">新人福利</a>
+    <a href="#" class="btn box2" target="_blanck">Plus会员</a>
+</body>
+
+</html>

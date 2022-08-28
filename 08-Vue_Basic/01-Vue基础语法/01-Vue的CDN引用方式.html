@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>Vue Study</div>
+    <div id="app"></div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <script>
+        // 建立一个模板 要使用template
+        const vue_html = {
+            template: `<h2>Hello Vue</h2>
+            <span>vue</span>`
+        }
+        // 使用vue进行插入
+        const app = Vue.createApp(vue_html)
+        // 挂载到vue上面
+        app.mount("#app")
+
+    </script>
+</body>
+
+</html>

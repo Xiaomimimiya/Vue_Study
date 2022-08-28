@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Person{
+            // 1 . 类中的构造函数
+            // 当我们通过new类时 会默认调用constructer
+            // 因此在里面我们需要构造一个constructer
+            constructor(name, age){
+                this.name = name
+                this.age = age
+            }
+
+            // 2. 类中的构造函数
+            runing(){
+                console.log(this.name+"runing");
+            }
+            eating(){
+                console.log(this.name+"eating");
+            }
+
+        }
+        var p1 = new Person(10, 12)
+        p1.runing()
+        p1.eating()
+        console.log(p1.name, p1.age );
+
+    </script>
+</body>
+</html>

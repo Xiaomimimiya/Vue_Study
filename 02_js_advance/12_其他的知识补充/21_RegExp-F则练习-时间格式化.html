@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2 class="time"></h2>
+    <script>
+        function forMateDate(timestamp, formatstring) {
+            // 将时间戳转换为日期
+            const date = new Date(timestamp)
+
+            // 创建正则
+            const dateO = {
+                "y+": date.getFullYear(),
+                "M+": date.getMonth() + 1,
+                "d+": date.getDate(),
+                "h+": date.getHours(),
+                "m+": date.getMinutes(),
+                "s+": date.getSeconds()
+            }
+            for (const key in dateO) {
+                const KeyRe = new RegExp(key)
+                if (KeyRe.test(formatstring)) {
+                    const value = (dateO[key] + "").padStart(2, "0")
+                    formatstring = formatstring.replace(KeyRe, value)
+                }
+            }
+            return formatstring
+        }
+
+        const product = {
+            name: "apple",
+            price: 2000,
+            time: 1659252290626
+        }
+        const timeEl = document.querySelector(".time")
+        
+        timeEl.textContent = forMateDate(product.time, "yyyy:MM:dd hh:mm:ss")
+    </script>
+</body>
+
+</html>

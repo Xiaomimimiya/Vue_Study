@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* boder会撑大盒子的大小 */
+            /* border: 50px solid orange; */
+            /* outline 不会撑大盒子的大小 */
+            outline: 50px solid orange;
+        }
+        /* 在开发的时候 考虑到美观的问题 会把outline默认的样式去掉 */
+        a{
+            margin-top: 100px;
+            display: inline-block;
+            outline: none;
+        }
+        input{
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <a href="#">百度一下</a>
+    <input/>
+</body>
+</html>

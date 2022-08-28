@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 优先级的高低
+        // 1. new
+        // 2. bind
+        // 3. apply/call
+        // 4. 隐式
+        // 5. 默认
+
+
+        function foo(){
+            console.log("foo", this);
+        }
+
+        //  1. 默认规则的优先级最低
+        // var obj = {foo: foo}
+        // obj.foo()
+
+        //  2. 显式 高于 隐式
+        // obj.foo.apply("abc")
+
+        //  3. bind 高于 隐式
+        // var bar = foo.bind("abc")
+        // var obj = {
+        //     name: "xiaomi",
+        //     baz: bar
+        // }
+        // 指向 abc
+        // obj.baz()
+        
+        // 3. new 高于隐式
+        // var obj = {
+        //     name: "why",
+        //     foo : function(){
+        //         console.log("foo", this);
+        //     }
+        // }
+        // 指向 foo
+        // new obj.foo()
+        
+        // 4. new 高于 bind 
+        // var bindFn = foo.bind("aaa")
+        // new bindFn()
+        // 输出空数组
+
+        // 5. bind>apply优先  
+        // var bindFn = foo.bind("aaa")
+        // bindFn.apply("bbb")
+        // 输出 aaa
+    </script>
+</body>
+</html>

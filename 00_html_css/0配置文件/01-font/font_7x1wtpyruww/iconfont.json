@@ -1,0 +1,23 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "597364",
+      "name": "反馈",
+      "font_class": "fankui",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "6102963",
+      "name": "客服",
+      "font_class": "kefu",
+      "unicode": "e644",
+      "unicode_decimal": 58948
+    }
+  ]
+}

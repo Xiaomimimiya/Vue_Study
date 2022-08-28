@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <ul class="list" id="test" age="19" name="xiaomi" data-counter="100">
+            <li class="div-1">li-1</li>
+            <li class="div-2" id="list">li-2</li>
+            <li class="div-3">li-3</li>
+            <li class="div-4">li-4</li>
+            <li class="div-5">li-5</li>
+            <li class="div-6">li-6</li>
+            <span>我是span</span>
+        </ul>
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        $(function () {
+            // 1、获取 attr 属性
+            const attr = $("ul").attr("id")
+            //    const attr =  $("ul").attr("name")
+            //    const attr =  $("ul").attr("data-counter")
+            console.log(attr);
+
+            // 2、设置 attr 属性 (key, value)的设置
+
+            // 2.1 设置单个
+            //  $("ul").attr("id", "box")  
+
+            // 2.2 设置多个
+            $("ul").attr({
+                id: "test1",
+                age: 20,
+                name: "xiaomiyes"
+            })
+
+            // 3、删除attr
+            // 3.1 删除单个
+            // $("ul").removeAttr("id")
+
+            // 3.2 删除多个
+            $("ul").removeAttr("id name")
+
+        })
+    </script>
+</body>
+
+</html>

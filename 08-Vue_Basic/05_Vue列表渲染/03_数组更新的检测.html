@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <template id="my-app">
+           <div>
+            <ul v-for="item in names"> {{item}}</ul>
+           </div>
+           <button @click="changeArray">修改数组</button>
+    </template>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data () {
+                return {
+                  names: ["xiaomi", "214", "Wqqr"]
+                }
+            },
+            methods:{
+                changeArray(){
+                    
+                    // this.names.push("123") 
+                    // this.names.pop()
+                    // this.names.sort()
+                    // this.names.reverse()
+                    // this.names.splice(1,0,"insert")
+
+                }
+            }
+        }
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+
+</html>

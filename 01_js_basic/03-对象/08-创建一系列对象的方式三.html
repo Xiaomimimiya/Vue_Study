@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Javascript默认提供给了我们更加符合JavaScript思维方式的一种创建对象的方法
+
+        // ======> 构造函数 <=====
+        function Student(name, age, height) {
+            this.name = name,
+            this.age = age,
+            this.height = height,
+            this.running = function(){
+                console.log(this.name + "running");
+            }
+        }
+
+        // 使用new 关键字的方法来进行函数的调用 即可实现多对象的创建
+        var Stu1 = new Student("Xiao", 12, 222)
+        console.log(Stu1.name);
+
+    </script>
+</body>
+
+</html>

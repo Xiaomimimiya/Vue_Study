@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const message = "mys sname is xiaomi"
+
+        // 需求：匹配name 且必须是一个单独的词
+
+        // const re = /name/ig
+        // console.log(re.test(message));
+        
+        // ===============> 使用词边界   \b 来划定边界
+
+        if (/\bname\b/.test(message)) {
+            console.log("true");
+        }else{
+            console.log("false");
+        }
+
+
+        // 案例之时间匹配
+
+        const time = "wqfqf,fqfq  11:20, 21:31,535235:52526"
+
+        const timeRe = /\b\d\d:\d\d\b/ig
+        
+        console.log(time.match(timeRe));
+    </script>
+</body>
+
+</html>

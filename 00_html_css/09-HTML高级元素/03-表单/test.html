@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        table {
+            text-align: center;
+            border-collapse: collapse;
+            border: 1px solid gray;
+        }
+
+        td {
+            padding: 5px 20px;
+
+        }
+
+        .title1:hover {
+            border-top: 2px solid red;
+            background-color: bisque;
+        }
+
+        .title2:hover {
+            border-top: 2px solid red;
+            background-color: bisque;
+        }
+
+        .bcg1 {
+            background-color: azure;
+        }
+
+        .bcg2 {
+            background-color: whitesmoke;
+        }
+
+        .blue {
+            color: blue;
+        }
+
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td class="title1">
+                    <a href="#">
+                        我的自选股
+                    </a>
+                </td>
+
+                <td colspan="2" class="title2">
+                    <a href="#">
+                        自选股新闻
+                    </a>
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>以下为自选股热门</td>
+                <td></td>
+                <td>
+                    <a href="#" class="blue">登录</a>
+                    <a href="#" class="blue">注册</a>
+                </td>
+            </tr>
+            <tr>
+                <td>代码|股票名称</td>
+                <td>最新</td>
+                <td>涨跌幅</td>
+            </tr>
+            <tr class="bcg1">
+                <td class="blue">
+                    <a href="#">300013 新宁物流</a>
+                </td>   
+                <td class="red">6.06</td>
+                <td class="red">4.66%</td>
+            </tr>
+
+            <tr class="bcg2">
+                <td class="blue">300532 今天国际</td>
+                <td>11.33</td>
+                <td>-4.55%</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

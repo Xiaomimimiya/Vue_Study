@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            background-color: aquamarine;
+        }
+
+        .before {
+            color: red;
+        }
+
+        .after {
+            color: blue;
+        }
+
+        /* 使用伪元素类进行内容的插入 */
+        .box2::before{
+            content: "test";
+            color: red;
+            font-size: 30px;
+        }
+        .box2::after {
+            content: "content";
+            color: yellowgreen;
+            font-size: 30px;
+        }
+
+        /* 使用选择器的交集进行内容的插入 */
+        /* 满足多内容的需求 */
+        .item::before{
+            
+            content: "test";
+            color: red;
+            font-size: 30px;
+        }
+        .item::after {
+            /* 插入 热 图标 */
+            content: url("../images/hot.svg");
+            color: yellowgreen;
+            font-size: 30px;
+
+            /* 位置不是很好看 */
+            position: relative;
+            left: 5px;
+            top: 2px;
+        }
+        /* 插入 新 图标*/
+        .new::after {
+            content: url("../images/new.svg");
+            position: relative;
+            left: 5px;
+            top: 2px;
+        }
+
+        /* 额外补充 */
+        .box5::after {
+                /* 使用伪元素的时候 不要将content 省略 */
+            content: "";
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 在前面和后面插入内容 传统的方式 -->
+    <div class="box1">
+        <span class="before">123</span>
+        我是div1元素
+        <span class="after">abc</span>
+    </div>
+
+    <!-- 第二种方式 -->
+    <div class="box2">
+        我是div2元素
+    </div>
+
+    <!-- 第三种方式 -->
+    <!-- 使用item的方式来进行 -->
+    <div class="box3 item">
+        我是div3元素 交集方式
+    </div>
+        <!-- 插入新的svg -->
+    <div class="box4 item new">
+        我是div4元素 交集方式
+    </div>
+
+    <!-- 额外补充 -->
+    <div class="box5">
+        我是div5元素
+    </div>
+</body>
+
+</html>

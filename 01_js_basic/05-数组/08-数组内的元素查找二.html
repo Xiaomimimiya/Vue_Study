@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var names = ["qwr", "231", "412", "Wqrwq"]
+
+        // 返回true
+        console.log(names.includes("231"));  // 返回true
+
+        // 返回查找到的元素的索引index
+        var findIndex = names.findIndex(
+            function (item, index, arr) {
+                return item === "231"
+            }
+        )
+        console.log(findIndex);  //1
+
+        // 复杂数组的查找
+        var students = [
+            { id: 100, name: "xiaomi" },
+            { id: 101, name: "xiaomi2" },
+            { id: 102, name: "xiaomi3" },
+            { id: 103, name: "xiaomi4" },
+        ]
+        var findIndex2 = students.findIndex(
+            function (item, index, arr) {
+                return item.id == 103
+            }
+        )
+        console.log(findIndex2); //3
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 实例方法 就是通过new来进行调用
+        // const promise = new Promise((resolve)=>{
+        //     console.log("resolve");
+        //     resolve("111")
+        // })
+
+        // 类方法就是直接调用 直接使用类名 promise.catch(()=>{})
+        // 使用的场景是 数据已经构建完成 直接将数据进行异步出去
+
+        const studentList = [1,2,3,4,5]
+        const promise = Promise.resolve(studentList)
+
+        promise.then((res)=>{
+            console.log("res",res);
+        })
+
+        // 相当于
+        // new Promise((resolve)=>{
+        //     resolve("hello world")
+        // })
+
+    </script>
+</body>
+</html>

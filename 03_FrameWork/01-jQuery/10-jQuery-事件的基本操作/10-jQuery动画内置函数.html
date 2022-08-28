@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="hide">隐藏</button>
+    <button class="show">显示</button>
+    <button class="toggle">切换</button>
+    <div class="box">box</div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        $(function () {
+            // 自己实现的隐藏
+            // $(".hide").click(function () {
+
+            //     $(".box").animate({
+            //         height: "100",
+            //         width: "100"
+            //     }, 2000, "linear",
+            //         function () {
+            //             console.log("动画执行完成");
+            //         })
+            // })
+
+            $(".hide").click(function () {
+
+                $(".box").hide()
+            })
+
+            $(".show").click(function () {
+
+                $(".box").show()
+            })
+
+
+            // $(".toggle").click(function () {
+
+            //     $(".box").toggle(2000)
+            // })
+            $(".toggle").click(function () {
+
+                $(".box").toggle({
+                    duration: 2000,
+                    complete() {
+                        console.log("sucess");
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

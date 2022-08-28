@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <h2>我是标题</h2>
+        <div class="container">
+            <p>
+                我是段落 <span class="keyword">coderwhy</span> 哈哈哈
+            </p>
+            <span class="keyword">coderwhy</span> 哈哈哈
+        </div>
+        <div class="article">
+            <h3 id="title">我是标题</h3>
+            <p>
+                我是文章的内容
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // 方法一
+        // 通过className来获取元素
+        // var keywordsEls = document.getElementsByClassName("keyword")
+
+        // 修改一个
+        // keywordsEls[0].style.color = "red"
+
+        // 修改所有
+        // for (let index = 0; index < keywordsEls.length; index++) {
+        // keywordsEls[index].style.color = "red"
+
+        // }
+
+        // 方法二
+        // 通过ID来进行获取元素 
+        // 因为ID是唯一的 不重复的 所以不需要其他索引
+        // var articleEl = document.getElementById("title")
+        // articleEl.style.color = "red"
+
+
+        // 方法三 =====> 主要方法
+        // querySelector:  通过选择器进行查询
+
+        // class方法 .class
+        // 获取一个
+        var keywordsEl = document.querySelector(".keyword")
+        // 获取所有
+        var keywordsEls = document.querySelectorAll(".keyword")
+        console.log(keywordsEls);
+        for (let index = 0; index < keywordsEls.length; index++) {
+            keywordsEls[index].style.color = "red"
+
+        }
+        // id方法 #id
+        var articleEl = document.querySelector("#title")
+
+
+    </script>
+</body>
+
+</html>

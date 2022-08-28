@@ -1,0 +1,34 @@
+git init 初始化一个仓库 
+
+☆☆☆☆☆
+git add . 将所有的文件添加到缓存区
+☆☆☆☆☆
+git commit -m "初始化项目"
+☆☆☆☆☆
+
+==========> git commit -a -m "修改代码"
+
+git log 查看提交记录
+git reflog 所有的提交操作 包括版本回退 版本删除等
+git log --pretty=oneline  一行显示log
+
+git clone xxxxxx 下载项目到本地 (git在哪个目录中 就下载到哪个目录)
+
+☆☆☆☆☆
+git status  检测文件的状态 看当前的文件是否提交 是否修改 查看文件的所有状态
+☆☆☆☆☆
+
+git reset --hard xxxxxxxx(id)    版本回退 回退到某个版本 指定id (前八位)
+
+git reset --hard "HEAD^"  回退到上一个版本 没有指定id
+
+
+☆☆☆☆☆文件push到github中去的命令文件☆☆☆☆☆
+git add . 
+git commit -m "xxx"
+git push 
+
+
+git remote -v 远程仓库的地址名
+
+git remote add origin(可以自定义) xxxx(远程地址)  与远程仓库建立连接

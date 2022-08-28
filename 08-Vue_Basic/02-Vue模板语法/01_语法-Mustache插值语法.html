@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <template id="my-app">
+
+        <!-- 基本数据展示 -->
+        <h2>{{ message }}</h2>
+
+        <!-- 表达式的运算 -->
+        <h2>{{ counter*2 }}</h2>
+        <h2>展示信息: {{ info.split(" ").reverse()}}</h2>
+
+        <!-- 三元运算 -->
+        <h2>{{ age>=18? "成年人":"未成年人" }}</h2>
+
+        <!-- 调用methods中的函数 -->
+
+        <!-- 但是不能定义  const var 数据 -->
+        <h2>{{ formateDate() }}</h2>
+    </template>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data: function () {
+                return {
+                    message: "hello world",
+                    counter: 10,
+                    info: "my name is xiaomi",
+                    age:18
+                }
+            },
+            methods:{
+                formateDate(){
+                    return "2022-8-24 " + this.age
+                }
+            }
+        }
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+
+</html>

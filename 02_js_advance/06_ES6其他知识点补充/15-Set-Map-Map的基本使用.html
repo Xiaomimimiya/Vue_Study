@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const obj1 = { name: "why" }
+        const obj2 = { name: "coder" }
+        const obj3 = { name: "coders" }
+        // 1. 对象类型的局限性:不可以使用复杂类型作为key
+        // const obj = {
+        //     address: "北京市",
+        //     [obj1]: "哈哈哈",
+        //     [obj2]: "呵呵呵"
+        // }
+
+        // 2. 为解决这个局限 使用map来进行解决
+            const map = new Map()
+            map.set(obj1, "num1")
+            map.set(obj2, "num2")
+
+            console.log(map);
+
+        // 3. 基本属性和set一样  size clear get set delete
+    </script>
+</body>
+
+</html>

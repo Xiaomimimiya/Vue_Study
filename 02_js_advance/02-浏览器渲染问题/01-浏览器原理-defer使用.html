@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">app</div>
+
+    <div id="title">title</div>
+
+    <div id="product">product</div>
+
+    <!-- 下载需要很长的事件，并且执行也需要很长的时间 -->
+
+    <!-- 1. 使用 defer 
+            1.1 defer属性告诉浏览器不要等待脚本下载，而继续解析HTML，构建DOMTree
+            
+            可以先渲染h1 再同时渲染页面
+            1.2 多个defer 按照从上到下的执行顺序 
+    -->
+    <script src="./js/test.js" defer></script>
+    <script src="./js/demo.js" defer></script>
+   <script>
+    
+    
+
+
+   </script>
+
+    <h1>哈哈哈</h1>
+</body>
+</html>

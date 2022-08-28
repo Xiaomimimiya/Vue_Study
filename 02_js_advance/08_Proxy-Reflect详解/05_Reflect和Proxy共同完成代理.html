@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const obj = {
+            name: "why",
+            age: 18,
+            city: "广州"
+        }
+        const objProxy = new Proxy(obj, {
+            set: function (target, key, newValue, reciver) {
+                // target[key] = newValue 
+
+                // 因此使用反射的方式来进行操作
+
+                // 好处一: 代理对象的目的:不再直接操作原对象
+                // 好处二: 可以看到是否操作成功 返回布尔值
+
+                
+                const isSuccess = Reflect.set(target, key, newValue)
+
+                if (isSuccess) {
+                    console.log("操作成功");
+                } else {
+                    console.log("操作失败")
+                }
+                
+            },
+            get: function (target, key) {
+
+            }
+        })
+
+        objProxy.name = "xiaomi"
+        console.log(obj);
+    </script>
+</body>
+
+</html>

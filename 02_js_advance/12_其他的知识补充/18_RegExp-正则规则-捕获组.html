@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const message = "我最喜欢的两本书:《黄金时代》和《沉默的大多数》"
+
+        // 需求 匹配两本书 且不能有书名号  
+
+        // 分组就是加    () 
+
+        const re = /《(.+?)》/ig
+
+        const res = message.matchAll(re)
+        for (const iterator of res) {
+            console.log(iterator[1]);
+        }
+
+        // 将捕获组作为一个整体  
+        // 需求 匹配两个连续的acb
+        const message2 = "abcjfasabcabcsfasabcabcsadasabcabcabc"
+        const re2 = /(abc){2,}/ig
+        const results = message2.match(re2)
+        console.log(results);
+    </script>
+</body>
+
+</html>

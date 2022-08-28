@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>
+        修改history
+    </button>
+    <button class="back">返回上一级</button>
+    <script>
+
+        // 前端路由的核心是 修改了URL 但是页面不刷新
+        // 主要实现的方法之一就是 修改history 来进行实现
+        
+        // history对象允许我们访问浏览器曾经的会话历史记录
+
+        // 1、history对象的属性
+        // console.log(history.length);
+        // console.log(history.state);
+
+
+        var btn = document.querySelector("button")
+        btn.onclick = function(){
+            history.pushState({name:"xiaomi", age:20}, "", "/why")
+        }
+
+        var backBtn = document.querySelector(".back")
+        backBtn.onclick = function(){
+            // 返回
+            history.back()
+            // 前进
+            // history.forward()
+        }
+    </script>
+</body>
+</html>

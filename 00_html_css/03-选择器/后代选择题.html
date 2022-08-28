@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .home span{
+            color: red;
+        }
+        /* 最邻近的后代选择 */
+        .home > span {
+            color: yellowgreen;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>  
+    <div class="home">
+        <span>嘻嘻</span>
+        <div class="box">
+            <span>1111</span>
+        </div>
+
+        <div class="content">
+            <div class="desc">
+                <p>
+                    <span>hhh</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <span>嘻嘻嘻</span>
+
+    <div>
+        <span>xxxx</span>
+    </div>
+
+</body>
+</html>

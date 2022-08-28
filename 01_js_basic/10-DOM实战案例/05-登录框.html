@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        input {
+            border: 0;
+            outline: 0;
+        }
+
+        .title {
+            margin-left: 100px;
+        }
+
+        .name {
+            width: 300px;
+            height: 50px;
+            margin-top: 10px;
+
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .name-left {
+            border: 1px solid gray;
+            width: 60px;
+
+            border-right: 0px;
+        }
+
+        .name-right {
+            border: 1px solid gray;
+            width: 240px;
+
+            padding: 5px;
+
+        }
+
+        .password {
+            margin-top: 20px;
+            width: 300px;
+            height: 50px;
+
+            display: flex;
+            justify-content: space-between;
+
+
+        }
+
+        .password-left {
+            border: 1px solid gray;
+            width: 60px;
+
+            border-right: 0px;
+        }
+
+        .password-right {
+            border: 1px solid gray;
+            width: 240px;
+
+            padding: 5px;
+
+        }
+
+        .login {
+            margin-top: 20px;
+            width: 300px;
+            height: 30px;
+            background-color: red;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .login span {
+            line-height: 30px;
+            color: white;
+        }
+
+        .error {
+            width: 200px;
+            height: 40px;
+            border: 1px solid red;
+            margin-left: 50px;
+            color: red;
+            text-align: center;
+
+        }
+
+        .error span {
+            line-height: 40px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .clear {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 class="title">登录界面</h2>
+    <div class="box">
+        <div class="hidden error">
+            <span>密码或者用户名不能为空</span>
+        </div>
+        <div class="name">
+            <div class="name-left">
+
+            </div>
+            <input class="name-right" id="uname" type="username" placeholder="请输入用户名">
+
+            </input>
+            <div class="clear ">
+                X
+            </div>
+        </div>
+        <div class="password">
+            <div class="password-left">
+
+            </div>
+            <input class="password-right" id="upass" type="password" placeholder="请输入密码">
+
+            </input>
+
+        </div>
+
+        <div class="login">
+            <span>登录</span>
+        </div>
+    </div>
+
+    <script>
+
+        var nameEl = document.querySelector("#uname")
+        var wordEl = document.querySelector("#upass")
+        var errorEl = document.querySelector(".error")
+        var clearEl = document.querySelector(".clear")
+        var btn = document.querySelector(".login")
+
+        clearEl.onclick = function () {
+          
+            if (nameEl.value != "") {
+                nameEl.value = ""
+
+            } 
+        }
+
+
+        btn.onclick = function () {
+
+            var names = nameEl.value;
+            var pass = wordEl.value
+
+            console.log(names, pass);
+            if (!names || !pass) {
+                alert("登录失败")
+                errorEl.classList.remove("hidden")
+            } else {
+                alert("登录成功");
+                errorEl.classList.add("hidden")
+            }
+
+        }
+    </script>
+</body>
+
+</html>

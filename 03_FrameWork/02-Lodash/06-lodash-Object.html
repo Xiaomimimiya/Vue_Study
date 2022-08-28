@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="./libs/lodash-4.17.21.js"></script>
+
+    <script>
+        const user = {
+            name: "xiaomi",
+            age: 19, 
+            city: "湖南",
+            running(){
+                console.log(this.name +" running");
+            },
+            friend: [
+                "jack", "mike", "john"
+            ]
+        }
+
+        // 拷贝数组的部分内容 name friend
+
+        console.log(_.pick(user, ["name", "friend"]));
+
+        // 忽略 name friend
+        console.log(_.omit(user, ["name", "friend"]));
+    </script>
+</body>
+
+</html>

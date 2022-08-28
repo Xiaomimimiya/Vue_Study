@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 元素查找
+        var name = ["qqq", "www", "sss", "aaa", "eee"]
+
+        // 方法一：indexOf 找到返回索引 未找到返回-1 
+        // 适用于简单的数组查找
+        console.log(name.indexOf("eee"));
+
+        // 方法二：数组遍历
+        // 适用于复杂数组的查找 数组内存放对象
+        var names = [
+            { id: 100, name: "xiaomi" },
+            { id: 101, name: "xiaomi2" },
+            { id: 102, name: "xiaomi3" },
+            { id: 103, name: "xiaomi4" },
+        ]
+        // 查找id为101的学生
+        var stu = null
+        for (let index = 0; index < names.length; index++) {
+            if (names[index].id === 101) {
+                stu = names[index];
+                break;
+            }
+        }
+        // 判断是否找到了 然后进行操作
+        if (stu) {
+            console.log("找到了", stu);
+        } else {
+            console.log("没有找到");
+        }
+
+        // 方法三：find方法来直接进行查找 
+        var id = 101
+        var student = names.find(
+            // item 就是元素
+            function (item) {
+                if (item.id === id) {   
+                    console.log("查到了", item.id);
+                }
+            }
+        )
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = {
+            name: "why",
+            age: 10,
+            friend: {
+                name: "xiao",
+                age: 12
+            },
+            running: function () {
+                console.log("running");
+            }
+        }
+        // 1.  访问对象的属性
+        // console.log(obj.name);
+        // console.log(obj.friend.age);
+        // console.log(obj.running());
+
+        // 2.  修改对象的属性
+        //   obj.age = 20;
+        //   obj.name = "xiaomi";
+        //   obj.running = function(){
+        //       alert("您修改了")
+        //   }
+        //   console.log(obj.age);
+        //   obj.running()
+
+        // 3.添加属性
+            obj.className = 2021
+            console.log(obj);
+
+        // 4.删除属性
+            delete obj.className
+    </script>
+</body>
+
+</html>

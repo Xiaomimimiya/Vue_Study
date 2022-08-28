@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.在ES5以及之前，只有全局和函教会形成自己的作用域
+
+        // 代码块
+
+        // function foo() {
+        //     console.log("hello world");
+        // }
+
+        // {
+        //     var message1 = "xioami"
+        // }
+        // console.log(message1);
+
+
+        //  2. 从ES6开始，使用let/const声明的变量是有块级作用域
+
+        {
+            let age = 18
+            const name = "xiaomi"
+            class person{
+
+            }
+            function foo(){
+                console.log("foo");
+            }
+        }
+        // console.log(age);    age is not defined
+        // console.log(name);   name is not defined
+        // const p = new person() person is not defined
+       
+        // 但是函数在外部是可以被访问到的
+        
+        foo()
+
+
+    </script>
+</body>
+</html>

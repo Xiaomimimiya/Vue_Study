@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active{
+            color: red;
+        }
+        .xiaomi{
+            font-size: 20px;
+        }
+        .coderwhy{
+            padding: 5px 5px;
+        }
+        .abc{
+            margin: 0 auto;
+        }
+     
+    </style>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <template id="my-app">
+        <!-- 1、基本绑定 -->
+        <div :class="className"></div>
+
+        <!-- 2、 实用三元判断切换-->
+        <button :class="isActive? 'active':'' " @click="toggle">我是按钮</button>
+
+        <!-- 3、对象语法进行操作 -->
+        <!-- class中可以按照key:value的键值对形式来进行判断 而value的值可以是布尔值 因此 可以进行动态绑定 -->
+        <button :class=" {active: isActive} " @click="toggle">我是按钮</button>
+
+        <!-- 4、多个键值对也可以进行操作  xiaomi 加 coderwhy 不加-->
+        <button :class=" {active: isActive, xiaomi: true, coderwhy: false} " 
+                @click="toggle">我是按钮
+        </button>
+
+        <!-- 5、同时 动态的class还可以和普通的class一起使用 -->
+        <button class="abc" :class=" {active: isActive, xiaomi: true, coderwhy: false} " 
+                @click="toggle">我是按钮
+        </button>
+
+        <button class="abc" :class="getDynamicClass()" 
+        @click="toggle">我是按钮
+</button>
+
+
+    </template>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data: function () {
+                return {
+                    className: "hello",
+                    isActive: true
+                }
+            },
+            methods:{
+                toggle(){
+                    this.isActive = !this.isActive
+                },
+                getDynamicClass(){
+                    return  {active: this.isActive, xiaomi: true, coderwhy: false} 
+                }
+            }
+
+        }
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+
+</html>

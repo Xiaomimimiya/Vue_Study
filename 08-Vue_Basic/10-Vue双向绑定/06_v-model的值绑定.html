@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <template id="my-app">
+
+        <!-- 从服务器获取的数据返回 进行绑定 -->
+
+        <!-- select多选  -->
+
+        <select multiple size="3" v-model="fruit">
+            <option v-for="item in fruits" :key="item.value" :value="item.value"> {{item.text}}</option>
+        </select>
+        <h2>{{ fruit }}</h2>
+
+        <!-- checkbox使用 -->
+        <div v-for="item in allHobbies" :key="item.value">
+            <label :for="item.value">
+                <input type="checkbox" :id="item.value" v-model="hobby" :value="item.value">{{item.text}}
+            </label>
+        </div>
+        <h2>{{hobby}}</h2>
+    </template>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data() {
+                return {
+                    fruits: [
+                        { value: "apple", text: "苹果" },
+                        { value: "orange", text: "橘子" },
+                        { value: "bananas", text: "苹果" },
+                     
+                    ],
+                    fruit: [],
+                    allHobbies: [
+                        { value: "sing", text: "唱" },
+                        { value: "jump", text: "跳" },
+                        { value: "rap", text: "rap" },
+                        { value: "basketball", text: "篮球" }
+                    ],
+                    hobby: []
+
+                }
+            },
+        }
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            display: flex;
+
+            align-items: center;
+
+            width: 200px;
+            height: 50px;
+            border-radius: 55px;
+            background-color: gray;
+
+            box-sizing: border-box;
+        }
+
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .title {
+            font-size: 10px;
+            margin-left: 20px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img class="avatar" src="../../html_css/0配置文件/0-images//11.jpg" alt="">
+        <span class="title">
+            购买了这个商品
+        </span>
+    </div>
+
+    <script>
+        // 1. 从服务器获取数据
+        let tipList = [
+            {
+                icon: 'https://bfs.biyao.com/group1/M01/A6/97/rBACYWBCHqyAFH5tAAANZXX5Eww646.png',
+                title: '1111对这件商品感兴趣'
+            },
+            {
+                icon: 'https://bfs.biyao.com/group1/M01/A2/67/rBACVGA_iOuAYaTxAAAPbted3yE165.png',
+                title: '123***814对这件商品感兴趣'
+            },
+            {
+                icon: 'https://bfs.biyao.com/group1/M00/7F/4E/rBACYV16HseAP-PnAAAW9bbVoKE463.png',
+                title: '2222对这件商品感兴趣'
+            }
+        ]
+
+        // 获取元素
+        var boxEl = document.querySelector(".box")
+        var imgEl = document.querySelector(".avatar")
+        var titleEl = document.querySelector(".title")
+
+
+        // 3秒钟切换一次数据    
+        var currentIndex = 0
+
+        // 数据动态切换
+        function getDate() {
+            var tipItem = tipList[currentIndex]
+            imgEl.src = tipItem.icon
+            titleEl.textContent = tipItem.title
+
+            currentIndex++
+            
+            if (currentIndex == tipList.length) {
+                currentIndex = 0
+            }
+
+        }
+
+        // 定时展示
+        setInterval(getDate, 2000)
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Person{
+            // 对象属性 是公共的属性
+
+            height = 199
+
+            // 私有属性 
+            _name = "xiaomi"  //程序员约定俗成的 但是外部可以访问到
+            
+            // ES13新增的私有属性定义方法
+            // 添加# 就表示是私有的 外部不能访问到
+            #inter = "private"
+
+          
+            constructor(name, age){
+                // 对象中的属性:在constructor通过this设置
+                this.name = name,
+                this.age = age
+            }
+        }
+
+        const p = new Person('xiaomi', 10)
+        console.log(p.name, p.age);
+        // console.log(p.#inter);
+        // console.log(Person.foo());
+    </script>
+</body>
+</html>

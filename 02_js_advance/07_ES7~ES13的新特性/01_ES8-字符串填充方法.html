@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2 class="title"> </h2>
+
+    <script>
+        // 可以通过padStart的方法来进行字符串的填充 而不需要进行条件判断
+
+        // 应用场景一 ========> 主要用来时间的格式化
+        const minute = "5".padStart(2,"0")
+        const seconds = "4".padStart(2, "0")
+      
+        
+        console.log(`${minute}:${seconds}`);   //05：03
+
+        // 应用场景二：对一些敏感数据格式化 电话、号码 脱敏
+        let number = "17773343779"
+        
+        let newNumber = number.slice(-4)
+
+        number = newNumber.padStart(number.length," *")
+
+        let titleEl = document.querySelector(".title")
+        titleEl.textContent = number
+
+    </script>
+</body>
+</html>

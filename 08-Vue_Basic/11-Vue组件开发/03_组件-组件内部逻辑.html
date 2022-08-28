@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .product {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <product-item></product-item>
+        <product-item></product-item>
+        <product-item></product-item>
+    </div>
+
+    <template id="productItem">
+        <div class="product">
+            <h2>{{title}}</h2>
+            <div>{{image}}</div>
+            <div>商品价格:<span>￥{{price}}</span></div>
+            <p>商品描述信息,{{price}}秒杀</p>
+            <button @click="favor">收藏</button>
+        </div>
+    </template>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const App = {}
+        const app = Vue.createApp(App)
+        app.component("product-item", {
+            template: "#productItem",
+            data() {
+                return {
+                    title: "小米手机",
+                    image: "111",
+                    price: 10,
+                }
+            },
+            methods: {
+                favor() {
+                    console.log("click favor");
+                }
+            }
+        }
+        )
+        app.mount("#app")
+    </script>
+</body>
+
+</html>

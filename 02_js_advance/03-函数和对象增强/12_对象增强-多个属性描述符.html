@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = {
+            name: "xiaomi",
+            age: 18,
+            city: "guangzhou"
+        }
+        // 新增方法，对多个属性进行描述符操作  =====> 优化
+
+        Object.defineProperties(obj, {
+            name: {
+                configurable: false,
+                enumerable: false,
+                writable: false
+            },
+            age: {
+                configurable: false,
+                enumerable: false,
+            }
+        })
+    </script>
+</body>
+
+</html>

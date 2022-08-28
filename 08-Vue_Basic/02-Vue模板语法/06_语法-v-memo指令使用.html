@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <template id="my-app">
+        <!-- name发生改变 页面才会进行渲染 -->
+        <!-- age city 发生改变则不会 -->
+            <div v-memo="[name]">
+                <h2>姓名 {{ name }}</h2>
+                <h2>年龄 {{ age }}</h2>
+                <h2>城市 {{ city }}</h2>
+            </div>
+            <button @click="changeinfo">改变信息</button>
+    </template>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data: function () {
+                return {
+                    name: "xiaomi",
+                    age: 18,
+                    city: "广州"
+                }
+            },
+            methods: {
+                changeinfo(){
+                    // this.name = "小米"
+                    this.age = 20
+                }
+            }
+        }
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+
+</html>

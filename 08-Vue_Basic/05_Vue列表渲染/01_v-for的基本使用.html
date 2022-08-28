@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item{
+            color:red;
+            background-color: wheat;
+            margin: 10px 10px;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app"></div>
+    <template id="my-app">
+        <!-- 先内容 后索引 -->
+        <div v-for="(item,index) in movies">
+            <div>{{index+1}}- {{item}}</div>
+        </div>
+
+        <!-- 遍历数组复杂数据 -->
+        <h2>商品列表</h2>
+        <div class="item" v-for="item in products">
+            <div>{{item.name}}-{{item.price}}元-{{item.number}}个</div>
+        </div>
+    </template>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        const App = {
+            template: '#my-app',
+
+            data() {
+                return {
+                    // 数组
+                    movies: ["盲井", "功夫熊猫", "天龙八部", "泰坦尼克号"],
+
+                    // 数组中存放对象
+                    products:[
+                        {name: "apple", price: 100, number: 10},
+                        {name: "xiaomi", price: 20, number: 20},
+                        {name: "huawei", price: 200, number: 30}
+                    ]
+                }
+            },
+        }
+        Vue.createApp(App).mount("#app")
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            display: block;
+            text-decoration: none;
+            font-size: 14px;
+            color: #333;
+        }
+        a:hover {
+            color: blueviolet;
+        }
+        .box {
+            display: inline-block;
+            width: 236px;
+            height: 224px; 
+        }
+        .box .desc {
+            margin-top: 3px;
+            margin-bottom: 4px;
+        }
+        .box .img {
+            height: 124px;
+            width: 100%;
+            border-radius: 12px;
+        }
+        .info-middle {
+            font-size: 12px;
+            color: #999999;
+            
+        }
+        .info-middle .line {
+            margin-left: 2px;
+            margin-right: 2px;
+        }
+
+        .info-middle::after {
+            display: inline-block;
+            content: url("../0-images/new.svg");
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            margin-left: 5px;
+        }
+
+        .info-bottom {
+            margin-bottom: 10px;
+        }
+
+        .info-bottom .price {
+            color: #f4621f;
+            font-size: 14px;
+        }
+
+        .info-bottom .user {
+            font-size: 12px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <a href="https://www.baidu.com">
+            <image class="img" src="../0-images/test.jpg"></image>
+            <p class="desc">继续教育|短视频上热门|好物推荐|短视频制作|</p>
+        </a>
+        <div class="info-middle">
+            <span>共三节</span>
+            <span class="line">|</span>
+            <span>继续教育</span>
+        </div>
+        <div class="info-bottom">
+            <span class="price">免费</span>
+            <span class="user">522人最近报名</span>
+        </div>
+    </div>
+</body>
+
+</html>

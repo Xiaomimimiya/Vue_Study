@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Animal{
+            eating(){
+                console.log("eating");
+            }
+            running(){
+                console.log("running");
+            }
+            static sleep(){
+                console.log("sleep");
+            }
+        }
+
+        class Mouse extends Animal {
+            // 子类对继承过来的父类方法不满意 可以修改 即
+            // 对继承过来的父类进行重写
+            // eating(){
+            //     console.log("mouse is"); 
+            // }
+            eating(){
+                // 但是部分不满意 就使用super调用父类的方法
+                console.log("mouse is");
+                // 调用父类的方法
+                super.eating()
+            }
+
+        
+
+        }
+
+        var mouse1 = new Mouse()
+        mouse1.eating()
+        // 静态方法可以直接调用
+        
+        Mouse.sleep()
+    </script>
+</body>
+</html>

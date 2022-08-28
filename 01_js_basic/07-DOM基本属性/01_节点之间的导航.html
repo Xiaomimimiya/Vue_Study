@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">hhh</div>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        // var htmlEl =  document.documentElement
+        // var bodyEl = document.body
+        // var headEl = document.head
+        // console.log(htmlEl)
+        // console.log(bodyEl)
+        // console.log(headEl)
+
+        // 1.获取节点的导航
+        var bodyEl = document.body
+
+        // 1.1 获取子节点
+        console.log(bodyEl.childNodes);
+
+        // 1.2 获取body的第一个子节点
+        console.log(bodyEl.firstChild);
+
+        // 1.3 获取body的第一个子节点 的下一个节点 .box节点
+        var SiblingEl = bodyEl.firstChild
+        console.log(SiblingEl.nextSibling);
+
+        // 1.4 获取body的父节点
+        var bodyParent = document.body
+        console.log(bodyParent.parentNode);
+    </script>
+</body>
+
+</html>

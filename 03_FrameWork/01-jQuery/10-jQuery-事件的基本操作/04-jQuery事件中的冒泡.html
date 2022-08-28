@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="box">
+        1111
+        <span class="content">111</span>
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        $(function () {
+            $(".content").click(function () {
+                console.log("span");
+            })
+            $(".box").click(function () {
+                console.log("box");
+            })
+            $("body").click(function () {
+                console.log("body");
+            })
+        })
+    </script>
+</body>
+
+</html>

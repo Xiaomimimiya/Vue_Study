@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getRandomIntInclusive(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值 
+        }
+        var numbers = getRandomIntInclusive(0, 100)
+        console.log(numbers);
+        var count = 7
+
+        for (var count = 1; count < 7; count++) {
+            var answer = prompt("请输入答案")
+            if (answer === numbers) {
+                alert("猜对了")
+                break
+            }
+            else if (answer > numbers) {
+                alert("大")
+            }
+            else {
+                alert("小了")
+            }
+            // 判断次数是否用完
+            if (i ===count-1) {
+                alert("次数用完")
+            }
+        }
+    </script>
+</body>
+
+</html>

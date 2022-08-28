@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+    <script>
+        var boxEl = document.querySelector(".box")
+
+        // 鼠标进入
+        // boxEl.addEventListener("mouseenter", function(){
+        //     console.log("mouseenter");
+        // })
+
+        // 鼠标移开
+        // boxEl.addEventListener("mouseleave", function(){
+        //     console.log("mouseleave");
+        // })
+
+        //  右击
+        // boxEl.addEventListener("contextmenu", function(){
+        //     console.log("contextmenu");
+        // })
+
+        //  鼠标在区域中移动
+        // boxEl.addEventListener("mousemove", function(){
+        //     console.log("mousemove");
+        // })
+        
+        // 监听点击
+        var isDown = false
+        boxEl.addEventListener("mousedown", function(){
+            console.log("鼠标点击了");
+            isDown = true
+        })
+
+        boxEl.addEventListener("mousemove", function(){
+            if (isDown) {
+                console.log("鼠标在移动");
+            }
+        })
+        
+        boxEl.addEventListener("mouseup", function(){
+            console.log("鼠标抬起来了");
+            isDown = false
+        })
+
+    </script>
+</body>
+</html>

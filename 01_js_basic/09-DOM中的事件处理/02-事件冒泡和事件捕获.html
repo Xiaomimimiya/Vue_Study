@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .box span {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <span></span>
+    </div>
+
+    <script>
+        // 点击是span 而 div body 都会受到点击
+
+        var spanEl = document.querySelector("span")
+        var BoxEl = document.querySelector(".box")
+        var bodyEl = document.querySelector("body")
+
+        // 事件冒泡 spanE1----> boxE1-----> bodyE1
+
+        // spanEl.addEventListener("click",function(){
+        //     console.log("spanEl-click");
+        // })
+        // BoxEl.addEventListener("click",function(){
+        //     console.log("BoxEl-click");
+        // })
+        // bodyEl.addEventListener("click",function(){
+        //     console.log("bodyEl-click");
+        // })
+
+        // 事件的捕获 添加第三个参数 true  输出是 body----> div----> span
+        spanEl.addEventListener("click", function () {
+            console.log("spanEl-click");
+        }, true)
+
+        BoxEl.addEventListener("click", function () {
+            console.log("boxEl-click");
+        }, true)
+
+        bodyEl.addEventListener("click", function () {
+            console.log("body-click");
+        }, true)
+
+    </script>
+</body>
+
+</html>

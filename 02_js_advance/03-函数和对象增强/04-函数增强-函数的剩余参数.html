@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+         // 情况一
+        function foo(num1, num2, ...others) {
+            // 传递多个参数时  使用arguments时 发现arguments用起来较为繁琐  
+            // console.log(arguments);
+
+            // 所以直接使用新的剩余参数 无论传入多少个参数 输出的都是数组形式
+            // 必须写在最后
+
+            console.log(others);
+            // 输出的不会包括num1, num2所替代的参数
+        }
+        
+        foo(1, 2, 3, 4, 5, 6, 7)
+
+        // 情况二
+        function bar(...params) {
+                console.log(params);
+        }
+        
+        bar(1,2,3,4,5,6,7,7)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li class="div-1">li-1</li>
+            <li class="div-2" id="list">li-2</li>
+            <li class="div-3">li-3</li>
+            <li class="div-4">li-4</li>
+            <li class="div-5">li-5</li>
+            <li class="div-6">li-6</li>
+            <span>我是span</span>
+        </ul>
+        <h2 class="choose">我是被选中的元素</h2>
+    </div>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        $(function () {
+            // 1.删除ul中的后代元素
+
+            // $("ul").empty()   // 删除全部的后代元素  即li
+
+
+            // 2. 删除某一个元素
+            // $("ul").remove()   // 全部被删除 包括自身
+            // $("ul li").remove(".div-3")    // 指定某一个删除 ul下面的li
+            // $("ul li").remove(".div-3, .div-6")    // 指定多个删除 
+            
+
+            // 3. 替换某一元素
+           const $div =  $("<li>").addClass("div-7").text("我是添加的div-7").css("color", "red")
+            // 内容.replaceAll("目标元素")
+
+            // $div.replaceAll(".div-6")
+
+            $("li").replaceWith($div)
+        })
+    </script>
+</body>
+
+</html>

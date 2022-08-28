@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. var声明的变量会进行(域的提升)
+
+        console.log(message)
+
+        var message = "Hello world"
+
+        // 2.Let/const声明的变量
+
+        // 但是如果我们使用let声明的变量，在声明之前访问会报错;
+
+        // console.log(foo);
+        // let foo = "广州"
+
+        // 那么是不是意味着foo变量只有在代码执行阶段才会创建的呢? 
+        // 执行之前就已经被创建 只是不能被访问
+
+        // ========> 因此 let/const的作用域并没有被提升
+
+    </script>
+</body>
+</html>

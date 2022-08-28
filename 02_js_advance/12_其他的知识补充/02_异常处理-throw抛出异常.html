@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 定义一个公共类的抛出类
+        class XMerror {
+            constructor(message, errorCode) {
+                this.message = message
+                this.errorCode = errorCode
+            }
+        }
+
+        // throw抛出一个异常
+        // 1.函数中的代码遇到throw之后，后续的代码都不会执行
+        // 2.throw抛出一个具体类型的错误信息
+        function foo() {
+            console.log("111");
+            console.log("222");
+            // 1、传统的定义 抛出一个值
+             // throw "aaa"
+
+            //  2、抛出一个对象  
+            // throw {errmessage:"错误信息", errorCode: 404}
+            // 自定义类
+            // throw new XMerror("我是错误信息", -1001)
+
+            // 3、Error 系统提供的类 其提供的错误信息较为详细 
+            //    ====> 建议使用 <====
+            throw new Error("我是错误信息")
+
+            console.log("333");
+            console.log("444");
+        }
+        foo()
+
+    </script>
+</body>
+
+</html>

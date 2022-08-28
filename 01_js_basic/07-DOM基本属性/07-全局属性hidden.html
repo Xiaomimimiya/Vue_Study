@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn">切换</button>
+
+    <!-- 元素设置hidden 则被隐藏 -->
+    <div class="box" id="container" style="color:red" hidden>
+        hhh
+    </div>
+
+    <script>
+        var hiddenEl = document.querySelector(".box")
+        console.log(hiddenEl);
+
+        var btnEl = document.querySelector(".btn")
+        // 点击
+        btnEl.onclick = function(){
+            hiddenEl.hidden  = !hiddenEl.hidden
+        }
+    </script>
+
+    
+</body>
+</html>

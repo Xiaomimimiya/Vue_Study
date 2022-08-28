@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: aquamarine;
+        }
+        .box strong{
+
+            /* 浮动元素和行内元素不会层叠 */
+            /* 会对span元素进行右移 */
+
+            /* 浮动可以解决元素之间的间隙问题 */
+
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+            <span>我是span</span>
+            <strong>我是strong</strong>
+            <i>我是i</i>
+            <div>我是div</div>
+    </div>
+   
+</body>
+
+</html>

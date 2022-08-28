@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .item {
+            display: inline-block;
+            width: 170px;
+            height: 170px;
+            background-color: #fff;
+            border-radius: 6px;
+        }
+
+        .item img {
+            width: 100%;
+            border-radius: 6px;
+        }
+
+        .item .desc {
+
+            font-weight: 400px;
+            margin-top: 2px;
+            font-size: 14px;
+            color: black;
+            margin-left: 3px;
+            margin-bottom: 5px;
+
+             /*保留两行  多余省略  */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+
+        }
+
+        .desc:hover {
+            color: #00a1d6;
+        }
+
+        .item .name {
+            font-size: 8px;
+            color: #757575;
+            margin-top: 1px;
+            margin-left: 3px;
+        }
+
+        .item .name::before {
+            content: url("../0-images/widget-up.svg");
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            margin-right: 2px;
+            position: relative;
+            top: 2px;
+        }
+       .info{
+           margin-top: 1px;
+       }
+        .item .times {
+            font-size: 8px;
+            color: #757575;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="item">
+        <a href="https://www.baidu.com">
+            <img src="../0-images/1122.jpg">
+            <p class="desc">热狗工厂热狗工厂热狗工厂热狗工厂热狗工厂热狗工厂热狗工厂热狗工厂</p>
+        </a>
+        <p class="info">
+            <a class="name" href="https://space.bilibili.com/394703780/">Tenadiserp</a>
+            <span class="times">3-20</span>
+        </p>
+    </div>
+</body>
+
+</html>

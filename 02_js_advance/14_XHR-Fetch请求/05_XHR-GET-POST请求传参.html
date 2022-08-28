@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const xhr = new XMLHttpRequest()
+
+        xhr.onload = function(){
+            console.log(xhr.response);
+        }
+
+        xhr.responseType = "json"
+
+        // 1. 传递参数方式一
+        // 明文  不安全
+        // xhr.open("get", "http://123.207.32.32:1888/02_param/get?name=why&age=19&address=广州" )
+
+        // 2. 传递参数方式四 JSON 方式
+
+        xhr.open("post", "http://123.207.32.32:1888/02_param/postjson")
+        xhr.setRequestHeader("Content-type","application/json")
+        xhr.send(JSON.stringify({
+             name: "why",
+             age: 18,
+             height: 200
+        }))
+    </script>
+</body>
+</html>

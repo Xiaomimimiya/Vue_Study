@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            display: flex;
+            align-items: center;
+
+            width: 300px;
+            height: 60px;
+            justify-content:left;
+           
+        }
+        .left{
+            background-color: #000;
+            display: flex;
+            align-items: center;
+        }
+
+        .close .logo {
+            width: 12px;
+            height: 12px;
+            margin-left: 10px;
+          
+        }
+        .title{
+            display: flex;
+            align-items: center;
+        }
+        .title img{
+            width: 30px;
+            height: 30px;
+            margin-left: 10px;
+            line-height: 50px;
+        }
+        .title p {
+            font-size: 10px;
+            color: white;
+            text-align: center;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+        .right {
+            display: inline-block;
+            background-color: red;
+            height: 36px;
+            align-items: center;
+        }
+        .open { 
+            line-height: 36px;
+            text-align: center;
+            font-size: 15px;
+        }
+        .hidden {
+            display: none;
+            transition: ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="left">
+            <div class="close">
+                <img class="logo" src="../../img/delete.png" alt="">
+            </div>
+            <div class="title">
+                <img src="../../img/logo.png" alt="">
+                <p>打开京东App,购物更轻松</p>
+            </div>
+        </div>
+       <div class="right">
+        <div class="open">
+            <span>立即打开</span>
+        </div>
+       </div>
+    </div>
+
+    <script>
+        var closeEl = document.querySelector(".close")
+        var boxEl = document.querySelector(".box")
+
+        closeEl.onclick = function(){
+            // boxEl.remove
+            boxEl.classList.add("hidden")
+        }
+    </script>
+</body>
+</html>

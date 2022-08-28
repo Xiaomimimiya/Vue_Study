@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/commen.css">
+    <link rel="stylesheet" href="./css/list.css">
+</head>
+
+<body>
+    <div class="banner">
+        <!-- 轮播图的照片 -->
+        <ul class="images">
+
+        </ul>
+        <!-- 上下切换 -->
+        <div class="control">
+            <button class="last">上一个</button>
+            <button class="next">下一个</button>
+        </div>
+        <!-- 指示器 -->
+        <div class="indicator">
+           
+        </div>
+
+    </div>
+    <script src="./data/banner.js"></script>
+    <script>
+        // 定义资源链接的网址
+        var bannerImageUrl = "https://res.vmallres.com/"
+
+        // 获取轮播图的长度
+        var bannerLength = banners.length
+        // 1.动态添加轮播图的照片
+        // 1.1 获取导入数据的照片
+        var imgUrl = document.querySelector(".images")
+        var activeitemEl = null
+            // 1.2 循环添加
+        for (let index = 0; index < banners.length; index++) {
+            // 获取数据中的照片
+            var banner = banners[index]
+
+            // 创建li元素
+            var itemEl = document.createElement("li")
+            itemEl.classList.add("item")
+            // 第一个元素添加active状态 
+            if (index === 0) {
+                itemEl.classList.add("active")
+                activeitemEl = itemEl
+            }
+            imgUrl.append(itemEl)
+
+            //创建img元素 
+            var imgEl = document.createElement("img")
+            imgEl.src = `${bannerImageUrl}${banner.imgUrl}`
+            console.log();
+            itemEl.append(imgEl)
+        }
+
+        // 1.2 动态添加指示器的内容
+        var indicatorEl = document.querySelector(".indicator")
+        for (let index = 0; index < bannerLength; index++) {
+            var itemEl = document.createElement("div")
+            itemEl.classList.add("item")
+            if (index==0) {
+                itemEl.classList.add("active")
+            }
+            indicatorEl.append(itemEl)
+
+            // 监听指示器的点击 点击切换轮播图
+            itemEl.index = index
+            itemEl.onclick = function(){
+                lastIndex = currentIndex
+                currentIndex = this.index
+                swichBannerItem()
+            }
+        }
+
+
+        // 2. 轮播图的切换
+        // 2.1 点击切换轮播图的实现
+        var currentIndex = 0
+        var lastIndex = 0
+        var controlEl = document.querySelector(".control")
+        var lastBtnEl = controlEl.querySelector(".last")
+        var nextBtnEl = controlEl.querySelector(".next")
+
+        lastBtnEl.onclick = function () {
+            lastIndex = currentIndex
+
+            currentIndex--
+            if (currentIndex === -1) {
+                currentIndex = bannerLength - 1
+            }
+            swichBannerItem()
+        }
+        nextBtnEl.onclick = function () {
+            // 找到下一个
+            nextBanner()
+        }
+
+        // 自动轮播效果的实现
+        var timer = null
+        starTimer()
+
+        // 暂停自动轮播
+
+        imgUrl.onmouseenter = function () {
+            // 关闭定时器
+            stopTimer()
+        }
+        imgUrl.onmouseleave = function () {
+            starTimer()
+        }
+
+        // 重复代码封装
+
+        // 对播放下一个 进行函数封装
+        function nextBanner() {
+            lastIndex = currentIndex
+
+            currentIndex++
+
+            if (currentIndex === bannerLength) {
+                currentIndex = 0
+            }
+            swichBannerItem()
+        }
+
+        function swichBannerItem() {
+            // 1. 切换图片item
+
+            // 当前的添加 前一个去掉
+            var currtenIndexEl = imgUrl.children[currentIndex]
+            var lastIndexEl = imgUrl.children[lastIndex]
+            lastIndexEl.classList.remove("active")
+            currtenIndexEl.classList.add("active")
+
+            // 2. 切换指示器的item
+
+            var currentIndicatorItemEl = indicatorEl.children[currentIndex]
+            var lastIndicatorItemEl = indicatorEl.children[lastIndex]
+
+            // 上一个移除
+            lastIndicatorItemEl.classList.remove("active")
+            // 当前添加
+            currentIndicatorItemEl.classList.add("active")  
+            
+        }
+
+
+        // 对自动轮播进行封装
+        function starTimer() {
+            timer = setInterval(function () {
+                nextBanner()
+            }, 3000);
+        }
+        function stopTimer() {
+            clearInterval(timer)
+        }
+    </script>
+</body>
+
+</html>

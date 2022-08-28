@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function execCode(counter) {
+            const promise = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if (counter > 0) {
+                        // 成功的情况
+                        let total = 0
+                        for (let index = 0; index < counter; index++) {
+                            total += index
+                        }
+
+                        resolve(total)
+                    } else {
+                        // 失败的情况
+                        reject(`${counter}有问题`)
+                    }
+                }, 3000)
+            })
+
+            return promise
+        }
+
+        // const promise = execCode(100)
+        
+        // promise.then(value => {
+        //     console.log("sucesss", value);
+        // })
+        // promise.catch(error => {
+        //     console.log("failure", error);
+        // })
+
+        // 另一种写法   
+        execCode(-100).then(value => { // 成功的情况
+            console.log("sucesss", value);
+        }).catch(error => { // 失败的情况
+            console.log("failure", error);
+        })
+    </script>
+</body>
+
+</html>
